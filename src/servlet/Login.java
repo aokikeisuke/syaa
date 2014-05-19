@@ -17,25 +17,30 @@ public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String ans = request.getParameter("answer");
-		if ("シャア".equals(ans)){
+		if ("シャア".equals(ans)) {
 			response.sendRedirect("http://localhost.8080/syaa/JSP/Top.jsp");
-		}else{
+		} else {
 			PrintWriter out = response.getWriter();
-			out.println("<script type='text/javascript'>"); 
-			out.println("alert(' * パスワードが違います * ');"); 
+			out.println("<script type='text/javascript'>");
+			out.println("alert(' invalid password');");
 			out.println("history.back();");
-			out.println("</script>"); 
+			out.println("</script>");
 			out.close();
 			response.sendRedirect("http://localhost.8080/syaa/JSP/Login.jsp");
 			return;

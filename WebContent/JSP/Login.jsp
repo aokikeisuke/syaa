@@ -1,5 +1,5 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,15 +8,14 @@
 </head>
 
 <body>
-<center>
-私たちのチームの名前は？<br/>
-<form method = "POST" action = "/Login.java">
-<input type="text" name = "answer"/>
-<input type = "submit" value = "ログイン">
 
-</form>
-</center>
+	<center>
+		私たちのチームの名前は？<br />
+		<form method="POST" action="/syaa/Login">
+			<input type="text" name="answer" /> <input type="submit" value="ログイン">
+
+		</form>
+	</center>
 </body>
-
 
 </html>
