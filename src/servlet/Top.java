@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.jni.Address;
 
+import beans.TopBeans;
+
 /**
  * Servlet implementation class Top
  */
@@ -22,7 +24,7 @@ public class Top extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<Address> list = beans.TopBeans.getInfos();
+		ArrayList<TopBeans> list = beans.TopBeans.getInfos();
 		request.setAttribute("list", list);
 		this.getServletContext().getRequestDispatcher("/syaa/Searchin").forward(request, response);
 	}
