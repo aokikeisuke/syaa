@@ -10,11 +10,12 @@
 <body>
 <center>
 私たちのチームの名前は？<br/>
-<form method = "POST" action = "/servlet/Login.java">
+<form method = "POST" action = "/Login.java">
 <input type="text" name = "answer"/>
 <input type = "submit" value = "ログイン">
-</center>
+
 </form>
+</center>
 </body>
 
 
