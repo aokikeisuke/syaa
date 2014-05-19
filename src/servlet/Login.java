@@ -34,7 +34,7 @@ public class Login extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String ans = request.getParameter("answer");
 		if ("シャア".equals(ans)) {
-			response.sendRedirect("http://localhost.8080/syaa/JSP/Top.jsp");
+			response.sendRedirect("http://localhost:8080/syaa/JSP/Top.jsp");
 		} else {
 			PrintWriter out = response.getWriter();
 			out.println("<script type='text/javascript'>");

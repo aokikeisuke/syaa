@@ -11,6 +11,7 @@
 	<br> *姓：
 	<br>
 	<input type="text" name="lastname" />
+	<br>
 	*名：
 	<br>
 	<input type="text" name="firstname" />
@@ -47,6 +48,11 @@
 	<form method="POST" action="/syaa/RegOut">
 	<input type="submit" value="登録">
 	</form>
+	<%
+	if ("lastname" == null | "firstname" == null){
+		
+	}
+	%>
 	
 </body>
 </html>
