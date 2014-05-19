@@ -4,10 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>シャアタイトル</title>
+<title>ログイン画面</title>
 </head>
+
 <body>
-
-<c:out value="こんにちは、タグライブラリ" />
-
+<center>
+私たちのチームの名前は？<br/>
+<form method = "POST" action = "/servlet/Login.java">
+<input type="text" name = "answer"/>
+<input type = "submit" value = "ログイン">
+</center>
+</form>
 </body>
+
+
+</html>
