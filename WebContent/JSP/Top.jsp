@@ -4,11 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>シャアタイトル</title>
+<title>トップ画面</title>
 </head>
+
 <body>
 
-<c:out value="こんにちは、タグライブラリ" />
+
+<form method = "POST" action = "/syaa/servlet/Top">
+<input type="submit" name = "edit" value="登録"/>
+<input type = "submit" name="search" value = "検索"/>
+
+</form>
 
 </body>
+
+
 </html>
