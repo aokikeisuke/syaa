@@ -1,4 +1,4 @@
-package syaa;
+package servlet;
 
 public class Sya {
 	public static void main(String[] args) {
