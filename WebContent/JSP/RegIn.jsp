@@ -13,7 +13,7 @@
 	<br> 
 	*姓：
 	<br>
-	<input type="text" name="lastname" required="required"/>
+	<input type="text" name="lastname" required/>
 	
 	<br>
 	*名：
@@ -50,7 +50,7 @@
 	<br>
 	<input type="text" name="word" />
 	<br>
-	<form method="POST" action="/syaa/RegOut">
+	<form method="POST" action="/syaa/RegOut3">
 	<input type="submit" value="登録">
 	</form>
 
