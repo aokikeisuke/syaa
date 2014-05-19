@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,21 +10,24 @@
 </head>
 <body>
 	*は必須項目です
-	<br> *姓：
+	<br> 
+	*姓：
 	<br>
-	<input type="text" name="lastname" />
+	<input type="text" name="lastname" required="required"/>
+	
 	<br>
 	*名：
 	<br>
-	<input type="text" name="firstname" />
+	<input type="text" name="firstname" required="required" />
+	
 	<br>
 	*フリガナ（姓）：
 	<br>
-	<input type="text" name="sublastname" />
+	<input type="text" name="sublastname" required="required"/>
 	<br>
 	*フリガナ（名）：
 	<br>
-	<input type="text" name="subfirstname" />
+	<input type="text" name="subfirstname" required="required"/>
 	<br>
 	生年月日：
 	<br>
@@ -48,11 +53,19 @@
 	<form method="POST" action="/syaa/RegOut">
 	<input type="submit" value="登録">
 	</form>
-	<%
-	if ("lastname" == null | "firstname" == null){
-		
-	}
-	%>
+
+<% 
+session.setAttribute("lastname", request.getParameter("lastname"));
+session.setAttribute("firstname", request.getParameter("firstname"));
+session.setAttribute("sublastname", request.getParameter("sublastname"));
+session.setAttribute("subfirstname", request.getParameter("subfirstname"));
+session.setAttribute("birthday", request.getParameter("birthday"));
+session.setAttribute("place", request.getParameter("place"));
+session.setAttribute("hobby", request.getParameter("hobby"));
+session.setAttribute("picture", request.getParameter("picture"));
+session.setAttribute("word", request.getParameter("word"));
+%>
+	
 	
 </body>
 </html>
