@@ -1,11 +1,14 @@
 package servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import beans.RegOutBeans;
 
 
 @WebServlet("/RegOut")
@@ -17,9 +20,10 @@ public class RegOut extends HttpServlet {
 		String yesNo = request.getParameter("yesno");
 		
 		if(yesNo.equals("はい")){
-			response.sendRedirect("/syaa/")
+			RegOutBeans.DataBaseInsert();
+			response.sendRedirect("/syaa/JSP/Top");
 		}else{
-			
+			response.sendRedirect("/syaa/JSP/RegIn");
 		}
 	
 	}
