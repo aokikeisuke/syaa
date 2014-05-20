@@ -124,7 +124,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2014-05-20 10:54:48</creation_date>
-			<updated_date>2014-05-20 10:58:00</updated_date>
+			<updated_date>2014-05-20 11:13:00</updated_date>
 			<model_property>
 				<name>プロジェクト名</name>
 				<value></value>
@@ -283,7 +283,7 @@
 		</word>
 		<word>
 			<id>8</id>
-			<length>50</length>
+			<length>200</length>
 			<decimal>null</decimal>
 			<array>false</array>
 			<array_dimension>null</array_dimension>
