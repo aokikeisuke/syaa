@@ -2,7 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% 
 String lastname = (String)session.getAttribute("lastname");
+String firstname = (String)session.getAttribute("firsttname");
 %>
+<%-- 
+String lastname = request.getParameter("lastname");
+session.setAttribute("lastname", lastname);
+--%>
 
 <!DOCTYPE html>
 <html>
@@ -11,16 +16,15 @@ String lastname = (String)session.getAttribute("lastname");
 <title>登録確認画面</title>
 </head>
 <body>
-<form>
-姓：
-<input type = "text" name = "lastname" size = "20"
-value = "<%=lastname%>"/>
-</form>
+<p>
+姓:<%=lastname %><br>
+名:<%=firstname %><br>
+</p>
 
-<form method="POST" action="/syaa/JSP/Top.jsp">
-	<input type="submit" name="yes" value="はい"/></form>
-<form method="POST" action="/syaa/JSP/RegIn.jsp">
-	<input type="submit" name="no" value="いいえ"/></form>
+<form  method="POST" action="/syaa/servlet/RegOut.java">
+	<input type="submit" name="yesno" value="はい"/>
+	<input type="submit" name="yesno" value="いいえ"/>
+</form>
 
 
 </body>
