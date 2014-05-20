@@ -42,7 +42,9 @@ import javax.servlet.http.Part;
 				if(this.isValidFile(name)){
 					part.write(
 							getServletContext().getRealPath("/syaa/WEB-INF/Pic") + "/" + name);
-					response.sendRedirect("/syaa/JSP/RegIn.jsp");
+					this.getServletContext().getRequestDispatcher("/syaa/JSP/RegOut.jsp").forward(request, response);
+					response.sendRedirect("/syaa/JSP/RegOut.jsp");
+					
 				}else{
 					response.getWriter().println("アップロードできませんでした");
 				}
