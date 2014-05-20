@@ -22,7 +22,7 @@ import beans.RegOutBeans;
 
 		@Override
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD
+
            HttpSession session = request.getSession(true);
            session.setAttribute("lastname",request.getParameter("lastname"));
            session.setAttribute("firstname", request.getParameter("firstname"));
@@ -39,17 +39,12 @@ import beans.RegOutBeans;
            regoutbeans.setLastname("lastname");
            regoutbeans.setFsubname("fsubname");
            regoutbeans.setLsubname("lsubname");
-//           regoutbeans.setBirthday("birthday");
+           regoutbeans.setBirthday("birthday");
            regoutbeans.setPlace("place");
            regoutbeans.setHobby("hobby");
            regoutbeans.setImage("image");
-//           regoutbeans.setWord("word");
+           regoutbeans.setWord("word");
            
-           
-           
-=======
-			
->>>>>>> a66968debdc6f5f64e5fe5463a15fe228e1a35bb
 		
 			
 			if(request.getParameter("lastname") == null || request.getParameter("firstname") == null || request.getParameter("sublastname") == null || request.getParameter("subfirstname") == null){
@@ -57,7 +52,7 @@ import beans.RegOutBeans;
 				response.sendRedirect("/syaa/JSP/RegIn.jsp");
 			}else{
 			
-				Part part = request.getPart("picture");
+				Part part = request.getPart("image");
 				String name = this.getFileName(part);
 				if(this.isValidFile(name)){
 					part.write(
