@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-@MultipartCinfig(location = "getServletContext().getRealPath("/syaa/WEB-INF/instancePic")")
+@MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')",  maxFileSize = 16777215L)
 @WebServlet("/syaa/servlet/RegOut")
 
 	
@@ -20,32 +21,39 @@ import javax.servlet.http.Part;
 		@Override
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
            HttpSession session = request.getSession(true);
-			String firstname = (String)session.getAttribute("firstname");
-			String lastname = (String)session.getAttribute("lastname");
-			String fsubname = (String)session.getAttribute("fsubname");
-			String lsubname = (String)session.getAttribute("lsubname");
+           session.setAttribute("lastname",request.getParameter("lastname"));
+           session.setAttribute("firstname", request.getParameter("firstname"));
+           session.setAttribute("sublastname", request.getParameter("sublastname"));
+           session.setAttribute("subfirstname", request.getParameter("subfirstname"));
+           session.setAttribute("birthday", request.getParameter("birthday"));
+           session.setAttribute("place", request.getParameter("place"));
+           session.setAttribute("hobby", request.getParameter("hobby"));
+           session.setAttribute("picture", request.getParameter("picture"));
+           session.setAttribute("word", request.getParameter("word"));
 		
 			
-			if(firstname == null || lastname == null || fsubname == null || lsubname == null){
+			if(request.getParameter("lastname") == null || request.getParameter("firstname") == null || request.getParameter("sublastname") == null || request.getParameter("subfirstname") == null){
 				System.out.println("名前とフリガナを入力してください");
 				response.sendRedirect("/syaa/JSP/RegIn.jsp");
 			}else{
 			
-			Part part = request.getPart("picture");
-			String name = this.getFileName(part);
-			if(this.isValidFile(name)){
-				part.write(
-						getServletContext().getRealPath("WEB-INF/data") + "/" + name);
-				       response.sendRedirect("RegIn.jsp");
-			}else{
-				response.getWriter().println("アップロードできませんでした");
-			}
-		}
+				Part part = request.getPart("picture");
+				String name = this.getFileName(part);
+				if(this.isValidFile(name)){
+					part.write(
+							getServletContext().getRealPath("/syaa/WEB-INF/Pic") + "/" + name);
+					this.getServletContext().getRequestDispatcher("/syaa/JSP/RegOut.jsp").forward(request, response);
+					response.sendRedirect("/syaa/JSP/RegOut.jsp");
+					
+				}else{
+					response.getWriter().println("アップロードできませんでした");
+				}
+		     }
 		}
 		
 		private String getFileName(Part part){
 			String result = null;
-			for(Strign disp : part.getHeader("Content-Disposition").split(";")){
+			for(String disp : part.getHeader("Content-Disposition").split(";")){
 				disp = disp.trim();
 				if(disp.startsWith("filename")){
 					result = disp.substring(disp.indexOf("=") + 1).trim();
@@ -63,8 +71,9 @@ import javax.servlet.http.Part;
 		private boolean isValidFile(String name){
 			if(name != null){
 				String[] perms = {"gif", "jpg", "jpeg", "png"};
-				for(String perm : perm){
-					if(perm.equals(names[name.length - 1])){
+				String[] names = name.split("\\.");
+				for(String perm : perms){
+					if(perm.equals(names[names.length - 1])){
 						return true;
 					}
 				}
