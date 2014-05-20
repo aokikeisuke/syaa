@@ -13,21 +13,21 @@
 	<br> 
 	*姓：
 	<br>
-	<input type="text" name="firstname"/>
+	<input type="text" name="lasttname"/>
 	
 	<br>
 	*名：
 	<br>
-	<input type="text" name="lastname"/>
+	<input type="text" name="firstname"/>
 	
 	<br>
 	*フリガナ（姓）：
 	<br>
-	<input type="text" name="fsubname"/>
+	<input type="text" name="lsubname"/>
 	<br>
 	*フリガナ（名）：
 	<br>
-	<input type="text" name="lsubname"/>
+	<input type="text" name="fsubname"/>
 	<br>
 	生年月日：
 	<br>
