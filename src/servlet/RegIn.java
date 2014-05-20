@@ -20,16 +20,7 @@ import javax.servlet.http.Part;
 
 		@Override
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-           HttpSession session = request.getSession(true);
-           session.setAttribute("lastname",request.getParameter("lastname"));
-           session.setAttribute("firstname", request.getParameter("firstname"));
-           session.setAttribute("sublastname", request.getParameter("sublastname"));
-           session.setAttribute("subfirstname", request.getParameter("subfirstname"));
-           session.setAttribute("birthday", request.getParameter("birthday"));
-           session.setAttribute("place", request.getParameter("place"));
-           session.setAttribute("hobby", request.getParameter("hobby"));
-           session.setAttribute("picture", request.getParameter("picture"));
-           session.setAttribute("word", request.getParameter("word"));
+			
 		
 			
 			if(request.getParameter("lastname") == null || request.getParameter("firstname") == null || request.getParameter("sublastname") == null || request.getParameter("subfirstname") == null){
@@ -42,7 +33,18 @@ import javax.servlet.http.Part;
 				if(this.isValidFile(name)){
 					part.write(
 							getServletContext().getRealPath("/syaa/WEB-INF/Pic") + "/" + name);
-					this.getServletContext().getRequestDispatcher("/syaa/JSP/RegOut.jsp").forward(request, response);
+					
+					HttpSession session = request.getSession();
+			           session.setAttribute("lastname",request.getParameter("lastname"));
+			           session.setAttribute("firstname", request.getParameter("firstname"));
+			           session.setAttribute("sublastname", request.getParameter("sublastname"));
+			           session.setAttribute("subfirstname", request.getParameter("subfirstname"));
+			           session.setAttribute("birthday", request.getParameter("birthday"));
+			           session.setAttribute("place", request.getParameter("place"));
+			           session.setAttribute("hobby", request.getParameter("hobby"));
+			           session.setAttribute("picture", request.getParameter("picture"));
+			           session.setAttribute("word", request.getParameter("word"));
+					
 					response.sendRedirect("/syaa/JSP/RegOut.jsp");
 					
 				}else{
