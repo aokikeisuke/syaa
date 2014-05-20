@@ -50,21 +50,9 @@
 	<br>
 	<input type="text" name="word" />
 	<br>
-	<form method="POST" action="/syaa/JSP/RegOut.jsp">
+	<form method="POST" action="/syaa/JSP/RegIn.java">
 	<input type="submit" value="登録">
 	</form>
-
-<% 
-session.setAttribute("lastname",request.getParameter("lastname"));
-session.setAttribute("firstname", request.getParameter("firstname"));
-session.setAttribute("sublastname", request.getParameter("sublastname"));
-session.setAttribute("subfirstname", request.getParameter("subfirstname"));
-session.setAttribute("birthday", request.getParameter("birthday"));
-session.setAttribute("place", request.getParameter("place"));
-session.setAttribute("hobby", request.getParameter("hobby"));
-session.setAttribute("picture", request.getParameter("picture"));
-session.setAttribute("word", request.getParameter("word"));
-%>
 	
 	
 </body>

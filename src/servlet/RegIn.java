@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import beans.RegOutBeans;
+
 @MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')",  maxFileSize = 16777215L)
 @WebServlet("/syaa/servlet/RegOut")
 
@@ -28,8 +30,22 @@ import javax.servlet.http.Part;
            session.setAttribute("birthday", request.getParameter("birthday"));
            session.setAttribute("place", request.getParameter("place"));
            session.setAttribute("hobby", request.getParameter("hobby"));
-           session.setAttribute("picture", request.getParameter("picture"));
+           session.setAttribute("image", request.getParameter("image"));
            session.setAttribute("word", request.getParameter("word"));
+           
+           RegOutBeans regoutbeans = new RegOutBeans();
+           regoutbeans.setFirstname("firstname");
+           regoutbeans.setLastname("lastname");
+           regoutbeans.setFsubname("fsubname");
+           regoutbeans.setLsubname("lsubname");
+           regoutbeans.setBirthday("birthday");
+           regoutbeans.setPlace("place");
+           regoutbeans.setHobby("hobby");
+           regoutbeans.setImage("image");
+           regoutbeans.setWord("word");
+           
+           
+           
 		
 			
 			if(request.getParameter("lastname") == null || request.getParameter("firstname") == null || request.getParameter("sublastname") == null || request.getParameter("subfirstname") == null){

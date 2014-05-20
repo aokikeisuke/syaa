@@ -58,8 +58,8 @@ public class RegOutBeans implements Serializable {
 		return birthday;
 	}
 
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
+	public void setBirthday(Date date) {
+		this.birthday = date;
 	}
 
 	public String getPlace() {
