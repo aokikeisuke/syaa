@@ -18,10 +18,19 @@ public class RegOutBeans implements Serializable {
 	private String lastname;
 	private String fsubname;
 	private String lsubname;
-	private Date birthday;
+	private String birthday;
 	private String place;
 	private String hobby;
-	
+	private String word;
+
+	public String getWord() {
+		return word;
+	}
+
+	public void setWord(String word) {
+		this.word = word;
+	}
+
 	public String getFirstname() {
 		return firstname;
 	}
@@ -54,12 +63,12 @@ public class RegOutBeans implements Serializable {
 		this.lsubname = lsubname;
 	}
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Date date) {
-		this.birthday = date;
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
 	}
 
 	public String getPlace() {
@@ -88,24 +97,27 @@ public class RegOutBeans implements Serializable {
 
 	private String image;
 
-public class DateBaseInsert{
-	   Connection db = null;
-	   PreparedStatement ps = null;
-	   try{
-		   Context context = new InitialContext();
-		   DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/");
-		   db = ds.getConnection();
-		   ps = db.prepareStatement("INSERT INTO EMPLOYEE VALUES (firstname, lastname, fsubname. lsubname, birthday, place, hobby, image, word)");
-		   
-		   
-		   
-	   }catch(Exception e){
-		   e.printStackTrace();
-	   }finally{
-		   try{
-			   if(ps != null){ps.close();}
-			   if(db != null){db.close();}
-		   }catch(Exception e){}
-	   }
-}
+	public void DateBaseInsert() {
+		Connection db = null;
+		PreparedStatement ps = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/");
+			db = ds.getConnection();
+			ps = db.prepareStatement("INSERT INTO EMPLOYEE VALUES (firstname, lastname, fsubname. lsubname, birthday, place, hobby, image, word)");
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (ps != null) {
+					ps.close();
+				}
+				if (db != null) {
+					db.close();
+				}
+			} catch (Exception e) {
+			}
+		}
+	}
 }
