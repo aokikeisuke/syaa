@@ -13,21 +13,21 @@
 	<br> 
 	*姓：
 	<br>
-	<input type="text" name="lastname" required/>
+	<input type="text" name="firstname"/>
 	
 	<br>
 	*名：
 	<br>
-	<input type="text" name="firstname" required="required" />
+	<input type="text" name="lastname"/>
 	
 	<br>
 	*フリガナ（姓）：
 	<br>
-	<input type="text" name="sublastname" required="required"/>
+	<input type="text" name="fsubname"/>
 	<br>
 	*フリガナ（名）：
 	<br>
-	<input type="text" name="subfirstname" required="required"/>
+	<input type="text" name="lsubname"/>
 	<br>
 	生年月日：
 	<br>
@@ -43,19 +43,19 @@
 	<br>
 	写真：
 	<form method ="POST" enctype="multipart/form-data">
-	<input type ="file" name="picture" size="75">
+	<input type ="file" name="image" size="75">
 	</form>
 	<br>
 	一言お願いします：
 	<br>
 	<input type="text" name="word" />
 	<br>
-	<form method="POST" action="/syaa/RegOut3">
+	<form method="POST" action="/syaa/JSP/RegOut.jsp">
 	<input type="submit" value="登録">
 	</form>
 
 <% 
-session.setAttribute("lastname", request.getParameter("lastname"));
+session.setAttribute("lastname",request.getParameter("lastname"));
 session.setAttribute("firstname", request.getParameter("firstname"));
 session.setAttribute("sublastname", request.getParameter("sublastname"));
 session.setAttribute("subfirstname", request.getParameter("subfirstname"));
