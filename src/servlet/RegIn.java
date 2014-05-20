@@ -38,11 +38,11 @@ import beans.RegOutBeans;
            regoutbeans.setLastname("lastname");
            regoutbeans.setFsubname("fsubname");
            regoutbeans.setLsubname("lsubname");
-           regoutbeans.setBirthday("birthday");
+//           regoutbeans.setBirthday("birthday");
            regoutbeans.setPlace("place");
            regoutbeans.setHobby("hobby");
            regoutbeans.setImage("image");
-           regoutbeans.setWord("word");
+//           regoutbeans.setWord("word");
            
            
            
