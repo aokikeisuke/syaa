@@ -4,55 +4,108 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.io.Serializable;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 public class RegOutBeans implements Serializable {
-	private String name;
-	private String image;
-	   public String getName() {
-		return name;
+	private String firstname;
+	private String lastname;
+	private String fsubname;
+	private String lsubname;
+	private Date birthday;
+	private String place;
+	private String hobby;
+	
+	public String getFirstname() {
+		return firstname;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getFsubname() {
+		return fsubname;
+	}
+
+	public void setFsubname(String fsubname) {
+		this.fsubname = fsubname;
+	}
+
+	public String getLsubname() {
+		return lsubname;
+	}
+
+	public void setLsubname(String lsubname) {
+		this.lsubname = lsubname;
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
+
+	public String getHobby() {
+		return hobby;
+	}
+
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+
 	public String getImage() {
 		return image;
 	}
+
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
-	public static ArrayList<TopBeans>getInfos(){
-	ArrayList<TopBeans> list = new ArrayList<TopBeans>();
+
+	private String image;
+
+public class DateBaseInsert{
 	   Connection db = null;
 	   PreparedStatement ps = null;
-	   ResultSet rs = null;
 	   try{
 		   Context context = new InitialContext();
 		   DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/");
 		   db = ds.getConnection();
-		   ps = db.prepareStatement("SELECT FIRSTNAME,LASTNAME,IMAGE FROM EMPLOYEE ORDER BY FSUBNAME,LSUBNAME");
-		   rs = ps.executeQuery();
-		     while(rs.next()){
-		    	 TopBeans topbeans = new TopBeans();
-		    	 topbeans.setName(rs.getString("FIRSTNAME") + rs.getString("LASTNAME"));
-		    	 topbeans.setImage(rs.getString("IMAGE"));
-		    	 
-		    	 list.add(topbeans);
-		     }
+		   ps = db.prepareStatement("INSERT INTO EMPLOYEE VALUES (firstname, lastname, fsubname. lsubname, birthday, place, hobby, image, word)");
+		   
+		   
+		   
 	   }catch(Exception e){
 		   e.printStackTrace();
 	   }finally{
 		   try{
-			   if(rs != null){rs.close();}		
 			   if(ps != null){ps.close();}
 			   if(db != null){db.close();}
 		   }catch(Exception e){}
 	   }
-	   return list;
 }
 }
