@@ -97,6 +97,7 @@ public class RegOutBeans implements Serializable {
 
 	private String image;
 
+	
 	public static void DataBaseInsert() {
 		Connection db = null;
 		PreparedStatement ps = null;
