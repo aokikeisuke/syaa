@@ -50,7 +50,7 @@
 	<br>
 	<input type="text" name="word" />
 	<br>
-	<form method="POST" action="/syaa/servlet/RegOut">
+	<form method="POST" action="/syaa/servlet/RegIn">
 	<input type="submit" value="登録">
 	</form>
 	
