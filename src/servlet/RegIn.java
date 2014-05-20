@@ -21,13 +21,18 @@ import javax.servlet.http.Part;
 		@Override
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
            HttpSession session = request.getSession(true);
-			String firstname = (String)session.getAttribute("firstname");
-			String lastname = (String)session.getAttribute("lastname");
-			String fsubname = (String)session.getAttribute("fsubname");
-			String lsubname = (String)session.getAttribute("lsubname");
+           session.setAttribute("lastname",request.getParameter("lastname"));
+           session.setAttribute("firstname", request.getParameter("firstname"));
+           session.setAttribute("sublastname", request.getParameter("sublastname"));
+           session.setAttribute("subfirstname", request.getParameter("subfirstname"));
+           session.setAttribute("birthday", request.getParameter("birthday"));
+           session.setAttribute("place", request.getParameter("place"));
+           session.setAttribute("hobby", request.getParameter("hobby"));
+           session.setAttribute("picture", request.getParameter("picture"));
+           session.setAttribute("word", request.getParameter("word"));
 		
 			
-			if(firstname == null || lastname == null || fsubname == null || lsubname == null){
+			if(request.getParameter("lastname") == null || request.getParameter("firstname") == null || request.getParameter("sublastname") == null || request.getParameter("subfirstname") == null){
 				System.out.println("名前とフリガナを入力してください");
 				response.sendRedirect("/syaa/JSP/RegIn.jsp");
 			}else{
