@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-@MultipartCinfig(location = "getServletContext().getRealPath("/syaa/WEB-INF/instancePic")")
+@MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')",  maxFileSize = 16777215L)
 @WebServlet("/syaa/servlet/RegOut")
 
 	
@@ -31,21 +32,21 @@ import javax.servlet.http.Part;
 				response.sendRedirect("/syaa/JSP/RegIn.jsp");
 			}else{
 			
-			Part part = request.getPart("picture");
-			String name = this.getFileName(part);
-			if(this.isValidFile(name)){
-				part.write(
-						getServletContext().getRealPath("WEB-INF/data") + "/" + name);
-				       response.sendRedirect("RegIn.jsp");
-			}else{
-				response.getWriter().println("アップロードできませんでした");
-			}
-		}
+				Part part = request.getPart("picture");
+				String name = this.getFileName(part);
+				if(this.isValidFile(name)){
+					part.write(
+							getServletContext().getRealPath("/syaa/WEB-INF/Pic") + "/" + name);
+					response.sendRedirect("/syaa/JSP/RegIn.jsp");
+				}else{
+					response.getWriter().println("アップロードできませんでした");
+				}
+		     }
 		}
 		
 		private String getFileName(Part part){
 			String result = null;
-			for(Strign disp : part.getHeader("Content-Disposition").split(";")){
+			for(String disp : part.getHeader("Content-Disposition").split(";")){
 				disp = disp.trim();
 				if(disp.startsWith("filename")){
 					result = disp.substring(disp.indexOf("=") + 1).trim();
@@ -63,8 +64,9 @@ import javax.servlet.http.Part;
 		private boolean isValidFile(String name){
 			if(name != null){
 				String[] perms = {"gif", "jpg", "jpeg", "png"};
-				for(String perm : perm){
-					if(perm.equals(names[name.length - 1])){
+				String[] names = name.split("\\.");
+				for(String perm : perms){
+					if(perm.equals(names[names.length - 1])){
 						return true;
 					}
 				}
