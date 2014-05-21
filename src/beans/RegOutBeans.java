@@ -121,8 +121,4 @@ public class RegOutBeans implements Serializable {
 			}
 		}
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> develop

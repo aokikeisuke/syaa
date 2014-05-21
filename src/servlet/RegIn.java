@@ -13,15 +13,12 @@ import javax.servlet.http.Part;
 
 import beans.RegOutBeans;
 
-<<<<<<< HEAD
-@MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')",  maxFileSize = 16777215L)
-@WebServlet("/syaa/servlet/RegIn")
-=======
+
 @MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
 @WebServlet("/syaa/servlet/RegIn")
 public class RegIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
->>>>>>> develop
+
 
 	@Override
 	protected void doPost(HttpServletRequest request,
