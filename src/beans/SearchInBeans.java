@@ -74,7 +74,7 @@ public class SearchInBeans implements Serializable{
 				String fullName =  namess.lastname + namess.firstname + namess.lsubname + namess.fsubname; 
 				
 				
-				if(fullName.matches( name ) ){
+				if(fullName.matches(".*" + name +".*") ){
 					list.add(fullName);
 				}
 				
