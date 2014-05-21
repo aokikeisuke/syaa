@@ -8,7 +8,7 @@ String fsubtname = (String)session.getAttribute("fsubname");
 String birthday = (String)session.getAttribute("birthday");
 String place = (String)session.getAttribute("place");
 String hobby = (String)session.getAttribute("hobby");
-String imag = (String)session.getAttribute("imag");
+String image = (String)session.getAttribute("image");
 String word = (String)session.getAttribute("word");
 %>
 <%-- 
@@ -31,11 +31,11 @@ session.setAttribute("lastname", lastname);
 誕生日:<%=birthday %><br>
 最寄り駅:<%=place %><br>
 趣味:<%=hobby %><br>
-写真:<%=imag %><br>
+写真:<%=image %><br>
 一言お願いします:<%=word %><br>
 </p>
 
-<form  method="POST" action="/syaa/servlet/RegOut.java">
+<form  method="POST" action="/syaa/servlet/RegOut">
 	<input type="submit" name="yesno" value="はい"/>
 	<input type="submit" name="yesno" value="いいえ"/>
 </form>
