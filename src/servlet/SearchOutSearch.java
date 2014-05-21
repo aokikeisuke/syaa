@@ -19,7 +19,7 @@ public class SearchOutSearch extends HttpServlet {
 		 name = name.replaceAll("\u0020","");
 		 
 		 ArrayList<Name> list　湯浅さんからのリスト = beans.SearchInBeans.names(name);
-		 request.setAttribute("list" list);
+		 request.setAttribute("list" ,list);
 		 
 		 this.getServletContext().getRequestDispatcher("/syaa/JSP/SearchIn").forward(request,response);
 		 
