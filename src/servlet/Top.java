@@ -26,7 +26,7 @@ public class Top extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<TopBeans> list = beans.TopBeans.getInfos();
 		request.setAttribute("list", list);
-		this.getServletContext().getRequestDispatcher("/syaa/Searchin").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/syaa/SearchIn.jsp").forward(request, response);
 	}
 
 }
