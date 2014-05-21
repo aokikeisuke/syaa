@@ -11,16 +11,23 @@
 <br>
 検索したい社員の名前を入力してください
 <br>
-
+<<<<<<< HEAD
 <form method="POST" action="/syaa/servlet/SerachOutPersonal">
-
+=======
+<form method="POST" action="/syaa/servlet/SerachOutSearch.java">
+>>>>>>> develop
 <input type="text" name = "search">
 <input type="submit" value="検索">
 <c:forEach var="item" items="${requestScope('list')}">
 <a href = "/syaa/SearchOut/"+item.id>
-
+<<<<<<< HEAD
 ${fn:escapeXml (item[0])}
-
+=======
+${fn:escapeXml (item.name)}
+</a>
+<a href = "/syaa/SearchOut/"+item.id>
+<img src ="">
+>>>>>>> develop
 </a>
 <a href = "/syaa/SearchOut/"+item.id>
 <img src="/syaa/WebContent/WEB-INF/Pic/"+item.image>
