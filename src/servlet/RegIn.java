@@ -14,7 +14,7 @@ import javax.servlet.http.Part;
 import beans.RegOutBeans;
 
 @MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
-@WebServlet("/syaa/servlet/RegIn")
+@WebServlet("/servlet/RegIn")
 public class RegIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
