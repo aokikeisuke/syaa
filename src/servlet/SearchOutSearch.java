@@ -9,24 +9,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.tomcat.jni.Address;
+import beans.SearchInBeans;
 
-import beans.TopBeans;
 
-/**
- * Servlet implementation class Top
- */
-@WebServlet("/servlet/Top")
-public class Top extends HttpServlet {
+@WebServlet("/syaa/servlet/SearchOut")
+public class SearchOutSearch extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<TopBeans> list = beans.TopBeans.getInfos();
-		request.setAttribute("list", list);
-		this.getServletContext().getRequestDispatcher("/JSP/SearchIn.jsp").forward(request, response);
+		 String name = request.getParameter("search");
+		 name = name.replaceAll("　","");
+		 name = name.replaceAll("\u0020","");
+		 
+		 ArrayList<String> list = beans.SearchInBeans.names();
+		 request.setAttribute("list" ,list);
+		 
+		 this.getServletContext().getRequestDispatcher("/syaa/JSP/SearchIn").forward(request,response);
+		 
 	}
 
 }

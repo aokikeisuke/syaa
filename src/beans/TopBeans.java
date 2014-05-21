@@ -15,12 +15,19 @@ import javax.sql.DataSource;
 public class TopBeans implements Serializable {
 	private String name;
 	private String image;
+	private int id;
     
 	
 	
 	
 	
-	   public String getName() {
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
@@ -42,12 +49,13 @@ public class TopBeans implements Serializable {
 		   Context context = new InitialContext();
 		   DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/");
 		   db = ds.getConnection();
-		   ps = db.prepareStatement("SELECT FIRSTNAME,LASTNAME,IMAGE FROM EMPLOYEE ORDER BY FSUBNAME,LSUBNAME");
+		   ps = db.prepareStatement("SELECT ID, FIRSTNAME, LASTNAME, IMAGE FROM EMPLOYEE ORDER BY LSUBNAME, FSUBNAME");
 		   rs = ps.executeQuery();
 		     while(rs.next()){
 		    	 TopBeans topbeans = new TopBeans();
-		    	 topbeans.setName(rs.getString("FIRSTNAME") + rs.getString("LASTNAME"));
+		    	 topbeans.setName(rs.getString("LASTNAME") + rs.getString("FIRSTNAME"));
 		    	 topbeans.setImage(rs.getString("IMAGE"));
+		    	 topbeans.setId(rs.getInt("ID"));
 		    	 
 		    	 list.add(topbeans);
 		     }

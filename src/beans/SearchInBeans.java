@@ -52,8 +52,8 @@ public class SearchInBeans implements Serializable{
 		this.fsubname = fsubname;
 	}
 	
-	public static ArrayList<SearchInBeans>names(String name){
-		ArrayList<SearchInBeans> list = new ArrayList<SearchInBeans>();
+	public static ArrayList<String>names(String name){
+		ArrayList<String> list = new ArrayList<String>();
 		Connection db = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -65,12 +65,20 @@ public class SearchInBeans implements Serializable{
 			rs = ps.executeQuery();
 			
 			while(rs.next()){
-				SearchInBeans nameｓ = new SearchInBeans();
-				nameｓ.setLastname(rs.getString("lastname"));
-				nameｓ.setFirstname(rs.getString("firstname"));
-				nameｓ.setLsubname(rs.getString("lsubname"));
-				nameｓ.setFsubname(rs.getString("fsubname"));
-				list.add(nameｓ);
+				SearchInBeans namess = new SearchInBeans();
+				namess.setLastname(rs.getString("lastname"));
+				namess.setFirstname(rs.getString("firstname"));
+				namess.setLsubname(rs.getString("lsubname"));
+				namess.setFsubname(rs.getString("fsubname"));
+				
+				String fullName =  namess.lastname + namess.firstname + namess.lsubname + namess.fsubname; 
+				
+				
+				if(fullName.matches( name ) ){
+					list.add(fullName);
+				}
+				
+						
 			}
 		}catch(Exception e){
 			e.printStackTrace();
