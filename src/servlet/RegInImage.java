@@ -17,7 +17,7 @@ import beans.RegOutBeans;
 
 //@MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
 @WebServlet("/servlet/RegIn")
-public class RegIn extends HttpServlet {
+public class RegInImage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -25,10 +25,10 @@ public class RegIn extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println("lastname: " + request.getParameter("lastname"));
-		System.out.println("firstname: " + request.getParameter("firstname"));
-		System.out.println("lsubname: " + request.getParameter("lsubname"));
-		System.out.println("fsubname: " + request.getParameter("fsubname"));
+//		System.out.println("lastname: " + request.getParameter("lastname"));
+//		System.out.println("firstname: " + request.getParameter("firstname"));
+//		System.out.println("lsubname: " + request.getParameter("lsubname"));
+//		System.out.println("fsubname: " + request.getParameter("fsubname"));
 		
 		if ("".equals(request.getParameter("lastname"))
 				|| "".equals(request.getParameter("firstname"))
