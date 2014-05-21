@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/syaa/servlet/SearchOut/*")
+@WebServlet("/syaa/servlet/SearchOut")
 public class SearchOutSearch extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -18,7 +18,11 @@ public class SearchOutSearch extends HttpServlet {
 		 name = name.replaceAll("　","");
 		 name = name.replaceAll("\u0020","");
 		 
-		 beans.SearchInBeans.names(name);
+		 ArrayList<Name> list　湯浅さんからのリスト = beans.SearchInBeans.names(name);
+		 request.setAttribute("list" list);
+		 
+		 this.getServletContext().getRequestDispatcher("/syaa/JSP/SearchIn").forward(request,response);
+		 
 	}
 
 }
