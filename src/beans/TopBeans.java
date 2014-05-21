@@ -42,7 +42,7 @@ public class TopBeans implements Serializable {
 		   Context context = new InitialContext();
 		   DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/");
 		   db = ds.getConnection();
-		   ps = db.prepareStatement("SELECT FIRSTNAME,LASTNAME,IMAGE FROM EMPLOYEE ORDER BY FSUBNAME,LSUBNAME");
+		   ps = db.prepareStatement("SELECT ID, FIRSTNAME, LASTNAME, IMAGE FROM EMPLOYEE ORDER BY LSUBNAME, FSUBNAME");
 		   rs = ps.executeQuery();
 		     while(rs.next()){
 		    	 TopBeans topbeans = new TopBeans();
