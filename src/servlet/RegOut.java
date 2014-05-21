@@ -25,6 +25,7 @@ public class RegOut extends HttpServlet {
 		}else{
 			response.sendRedirect("/syaa/JSP/RegIn");
 		}
+		
 	
 	}
 
