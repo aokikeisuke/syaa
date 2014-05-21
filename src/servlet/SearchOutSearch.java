@@ -1,11 +1,15 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import beans.SearchInBeans;
 
 
 @WebServlet("/syaa/servlet/SearchOut")
@@ -19,7 +23,7 @@ public class SearchOutSearch extends HttpServlet {
 		 name = name.replaceAll("　","");
 		 name = name.replaceAll("\u0020","");
 		 
-		 ArrayList<Name> list　湯浅さんからのリスト = beans.SearchInBeans.names(name);
+		 ArrayList<String> list = beans.SearchInBeans.names();
 		 request.setAttribute("list" ,list);
 		 
 		 this.getServletContext().getRequestDispatcher("/syaa/JSP/SearchIn").forward(request,response);
