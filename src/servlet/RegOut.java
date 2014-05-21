@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import beans.RegOutBeans;
 
 
-@WebServlet("/RegOut")
+@WebServlet("/servlet/RegOut")
 public class RegOut extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

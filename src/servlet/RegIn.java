@@ -15,7 +15,7 @@ import beans.RegOutBeans;
 
 
 @MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
-@WebServlet("/syaa/servlet/RegIn")
+@WebServlet("/servlet/RegIn")
 public class RegIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -24,10 +24,10 @@ public class RegIn extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		if (request.getParameter("lastname") == null
-				|| request.getParameter("firstname") == null
-				|| request.getParameter("sublastname") == null
-				|| request.getParameter("subfirstname") == null) {
+		if ("".equals(request.getParameter("lastname"))
+				|| "".equals(request.getParameter("firstname"))
+				|| "".equals(request.getParameter("sublastname"))
+				|| "".equals(request.getParameter("subfirstname"))) {
 			System.out.println("名前とフリガナを入力してください");
 			response.sendRedirect("/syaa/JSP/RegIn.jsp");
 		} else {
