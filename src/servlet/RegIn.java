@@ -22,10 +22,15 @@ public class RegIn extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		if ("".equals(request.getParameter("lastname"))
-				|| "".equals(request.getParameter("firstname"))
-				|| "".equals(request.getParameter("sublastname"))
-				|| "".equals(request.getParameter("subfirstname"))) {
+		System.out.println(request.getParameter("lastname"));
+		System.out.println(request.getParameter("firstname"));
+		System.out.println(request.getParameter("sublastname"));
+		System.out.println(request.getParameter("subfirstname"));
+		
+		if (null == request.getParameter("lastname")
+				|| null == request.getParameter("firstname")
+				|| null == request.getParameter("lsubname")
+				|| null == request.getParameter("fsubname")) {
 			System.out.println("名前とフリガナを入力してください");
 			response.sendRedirect("/syaa/JSP/RegIn.jsp");
 		} else {
