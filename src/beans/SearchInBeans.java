@@ -70,7 +70,7 @@ public class SearchInBeans implements Serializable{
 				nameｓ.setFirstname(rs.getString("firstname"));
 				nameｓ.setLsubname(rs.getString("lsubname"));
 				nameｓ.setFsubname(rs.getString("fsubname"));
-				list.name(nameｓ);
+				list.add(nameｓ);
 			}
 		}catch(Exception e){
 			e.printStackTrace();
