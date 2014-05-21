@@ -3,7 +3,7 @@ package servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
+// import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +14,7 @@ import javax.servlet.http.Part;
 import beans.RegOutBeans;
 
 
-@MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
+// @MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
 @WebServlet("/servlet/RegIn")
 public class RegIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,8 +26,8 @@ public class RegIn extends HttpServlet {
 
 		System.out.println(request.getParameter("lastname"));
 		System.out.println(request.getParameter("firstname"));
-		System.out.println(request.getParameter("sublastname"));
-		System.out.println(request.getParameter("subfirstname"));
+		System.out.println(request.getParameter("lsubname"));
+		System.out.println(request.getParameter("fsubname"));
 		
 		if (null == request.getParameter("lastname")
 				|| null == request.getParameter("firstname")
@@ -46,8 +46,8 @@ public class RegIn extends HttpServlet {
 				HttpSession session = request.getSession();
 				String ln = request.getParameter("lastname");
 				String fn = request.getParameter("firstname");
-				String sln = request.getParameter("sublastname");
-				String sfn = request.getParameter("subfirstname");
+				String sln = request.getParameter("lsubname");
+				String sfn = request.getParameter("fsubname");
 				String bd = request.getParameter("birthday");
 				String pl = request.getParameter("place");
 				String hb = request.getParameter("hobby");
