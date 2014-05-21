@@ -16,17 +16,17 @@ import beans.TopBeans;
 /**
  * Servlet implementation class Top
  */
-@WebServlet("/Top")
+@WebServlet("/servlet/Top")
 public class Top extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<TopBeans> list = beans.TopBeans.getInfos();
 		request.setAttribute("list", list);
-		this.getServletContext().getRequestDispatcher("/syaa/SearchIn.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/JSP/SearchIn.jsp").forward(request, response);
 	}
 
 }
