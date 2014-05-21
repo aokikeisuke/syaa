@@ -35,7 +35,7 @@ session.setAttribute("lastname", lastname);
 一言お願いします:<%=word %><br>
 </p>
 
-<form  method="POST" action="/syaa/servlet/RegOut.java">
+<form  method="POST" action="/syaa/servlet/RegOut">
 	<input type="submit" name="yesno" value="はい"/>
 	<input type="submit" name="yesno" value="いいえ"/>
 </form>

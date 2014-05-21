@@ -52,7 +52,7 @@ public class SearchInBeans implements Serializable{
 		this.fsubname = fsubname;
 	}
 	
-	public static ArrayList<SearchInBeans>getInfos(){
+	public static ArrayList<SearchInBeans>names(String name){
 		ArrayList<SearchInBeans> list = new ArrayList<SearchInBeans>();
 		Connection db = null;
 		PreparedStatement ps = null;
