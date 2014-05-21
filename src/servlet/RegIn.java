@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 // import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +15,7 @@ import javax.servlet.http.Part;
 import beans.RegOutBeans;
 
 
-// @MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
+//@MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
 @WebServlet("/servlet/RegIn")
 public class RegIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -24,15 +25,15 @@ public class RegIn extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println(request.getParameter("lastname"));
-		System.out.println(request.getParameter("firstname"));
-		System.out.println(request.getParameter("lsubname"));
-		System.out.println(request.getParameter("fsubname"));
+		System.out.println("lastname: " + request.getParameter("lastname"));
+		System.out.println("firstname: " + request.getParameter("firstname"));
+		System.out.println("lsubname: " + request.getParameter("lsubname"));
+		System.out.println("fsubname: " + request.getParameter("fsubname"));
 		
-		if (null == request.getParameter("lastname")
-				|| null == request.getParameter("firstname")
-				|| null == request.getParameter("lsubname")
-				|| null == request.getParameter("fsubname")) {
+		if ("".equals(request.getParameter("lastname"))
+				|| "".equals(request.getParameter("firstname"))
+				|| "".equals(request.getParameter("lsubname"))
+				|| "".equals(request.getParameter("fsubname"))) {
 			System.out.println("名前とフリガナを入力してください");
 			response.sendRedirect("/syaa/JSP/RegIn.jsp");
 		} else {
