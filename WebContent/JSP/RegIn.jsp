@@ -46,15 +46,6 @@
 	<input type="text" name="hobby" />
 	<br>
 	
-	<!--
-	写真：
-	
-	<input type ="file" name="image" size="75">
-	
-	<br>
-	-->
-	
-	
 	一言お願いします：
 	<br>
 	<input type="text" name="word" />

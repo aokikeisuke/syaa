@@ -91,8 +91,12 @@ public class SearchInBeans implements Serializable{
 			
 		}
 		return list;
-	
+		
 	}
+//	public static ArrayList<String>personal(){
+//		
+//		return personal();
+//	}
 
 	
 }
