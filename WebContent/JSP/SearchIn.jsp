@@ -14,8 +14,8 @@
 <form method="POST" action="/syaa/servlet/SerachIn">
 <input type="text" name = "search">
 <input type="submit" value="検索">
-<c:forEach var="item" items="${requestScope('list')}">
-<a href = "/syaa/SearchOut/"+item.id>
+<c:forEach var="item" items="${requestScope['list']}">
+<a href = "/syaa/SearchOut/" + item.id>
 ${fn:escapeXml (item.firstname)}
 ${fn:escapeXml (item.lastname)}
 ${fn:escapeXml (item.image)}

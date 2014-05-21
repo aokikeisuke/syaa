@@ -53,7 +53,7 @@ public class TopBeans implements Serializable {
 		   rs = ps.executeQuery();
 		     while(rs.next()){
 		    	 TopBeans topbeans = new TopBeans();
-		    	 topbeans.setName(rs.getString("FIRSTNAME") + rs.getString("LASTNAME"));
+		    	 topbeans.setName(rs.getString("LASTNAME") + rs.getString("FIRSTNAME"));
 		    	 topbeans.setImage(rs.getString("IMAGE"));
 		    	 topbeans.setId(rs.getInt("ID"));
 		    	 

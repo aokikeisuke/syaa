@@ -13,6 +13,7 @@ public class SearchOutSearch extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 String name = request.getParameter("search");
 		 name = name.replaceAll("　","");
