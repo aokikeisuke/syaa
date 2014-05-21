@@ -20,7 +20,7 @@ public class RegOut extends HttpServlet {
 		String yesNo = request.getParameter("yesno");
 		
 		if(yesNo.equals("はい")){
-			RegOutBeans.DataBaseInsert();
+			RegOutBeans.DataBaseInsert(request);
 			response.sendRedirect("/syaa/JSP/Top");
 		}else{
 			response.sendRedirect("/syaa/JSP/RegIn");

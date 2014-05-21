@@ -10,6 +10,7 @@ import java.io.Serializable;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
@@ -97,14 +98,25 @@ public class RegOutBeans implements Serializable {
 
 	private String image;
 
-	public static void DataBaseInsert() {
+	public static void DataBaseInsert(HttpServletRequest request) {
 		Connection db = null;
 		PreparedStatement ps = null;
 		try {
 			Context context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/");
 			db = ds.getConnection();
-			ps = db.prepareStatement("INSERT INTO EMPLOYEE VALUES (firstname, lastname, fsubname. lsubname, birthday, place, hobby, image, word)");
+			ps = db.prepareStatement("INSERT INTO EMPLOYEE VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			// p. 181参照
+			// このエラー何？
+			ps.setString(1, request.getParameter("lastname"));
+			ps.setString(2, request.getParameter("firstname"));
+			ps.setString(3, request.getParameter("lsubname"));
+			ps.setString(4, request.getParameter("fsubname"));
+			ps.setString(5, request.getParameter("birthday"));
+			ps.setString(6, request.getParameter("place"));
+			ps.setString(7, request.getParameter("hobby"));
+			ps.setString(8, request.getParameter("word"));
+			ps.setString(9, request.getParameter("image"));
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -117,7 +129,7 @@ public class RegOutBeans implements Serializable {
 					db.close();
 				}
 			} catch (Exception e) {
-				
+
 			}
 		}
 	}
