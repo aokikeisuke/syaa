@@ -11,15 +11,20 @@
 <br>
 検索したい社員の名前を入力してください
 <br>
-<form method="POST" action="/syaa/servlet/SerachIn">
+<form method="POST" action="/syaa/servlet/SerachOutPersonal">
 <input type="text" name = "search">
 <input type="submit" value="検索">
 <c:forEach var="item" items="${requestScope('list')}">
 <a href = "/syaa/SearchOut/"+item.id>
-${fn:escapeXml (item.firstname)}
-${fn:escapeXml (item.lastname)}
-${fn:escapeXml (item.image)}
+${fn:escapeXml (item[0])}
 </a>
+<a href = "/syaa/SearchOut/"+item.id>
+<img src="/syaa/WebContent/WEB-INF/Pic/"+item.image>
+<!-- 
+写真のURL指定の仕方を要確認。「+」が必要なのか。。。？
+ -->
+</a>
+
 </c:forEach>
 </form>
 </body>
