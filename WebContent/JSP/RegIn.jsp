@@ -11,7 +11,7 @@
 <body>
 	*は必須項目です
 	
-	<form method ="POST" enctype="multipart/form-data" action="/syaa/servlet/RegIn">
+	<form method ="POST"  action="/syaa/servlet/RegIn">
 	<br> 
 	*姓：
 	<br>
@@ -45,11 +45,16 @@
 	<br>
 	<input type="text" name="hobby" />
 	<br>
+	
+	<!--
 	写真：
 	
 	<input type ="file" name="image" size="75">
 	
 	<br>
+	-->
+	
+	
 	一言お願いします：
 	<br>
 	<input type="text" name="word" />
