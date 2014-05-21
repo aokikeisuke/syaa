@@ -10,10 +10,14 @@
 </head>
 <body>
 	*は必須項目です
+	
+	<form method ="POST" enctype="multipart/form-data" action="/syaa/servlet/RegIn">
 	<br> 
 	*姓：
 	<br>
-	<input type="text" name="lasttname"/>
+	
+	<input type="text" name="lastname"/>
+	
 	
 	<br>
 	*名：
@@ -42,15 +46,15 @@
 	<input type="text" name="hobby" />
 	<br>
 	写真：
-	<form method ="POST" enctype="multipart/form-data">
+	
 	<input type ="file" name="image" size="75">
-	</form>
+	
 	<br>
 	一言お願いします：
 	<br>
 	<input type="text" name="word" />
 	<br>
-	<form method="POST" action="/syaa/servlet/RegIn">
+	
 	<input type="submit" value="登録">
 	</form>
 	
