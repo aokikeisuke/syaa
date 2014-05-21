@@ -124,7 +124,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2014-05-20 10:54:48</creation_date>
-			<updated_date>2014-05-21 10:37:33</updated_date>
+			<updated_date>2014-05-21 12:57:20</updated_date>
 			<model_property>
 				<name>プロジェクト名</name>
 				<value></value>
@@ -223,7 +223,7 @@
 		</word>
 		<word>
 			<id>4</id>
-			<length>10</length>
+			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
 			<array_dimension>null</array_dimension>
@@ -234,7 +234,7 @@
 			<description></description>
 			<logical_name>ID</logical_name>
 			<physical_name>ID</physical_name>
-			<type>varchar(n)</type>
+			<type>integer</type>
 		</word>
 		<word>
 			<id>5</id>
@@ -344,10 +344,10 @@
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
 					<physical_name></physical_name>
-					<type>varchar(n)</type>
+					<type>integer</type>
 					<constraint></constraint>
 					<default_value></default_value>
-					<auto_increment>false</auto_increment>
+					<auto_increment>true</auto_increment>
 					<foreign_key>false</foreign_key>
 					<not_null>true</not_null>
 					<primary_key>true</primary_key>
