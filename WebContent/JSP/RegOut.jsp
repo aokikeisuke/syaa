@@ -11,6 +11,8 @@ String hobby = (String)session.getAttribute("hobby");
 String image = (String)session.getAttribute("image");
 String word = (String)session.getAttribute("word");
 %>
+
+
 <%-- 
 String lastname = request.getParameter("lastname");
 session.setAttribute("lastname", lastname);
@@ -36,6 +38,16 @@ session.setAttribute("lastname", lastname);
 </p>
 
 <form  method="POST" action="/syaa/servlet/RegOut">
+    <input type="hidden" name="lastname" value="<%=lastname %>"/>
+    <input type="hidden" name="firstname" value="<%=firstname %>"/>
+    <input type="hidden" name="lsubtname" value="<%=lsubtname %>"/>
+    <input type="hidden" name="fsubtname" value="<%=fsubtname %>"/>
+    <input type="hidden" name="birthday" value="<%=birthday %>"/>
+    <input type="hidden" name="place" value="<%=place %>"/>
+    <input type="hidden" name="hobby" value="<%=hobby %>"/>
+    <input type="hidden" name="image" value="<%=image %>"/>
+    <input type="hidden" name="word" value="<%=word %>"/>
+    
 	<input type="submit" name="yesno" value="はい"/>
 	<input type="submit" name="yesno" value="いいえ"/>
 </form>
