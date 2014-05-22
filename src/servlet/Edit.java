@@ -20,8 +20,7 @@ public class Edit extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		beans.EditBeans.DateBaseModify(request){
-		//EditBeans.javaの、データベースに上書きするメソッドを呼び出す。
+		
 		
 		HttpSession session = request.getSession();
 		String ln = request.getParameter("lastname");
@@ -58,6 +57,9 @@ public class Edit extends HttpServlet {
 		editbeans.setImage(im);
 		editbeans.setWord(wd);
 		editbeans.setId(id);
+		
+		beans.EditBeans.DateBaseModify(editbeans);
+		//EditBeans.javaの、データベースに上書きするメソッドを呼び出す。
 
 		response.sendRedirect("/syaa/JSP/Top");
 		

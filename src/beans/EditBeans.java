@@ -1,17 +1,11 @@
 package beans;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.io.Serializable;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 @SuppressWarnings("serial")
@@ -25,13 +19,13 @@ public class EditBeans implements Serializable {
 	private String hobby;
 	private String word;
 	private String image;
-	private int id;
+	private String id;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -124,9 +118,8 @@ public class EditBeans implements Serializable {
 			ps.setString(7, editbeans.getHobby());
 			ps.setString(8, editbeans.getImage());
 			ps.setString(9, editbeans.getWord());
-			ps.setInt(10, editbeans.getId());
-			
-			
+			ps.setString(10, editbeans.getId());
+
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
