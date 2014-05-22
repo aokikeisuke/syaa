@@ -38,14 +38,6 @@ public class RegInText extends HttpServlet {
 		} else {
 
 			HttpSession session = request.getSession();
-			String ln = request.getParameter("lastname");
-			String fn = request.getParameter("firstname");
-			String sln = request.getParameter("lsubname");
-			String sfn = request.getParameter("fsubname");
-			String bd = request.getParameter("birthday");
-			String pl = request.getParameter("place");
-			String hb = request.getParameter("hobby");
-			String wd = request.getParameter("word");
 
 			session.setAttribute("lastname", request.getParameter("lastname"));
 			session.setAttribute("firstname", request.getParameter("firstname"));
@@ -56,15 +48,7 @@ public class RegInText extends HttpServlet {
 			session.setAttribute("hobby", request.getParameter("hobby"));
 			session.setAttribute("word", request.getParameter("word"));
 
-			RegOutBeans regoutbeans = new RegOutBeans();
-			regoutbeans.setFirstname(ln);
-			regoutbeans.setLastname(fn);
-			regoutbeans.setFsubname(sln);
-			regoutbeans.setLsubname(sfn);
-			regoutbeans.setBirthday(bd);
-			regoutbeans.setPlace(pl);
-			regoutbeans.setHobby(hb);
-			regoutbeans.setWord(wd);
+			
 
 			response.sendRedirect("/syaa/JSP/RegInImage.jsp");
 
