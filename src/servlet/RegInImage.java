@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
-// import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,46 +14,40 @@ import javax.servlet.http.Part;
 
 import beans.RegOutBeans;
 
-
-//@MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
+@MultipartConfig(maxFileSize = 16777215L)
 @WebServlet("/servlet/RegInImage")
 public class RegInImage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 
 	@Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-//		System.out.println("lastname: " + request.getParameter("lastname"));
-//		System.out.println("firstname: " + request.getParameter("firstname"));
-//		System.out.println("lsubname: " + request.getParameter("lsubname"));
-//		System.out.println("fsubname: " + request.getParameter("fsubname"));
-		
-		
- if(null != request.getPart("image")){	
-    Part part = request.getPart("image");
-    String name = this.getFileName(part);
-    if(this.isValidFile(name)){
-    	part.write(
-    			getServletContext().getRealPath("/syaa/WEB-INF/instancePic") + "/" + name);
-    	HttpSession session = request.getSession();
-    	session.setAttribute("image", request.getParameter("image"));
-    	
-    	
-    	RegOutBeans regoutbeans = new RegOutBeans();
-    	String im = request.getParameter("image");
-    	regoutbeans.setImage(im);
-    	
-    	response.sendRedirect("/syaa/JSP/RegOut.jsp");
-  
-    }else{
-    	response.getWriter().println("ファイルがアップロードできませんでした");
-    }
-  }else{
-	  response.sendRedirect("/syaa/JSP/RegOut.jsp");
-  }
-    }
+		if (!"".equals(request.getParameter("image"))) {
+			
+			
+			Part part = request.getPart("image");
+			String name = this.getFileName(part);
+			if (this.isValidFile(name)) {
+				part.write(getServletContext().getRealPath("/Pic") + "/" + name);
+				HttpSession session = request.getSession();
+				
+				session.setAttribute("image", request.getParameter("image"));
+                
+				request.setAttribute("name", name );
+				this.getServletContext().getRequestDispatcher("/JSP/RegOut.jsp").forward(request,response);
+				//response.sendRedirect("/syaa/JSP/RegOut.jsp");
+			
+
+			} else {
+				response.getWriter().println("ファイルがアップロードできませんでした");
+			}
+		} else {
+			response.sendRedirect("/syaa/JSP/RegOut.jsp");
+			
+			
+		}
+	}
 
 	private String getFileName(Part part) {
 		String result = null;

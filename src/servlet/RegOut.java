@@ -7,7 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+
 
 import beans.RegOutBeans;
 
@@ -18,10 +19,11 @@ public class RegOut extends HttpServlet {
        
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	request.setCharacterEncoding("UTF-8");
 		String yesNo = request.getParameter("yesno");
 		
 		if(yesNo.equals("はい")){
-			HttpSession session = request.getSession();
+			
 			String ln = request.getParameter("lastname");
 			String fn = request.getParameter("firstname");
 			String sln = request.getParameter("lsubname");
@@ -29,6 +31,7 @@ public class RegOut extends HttpServlet {
 			String bd = request.getParameter("birthday");
 			String pl = request.getParameter("place");
 			String hb = request.getParameter("hobby");
+			String im = request.getParameter("image");
 			String wd = request.getParameter("word");
 			
 			RegOutBeans regoutbeans = new RegOutBeans();
@@ -39,12 +42,13 @@ public class RegOut extends HttpServlet {
 			regoutbeans.setBirthday(bd);
 			regoutbeans.setPlace(pl);
 			regoutbeans.setHobby(hb);
+			regoutbeans.setImage(im);
 			regoutbeans.setWord(wd);
 
 			RegOutBeans.DataBaseInsert(regoutbeans);
-			response.sendRedirect("/syaa/JSP/Top");
+			response.sendRedirect("/syaa/JSP/Top.jsp");
 		}else{
-			response.sendRedirect("/syaa/JSP/RegInText");
+			response.sendRedirect("/syaa/JSP/RegIn.jsp");
 		}
 		
 	
