@@ -33,7 +33,7 @@ session.setAttribute("lastname", lastname);
 誕生日:<%=birthday %><br>
 最寄り駅:<%=place %><br>
 趣味:<%=hobby %><br>
-写真:<%=image %><br>
+写真:<img src="../Pic/${requestScope['name']} " alt="" width="100" height="100" border="0" /><br>
 一言お願いします:<%=word %><br>
 </p>
 
@@ -50,6 +50,7 @@ session.setAttribute("lastname", lastname);
     
 	<input type="submit" name="yesno" value="はい"/>
 	<input type="submit" name="yesno" value="いいえ"/>
+	
 </form>
 
 
