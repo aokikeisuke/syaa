@@ -101,7 +101,7 @@ public class SearchInBeans implements Serializable{
 				SearchInBeans namess = new SearchInBeans();
 				namess.setId(rs.getInt("ID"));
 				namess.setLastname(rs.getString("LASTNAME"));
-				namess.setFirstname(rs.getString("FIRSTNARME"));
+				namess.setFirstname(rs.getString("FIRSTNAME"));
 				namess.setAllname(rs.getString("LASTNAME")+rs.getString("FIRSTNAME"));
 				namess.setLsubname(rs.getString("LSUBNAME"));
 				namess.setFsubname(rs.getString("FSUBNAME"));
