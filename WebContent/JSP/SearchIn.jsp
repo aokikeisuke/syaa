@@ -12,7 +12,7 @@
 検索したい社員の名前を入力してください
 <br>
 
-<form method="POST" action="/syaa/servlet/SerachOutPersonal">
+<form method="POST" action="/syaa/servlet/SearchOutSearch">
 
 <input type="text" name = "search">
 <input type="submit" value="検索">

@@ -19,6 +19,7 @@ public class SearchInBeans implements Serializable{
 	private String firstname;
 	private String lsubname;
 	private String fsubname;
+	private String image;
 	
 	public String getLastname() {
 		return lastname;
@@ -52,6 +53,16 @@ public class SearchInBeans implements Serializable{
 		this.fsubname = fsubname;
 	}
 	
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	
 	public static ArrayList<String>names(String name){
 		ArrayList<String> list = new ArrayList<String>();
 		Connection db = null;
@@ -70,12 +81,13 @@ public class SearchInBeans implements Serializable{
 				namess.setFirstname(rs.getString("firstname"));
 				namess.setLsubname(rs.getString("lsubname"));
 				namess.setFsubname(rs.getString("fsubname"));
+				namess.setImage(rs.getString("image"));
 				
 				String fullName =  namess.lastname + namess.firstname + namess.lsubname + namess.fsubname; 
 				
 				
 				if(fullName.matches(".*" + name +".*") ){
-					list.add(fullName);
+					list.add(namess.lastname + namess.firstname + namess.image);
 				}
 				
 						
@@ -92,11 +104,10 @@ public class SearchInBeans implements Serializable{
 		}
 		return list;
 		
+		
+		
 	}
-//	public static ArrayList<String>personal(){
-//		
-//		return personal();
-//	}
 
+	
 	
 }
