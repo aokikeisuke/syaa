@@ -1,19 +1,16 @@
 package beans;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
+@SuppressWarnings("serial")
 public class RegOutBeans implements Serializable {
 	private String firstname;
 	private String lastname;
@@ -105,17 +102,35 @@ public class RegOutBeans implements Serializable {
 			Context context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/test");
 			db = ds.getConnection();
-			ps = db.prepareStatement("INSERT INTO EMPLOYEE(LASTNAME, FIRSTNAME, LSUBNAME, FSUBNAME, BIRTHDAY, PLACE, HOBBY, WORD, IMAGE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			ps = db.prepareStatement("INSERT INTO EMPLOYEE(LASTNAME, FIRSTNAME, LSUBNAME, FSUBNAME, PLACE, HOBBY, WORD, IMAGE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			// p. 181参照
-			ps.setString(1, regoutbeans.getLastname());
-			ps.setString(2, regoutbeans.getFirstname());
-			ps.setString(3, regoutbeans.getLsubname());
-			ps.setString(4, regoutbeans.getFsubname());
-			ps.setString(5, regoutbeans.getBirthday());
-			ps.setString(6, regoutbeans.getPlace());
-			ps.setString(7, regoutbeans.getHobby());
-			ps.setString(8, regoutbeans.getWord());
-			ps.setString(9, regoutbeans.getImage());
+			
+			ps.setString(1, regoutbeans.lastname);
+			ps.setString(2, regoutbeans.firstname);
+			ps.setString(3, regoutbeans.lsubname);
+			ps.setString(4, regoutbeans.fsubname);
+			ps.setString(5, regoutbeans.birthday);
+			ps.setString(5, regoutbeans.place);
+			ps.setString(6, regoutbeans.hobby);
+			ps.setString(7, regoutbeans.word);
+			ps.setString(8, regoutbeans.image);
+			
+			
+		
+			//誕生日（String）はDate型に変換しないとデータベースに挿入できない。
+			
+//			SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd");
+//			Date s = f.parse(regoutbeans.getBirthday());
+//			
+//			ps.setString(1, regoutbeans.getLastname());
+//			ps.setString(2, regoutbeans.getFirstname());
+//			ps.setString(3, regoutbeans.getLsubname());
+//			ps.setString(4, regoutbeans.getFsubname());
+//			ps.setDate(5, s);
+//			ps.setString(6, regoutbeans.getPlace());
+//			ps.setString(7, regoutbeans.getHobby());
+//			ps.setString(8, regoutbeans.getWord());
+//			ps.setString(9, regoutbeans.getImage());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

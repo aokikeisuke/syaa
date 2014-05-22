@@ -3,8 +3,8 @@
 <% 
 String lastname = (String)session.getAttribute("lastname");
 String firstname = (String)session.getAttribute("firstname");
-String lsubtname = (String)session.getAttribute("lsubname");
-String fsubtname = (String)session.getAttribute("fsubname");
+String lsubname = (String)session.getAttribute("lsubname");
+String fsubname = (String)session.getAttribute("fsubname");
 String birthday = (String)session.getAttribute("birthday");
 String place = (String)session.getAttribute("place");
 String hobby = (String)session.getAttribute("hobby");
@@ -28,8 +28,8 @@ session.setAttribute("lastname", lastname);
 <p>
 姓:<%=lastname %><br>
 名:<%=firstname %><br>
-フリガナ（姓）:<%=lsubtname %><br>
-フリガナ（名）:<%=fsubtname %><br>
+フリガナ（姓）:<%=lsubname %><br>
+フリガナ（名）:<%=fsubname %><br>
 誕生日:<%=birthday %><br>
 最寄り駅:<%=place %><br>
 趣味:<%=hobby %><br>
@@ -40,8 +40,8 @@ session.setAttribute("lastname", lastname);
 <form  method="POST" action="/syaa/servlet/RegOut">
     <input type="hidden" name="lastname" value="${ requestScope['lastname']} "/>
     <input type="hidden" name="firstname" value="<%=firstname %>"/>
-    <input type="hidden" name="lsubtname" value="<%=lsubtname %>"/>
-    <input type="hidden" name="fsubtname" value="<%=fsubtname %>"/>
+    <input type="hidden" name="lsubname" value="<%=lsubname %>"/>
+    <input type="hidden" name="fsubname" value="<%=fsubname %>"/>
     <input type="hidden" name="birthday" value="<%=birthday %>"/>
     <input type="hidden" name="place" value="<%=place %>"/>
     <input type="hidden" name="hobby" value="<%=hobby %>"/>
@@ -49,9 +49,11 @@ session.setAttribute("lastname", lastname);
     <input type="hidden" name="word" value="<%=word %>"/>
     
 	<input type="submit" name="yesno" value="はい"/>
+	
 	<input type="submit" name="yesno" value="いいえ"/>
 	
-</form>
+	
+	</form>
 
 
 </body>

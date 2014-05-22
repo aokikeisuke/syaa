@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
+import javax.servlet.http.HttpSession;
+
 import beans.RegOutBeans;
 
 
@@ -24,6 +26,8 @@ public class RegOut extends HttpServlet {
 		
 		if(yesNo.equals("はい")){
 			
+			
+			
 			String ln = request.getParameter("lastname");
 			String fn = request.getParameter("firstname");
 			String sln = request.getParameter("lsubname");
@@ -35,10 +39,10 @@ public class RegOut extends HttpServlet {
 			String wd = request.getParameter("word");
 			
 			RegOutBeans regoutbeans = new RegOutBeans();
-			regoutbeans.setFirstname(ln);
-			regoutbeans.setLastname(fn);
-			regoutbeans.setFsubname(sln);
-			regoutbeans.setLsubname(sfn);
+			regoutbeans.setLastname(ln);
+			regoutbeans.setFirstname(fn);
+			regoutbeans.setLsubname(sln);
+			regoutbeans.setFsubname(sfn);
 			regoutbeans.setBirthday(bd);
 			regoutbeans.setPlace(pl);
 			regoutbeans.setHobby(hb);
