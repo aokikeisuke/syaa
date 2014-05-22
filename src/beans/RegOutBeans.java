@@ -98,7 +98,7 @@ public class RegOutBeans implements Serializable {
 
 	private String image;
 
-	public static void DataBaseInsert(HttpServletRequest request) {
+	public static void DataBaseInsert(RegOutBeans regoutbeans) {
 		Connection db = null;
 		PreparedStatement ps = null;
 		try {
@@ -107,16 +107,15 @@ public class RegOutBeans implements Serializable {
 			db = ds.getConnection();
 			ps = db.prepareStatement("INSERT INTO EMPLOYEE VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			// p. 181参照
-			// このエラー何？
-			ps.setString(1, request.getParameter("lastname"));
-			ps.setString(2, request.getParameter("firstname"));
-			ps.setString(3, request.getParameter("lsubname"));
-			ps.setString(4, request.getParameter("fsubname"));
-			ps.setString(5, request.getParameter("birthday"));
-			ps.setString(6, request.getParameter("place"));
-			ps.setString(7, request.getParameter("hobby"));
-			ps.setString(8, request.getParameter("word"));
-			ps.setString(9, request.getParameter("image"));
+			ps.setString(1, regoutbeans.getLastname());
+			ps.setString(2, regoutbeans.getFirstname());
+			ps.setString(3, regoutbeans.getLsubname());
+			ps.setString(4, regoutbeans.getFsubname());
+			ps.setString(5, regoutbeans.getBirthday());
+			ps.setString(6, regoutbeans.getPlace());
+			ps.setString(7, regoutbeans.getHobby());
+			ps.setString(8, regoutbeans.getWord());
+			ps.setString(9, regoutbeans.getImage());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

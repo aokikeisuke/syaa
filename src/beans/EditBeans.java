@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
+@SuppressWarnings("serial")
 public class EditBeans implements Serializable {
 	private String firstname;
 	private String lastname;
@@ -24,6 +25,15 @@ public class EditBeans implements Serializable {
 	private String hobby;
 	private String word;
 	private String image;
+	private int id;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getWord() {
 		return word;
@@ -97,7 +107,7 @@ public class EditBeans implements Serializable {
 		this.image = image;
 	}
 
-	public static void DateBaseModify(HttpServletRequest request) {
+	public static void DateBaseModify(EditBeans editbeans) {
 		Connection db = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -106,16 +116,16 @@ public class EditBeans implements Serializable {
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/");
 			db = ds.getConnection();
 			ps = db.prepareStatement("UPDATE EMPLOYEE SET ?, ?, ?, ?, ?, ?, ?, ?, ? WHERE ID = ?");
-			ps.setString(1, request.getParameter("lastname"));
-			ps.setString(2, request.getParameter("firstname"));
-			ps.setString(3, request.getParameter("lsubname"));
-			ps.setString(4, request.getParameter("fsubname"));
-			ps.setString(5, request.getParameter("birthday"));
-			ps.setString(6, request.getParameter("place"));
-			ps.setString(7, request.getParameter("hobby"));
-			ps.setString(8, request.getParameter("word"));
-			ps.setString(9, request.getParameter("image"));
-			ps.setString(10, request.getParameter("id"));
+			ps.setString(1, editbeans.getLastname());
+			ps.setString(2, editbeans.getFirstname());
+			ps.setString(3, editbeans.getFsubname());
+			ps.setString(4, editbeans.getLsubname());
+			ps.setString(5, editbeans.getBirthday());
+			ps.setString(6, editbeans.getPlace());
+			ps.setString(7, editbeans.getHobby());
+			ps.setString(8, editbeans.getImage());
+			ps.setString(9, editbeans.getWord());
+			ps.setInt(10, editbeans.getId());
 			
 			
 			ps.executeUpdate();
