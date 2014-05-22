@@ -19,8 +19,8 @@ public class Edit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		beans.EditBeans.DateBaseModify(request);
-		//EditBeans.javaの、データベースに上書きするメソッドを呼び出す。
+		
+		
 		
 		HttpSession session = request.getSession();
 		String ln = request.getParameter("lastname");
@@ -32,7 +32,8 @@ public class Edit extends HttpServlet {
 		String hb = request.getParameter("hobby");
 		String im = request.getParameter("image");
 		String wd = request.getParameter("word");
-		String id = request.getParameter("id");
+		//IDはint指定なのになぜかエラー。
+		int id = request.getParameter("id");
 
 		session.setAttribute("lastname", request.getParameter("lastname"));
 		session.setAttribute("firstname", request.getParameter("firstname"));
@@ -56,9 +57,10 @@ public class Edit extends HttpServlet {
 		editbeans.setImage(im);
 		editbeans.setWord(wd);
 		editbeans.setId(id);
+		
+		beans.EditBeans.DateBaseModify(editbeans);
+		//EditBeans.javaの、データベースに上書きするメソッドを呼び出す。
 
-		
-		
 		response.sendRedirect("/syaa/JSP/Top");
 		
 	}
