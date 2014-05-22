@@ -15,7 +15,7 @@ import beans.EditBeans;
 /**
  * Servlet implementation class Edit
  */
-@WebServlet("/Edit")
+@WebServlet("/Delete")
 public class Delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -24,44 +24,16 @@ public class Delete extends HttpServlet {
 		
 		
 		HttpSession session = request.getSession();
-		String ln = request.getParameter("lastname");
-		String fn = request.getParameter("firstname");
-		String sln = request.getParameter("lsubname");
-		String sfn = request.getParameter("fsubname");
-		String bd = request.getParameter("birthday");
-		String pl = request.getParameter("place");
-		String hb = request.getParameter("hobby");
-		String im = request.getParameter("image");
-		String wd = request.getParameter("word");
 		//IDはint指定ではない？
 		//ここでIDを取得するためにはSearchInBeans.javaで
 		//select *で取得したものをsessionだか何かで送る必要あり。
 		String id = request.getParameter("id");
-
-		session.setAttribute("lastname", request.getParameter("lastname"));
-		session.setAttribute("firstname", request.getParameter("firstname"));
-		session.setAttribute("sublastname", request.getParameter("sublastname"));
-		session.setAttribute("subfirstname",request.getParameter("subfirstname"));
-		session.setAttribute("birthday", request.getParameter("birthday"));
-		session.setAttribute("place", request.getParameter("place"));
-		session.setAttribute("hobby", request.getParameter("hobby"));
-		session.setAttribute("image", request.getParameter("image"));
-		session.setAttribute("word", request.getParameter("word"));
 		session.setAttribute("id", request.getParameter("id"));
 
 		DeleteBeans deletebeans = new DeleteBeans();
-		deletebeans.setFirstname(ln);
-		deletebeans.setLastname(fn);
-		deletebeans.setFsubname(sln);
-		deletebeans.setLsubname(sfn);
-		deletebeans.setBirthday(bd);
-		deletebeans.setPlace(pl);
-		deletebeans.setHobby(hb);
-		deletebeans.setImage(im);
-		deletebeans.setWord(wd);
 		deletebeans.setId(id);
 		
-		beans.EditBeans.DateBaseDelete(deletebeans);
+		beans.DeleteBeans.DateBaseDelete(deletebeans);
 		//EditBeans.javaの、データベースに上書きするメソッドを呼び出す。
 
 		response.sendRedirect("/syaa/JSP/Top");
