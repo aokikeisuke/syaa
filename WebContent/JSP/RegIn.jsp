@@ -11,7 +11,7 @@
 <body>
 	*は必須項目です
 	
-	<form method ="POST"  action="/syaa/servlet/RegIn">
+	<form method ="POST"  action="/syaa/servlet/RegInText">
 	<br> 
 	*姓：
 	<br>

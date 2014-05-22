@@ -16,7 +16,7 @@ import beans.RegOutBeans;
 
 
 //@MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
-@WebServlet("/servlet/RegIn")
+@WebServlet("/servlet/RegInImage")
 public class RegInImage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,64 +30,30 @@ public class RegInImage extends HttpServlet {
 //		System.out.println("lsubname: " + request.getParameter("lsubname"));
 //		System.out.println("fsubname: " + request.getParameter("fsubname"));
 		
-		if ("".equals(request.getParameter("lastname"))
-				|| "".equals(request.getParameter("firstname"))
-				|| "".equals(request.getParameter("lsubname"))
-				|| "".equals(request.getParameter("fsubname"))) {
-			System.out.println("名前とフリガナを入力してください");
-			response.sendRedirect("/syaa/JSP/RegIn.jsp");
-		} else {
-
-			Part part = request.getPart("image");
-			String name = this.getFileName(part);
-			if (this.isValidFile(name)) {
-				part.write(getServletContext().getRealPath("/syaa/WEB-INF/Pic")
-						+ "/" + name);
-
-				HttpSession session = request.getSession();
-				String ln = request.getParameter("lastname");
-				String fn = request.getParameter("firstname");
-				String sln = request.getParameter("lsubname");
-				String sfn = request.getParameter("fsubname");
-				String bd = request.getParameter("birthday");
-				String pl = request.getParameter("place");
-				String hb = request.getParameter("hobby");
-				String im = request.getParameter("image");
-				String wd = request.getParameter("word");
-
-				session.setAttribute("lastname",
-						request.getParameter("lastname"));
-				session.setAttribute("firstname",
-						request.getParameter("firstname"));
-				session.setAttribute("sublastname",
-						request.getParameter("sublastname"));
-				session.setAttribute("subfirstname",
-						request.getParameter("subfirstname"));
-				session.setAttribute("birthday",
-						request.getParameter("birthday"));
-				session.setAttribute("place", request.getParameter("place"));
-				session.setAttribute("hobby", request.getParameter("hobby"));
-				session.setAttribute("image", request.getParameter("image"));
-				session.setAttribute("word", request.getParameter("word"));
-
-				RegOutBeans regoutbeans = new RegOutBeans();
-				regoutbeans.setFirstname(ln);
-				regoutbeans.setLastname(fn);
-				regoutbeans.setFsubname(sln);
-				regoutbeans.setLsubname(sfn);
-				regoutbeans.setBirthday(bd);
-				regoutbeans.setPlace(pl);
-				regoutbeans.setHobby(hb);
-				regoutbeans.setImage(im);
-				regoutbeans.setWord(wd);
-
-				response.sendRedirect("/syaa/JSP/RegOut.jsp");
-
-			} else {
-				response.getWriter().println("アップロードできませんでした");
-			}
-		}
-	}
+		
+ if(null != request.getPart("image")){	
+    Part part = request.getPart("image");
+    String name = this.getFileName(part);
+    if(this.isValidFile(name)){
+    	part.write(
+    			getServletContext().getRealPath("/syaa/WEB-INF/instancePic") + "/" + name);
+    	HttpSession session = request.getSession();
+    	session.setAttribute("image", request.getParameter("image"));
+    	
+    	
+    	RegOutBeans regoutbeans = new RegOutBeans();
+    	String im = request.getParameter("image");
+    	regoutbeans.setImage(im);
+    	
+    	response.sendRedirect("/syaa/JSP/RegOut.jsp");
+  
+    }else{
+    	response.getWriter().println("ファイルがアップロードできませんでした");
+    }
+  }else{
+	  response.sendRedirect("/syaa/JSP/RegOut.jsp");
+  }
+    }
 
 	private String getFileName(Part part) {
 		String result = null;

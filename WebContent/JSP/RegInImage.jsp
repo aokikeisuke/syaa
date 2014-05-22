@@ -1,6 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	
 <!DOCTYPE html>
 <html>
@@ -10,10 +8,10 @@
 </head>
 <body>
 	
-	
+	<form method = "POST" enctype = "multipart/form-data" action = "/syaa/servlet/RegInImage">
 	写真：
 	
-	<input type ="file" name="image" size="75">
+	<input type ="file" name="image"  size="75">
 	
 	<br>
 	
