@@ -10,6 +10,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import org.apache.catalina.connector.Request;
+
 
 
 @SuppressWarnings("serial")
@@ -61,13 +63,15 @@ public class SearchInBeans implements Serializable{
 	public void setImage(String image) {
 		this.image = image;
 	}
-
+	
 	
 	public static ArrayList<String>names(String name){
 		ArrayList<String> list = new ArrayList<String>();
 		Connection db = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+		
+		
 		try{
 			Context context= new InitialContext();
 			DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/test");
