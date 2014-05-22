@@ -22,7 +22,25 @@ public class SearchInBeans implements Serializable{
 	private String lsubname;
 	private String fsubname;
 	private String image;
+	private int id;
+	private String allname;
 	
+	public String getAllname() {
+		return allname;
+	}
+
+	public void setAllname(String allname) {
+		this.allname = allname;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getLastname() {
 		return lastname;
 	}
@@ -81,15 +99,15 @@ public class SearchInBeans implements Serializable{
 			
 			while(rs.next()){
 				SearchInBeans namess = new SearchInBeans();
-				namess.setLastname(rs.getString("lastname"));
-				namess.setFirstname(rs.getString("firstname"));
-				namess.setLsubname(rs.getString("lsubname"));
-				namess.setFsubname(rs.getString("fsubname"));
-				namess.setImage(rs.getString("image"));
+				namess.setId(rs.getInt("ID"));
+				namess.setLastname(rs.getString("LASTNAME"));
+				namess.setFirstname(rs.getString("FIRSTNARME"));
+				namess.setAllname(rs.getString("LASTNAME")+rs.getString("FIRSTNAME"));
+				namess.setLsubname(rs.getString("LSUBNAME"));
+				namess.setFsubname(rs.getString("FSUBNAME"));
+				namess.setImage(rs.getString("IMAGE"));
 				
 				String fullName =  namess.lastname + namess.firstname + namess.lsubname + namess.fsubname; 
-				
-				
 				if(fullName.matches(".*" + name +".*") ){
 					list.add(namess.lastname + namess.firstname + namess.image);
 				}
