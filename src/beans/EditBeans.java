@@ -110,7 +110,6 @@ public class EditBeans implements Serializable {
 	public static void DateBaseModify(EditBeans editbeans) {
 		Connection db = null;
 		PreparedStatement ps = null;
-		ResultSet rs = null;
 		try {
 			Context context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/");
