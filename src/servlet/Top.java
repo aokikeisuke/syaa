@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.tomcat.jni.Address;
-
 import beans.TopBeans;
 
 /**
@@ -24,7 +22,7 @@ public class Top extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<TopBeans> list = beans.TopBeans.getInfos();
+		ArrayList<TopBeans> list = TopBeans.getInfos();
 		request.setAttribute("list", list);
 		this.getServletContext().getRequestDispatcher("/JSP/SearchIn.jsp").forward(request, response);
 	}

@@ -18,7 +18,7 @@ import beans.RegOutBeans;
 
 
 //@MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
-@WebServlet("/servlet/RegInImage")
+@WebServlet("/servlet/EditInImage")
 public class EditImage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
