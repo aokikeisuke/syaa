@@ -124,7 +124,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2014-05-20 10:54:48</creation_date>
-			<updated_date>2014-05-21 12:57:20</updated_date>
+			<updated_date>2014-05-22 17:50:24</updated_date>
 			<model_property>
 				<name>プロジェクト名</name>
 				<value></value>
@@ -173,7 +173,7 @@
 			<args></args>
 			<description></description>
 			<logical_name>生年月日</logical_name>
-			<physical_name>BIRTYDAY</physical_name>
+			<physical_name>BIRTHDAY</physical_name>
 			<type>date</type>
 		</word>
 		<word>
