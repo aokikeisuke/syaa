@@ -9,14 +9,12 @@
 <body>
 	
 	<form method = "POST" enctype = "multipart/form-data" action = "/syaa/servlet/RegInImage">
-	写真：
-	
-	<input type ="file" name="image"  size="75">
-	
-	<br>
+	写真：<br/>
+	<input type ="file" name="image"  size="75"/><br/>
 	
 	
-	<input type="submit" value="登録">
+	<input type="submit" value="登録"/><br/>
+	${requestScope['alert']}
 	</form>
 	
 	
