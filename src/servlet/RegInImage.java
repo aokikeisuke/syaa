@@ -31,12 +31,12 @@ public class RegInImage extends HttpServlet {
 //		System.out.println("fsubname: " + request.getParameter("fsubname"));
 		
 		
-		
+ if(null != request.getPart("image")){	
     Part part = request.getPart("image");
     String name = this.getFileName(part);
     if(this.isValidFile(name)){
     	part.write(
-    			getServletContext().getRealPath("/WEB-INF/instancePic") + "/" + name);
+    			getServletContext().getRealPath("/syaa/WEB-INF/instancePic") + "/" + name);
     	HttpSession session = request.getSession();
     	session.setAttribute("image", request.getParameter("image"));
     	
@@ -46,11 +46,13 @@ public class RegInImage extends HttpServlet {
     	regoutbeans.setImage(im);
     	
     	response.sendRedirect("/syaa/JSP/RegOut.jsp");
-    	
-    	
+  
     }else{
     	response.getWriter().println("ファイルがアップロードできませんでした");
     }
+  }else{
+	  response.sendRedirect("/syaa/JSP/RegOut.jsp");
+  }
     }
 
 	private String getFileName(Part part) {

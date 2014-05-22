@@ -23,7 +23,7 @@ public class RegOut extends HttpServlet {
 			RegOutBeans.DataBaseInsert(request);
 			response.sendRedirect("/syaa/JSP/Top");
 		}else{
-			response.sendRedirect("/syaa/JSP/RegIn");
+			response.sendRedirect("/syaa/JSP/RegInText");
 		}
 		
 	

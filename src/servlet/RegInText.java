@@ -27,7 +27,7 @@ public class RegInText extends HttpServlet {
 		// request.getParameter("firstname"));
 		// System.out.println("lsubname: " + request.getParameter("lsubname"));
 		// System.out.println("fsubname: " + request.getParameter("fsubname"));
-
+        request.setCharacterEncoding("UTF-8");
 		if ("".equals(request.getParameter("lastname"))
 				|| "".equals(request.getParameter("firstname"))
 				|| "".equals(request.getParameter("lsubname"))
@@ -49,10 +49,8 @@ public class RegInText extends HttpServlet {
 
 			session.setAttribute("lastname", request.getParameter("lastname"));
 			session.setAttribute("firstname", request.getParameter("firstname"));
-			session.setAttribute("sublastname",
-					request.getParameter("sublastname"));
-			session.setAttribute("subfirstname",
-					request.getParameter("subfirstname"));
+			session.setAttribute("lsubname",request.getParameter("lsubname"));
+			session.setAttribute("fsubname",request.getParameter("fsubname"));
 			session.setAttribute("birthday", request.getParameter("birthday"));
 			session.setAttribute("place", request.getParameter("place"));
 			session.setAttribute("hobby", request.getParameter("hobby"));
