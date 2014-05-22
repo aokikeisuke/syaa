@@ -27,7 +27,7 @@
 	<br>
 	*フリガナ（姓）：
 	<br>
-	<input type="text" name="lsubname"/>
+	<input type="text" name="lsubname" value = "aoki"/>
 	<br>
 	*フリガナ（名）：
 	<br>
@@ -51,7 +51,7 @@
 	<input type="text" name="word" />
 	<br>
 	
-	<input type="submit" value="登録">
+	<input type="submit" value="次へ">
 	</form>
 	
 	

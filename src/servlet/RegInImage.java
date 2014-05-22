@@ -22,16 +22,18 @@ public class RegInImage extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
-		if (!"".equals(request.getParameter("image"))) {
+		
+		    Part part = request.getPart("image");
+	        
+		//if (!(null == part )) {      || "".equals(image)
 			
 			
-			Part part = request.getPart("image");
+			
 			String name = this.getFileName(part);
 			if (this.isValidFile(name)) {
 				part.write(getServletContext().getRealPath("/Pic") + "/" + name);
-				HttpSession session = request.getSession();
 				
+				HttpSession session = request.getSession();
 				session.setAttribute("image", request.getParameter("image"));
                 
 				request.setAttribute("name", name );
@@ -40,13 +42,23 @@ public class RegInImage extends HttpServlet {
 			
 
 			} else {
-				response.getWriter().println("ファイルがアップロードできませんでした");
+	            if("".equals(name)){
+//	            	HttpSession session = request.getSession();
+//	            	request.setAttribute("lastname", session.getAttribute("lastname") );
+//	            	request.setAttribute("name", name );
+//	            	request.setAttribute("name", name );
+//	            	request.setAttribute("name", name );
+	            	this.getServletContext().getRequestDispatcher("/JSP/RegOut.jsp").forward(request,response);
+	            //	response.sendRedirect("/syaa/JSP/RegOut.jsp");
+				
+			
+	            }else{
+	            	response.setCharacterEncoding("UTF-8");
+	            	String alert = "アップロードできない種類のファイルです";
+	            	request.setAttribute("alert", alert );
+					this.getServletContext().getRequestDispatcher("/JSP/RegInImage.jsp").forward(request,response);
+	            }
 			}
-		} else {
-			response.sendRedirect("/syaa/JSP/RegOut.jsp");
-			
-			
-		}
 	}
 
 	private String getFileName(Part part) {
