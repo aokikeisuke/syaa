@@ -47,7 +47,7 @@ public class TopBeans implements Serializable {
 	   ResultSet rs = null;
 	   try{
 		   Context context = new InitialContext();
-		   DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/");
+		   DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/test");
 		   db = ds.getConnection();
 		   ps = db.prepareStatement("SELECT ID, FIRSTNAME, LASTNAME, IMAGE FROM EMPLOYEE ORDER BY LSUBNAME, FSUBNAME");
 		   rs = ps.executeQuery();
@@ -66,7 +66,9 @@ public class TopBeans implements Serializable {
 			   if(rs != null){rs.close();}		
 			   if(ps != null){ps.close();}
 			   if(db != null){db.close();}
-		   }catch(Exception e){}
+		   }catch(Exception e){
+			   e.printStackTrace();
+		   }
 	   }
 	   return list;
 }

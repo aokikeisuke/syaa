@@ -12,13 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import beans.SearchInBeans;
 
 
-@WebServlet("/syaa/servlet/SearchOut")
+@WebServlet("/servlet/SearchOutSearch")
 public class SearchOutSearch extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
+
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		 String name = request.getParameter("search");
 		 name = name.replaceAll("　","");
 		 name = name.replaceAll("\u0020","");
@@ -26,7 +27,7 @@ public class SearchOutSearch extends HttpServlet {
 		 ArrayList<String> list = beans.SearchInBeans.names(name);
 		 request.setAttribute("list" ,list);
 		 
-		 this.getServletContext().getRequestDispatcher("/syaa/JSP/SearchIn").forward(request,response);
+		 this.getServletContext().getRequestDispatcher("/JSP/SearchIn.jsp").forward(request,response);
 		 
 	}
 
