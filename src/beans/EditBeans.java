@@ -115,6 +115,7 @@ public class EditBeans implements Serializable {
 			ps.setString(7, request.getParameter("hobby"));
 			ps.setString(8, request.getParameter("word"));
 			ps.setString(9, request.getParameter("image"));
+			ps.setString(10, request.getParameter("id"));
 			
 			
 			ps.executeUpdate();
