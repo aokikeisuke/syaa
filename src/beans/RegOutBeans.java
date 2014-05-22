@@ -102,18 +102,20 @@ public class RegOutBeans implements Serializable {
 			Context context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/test");
 			db = ds.getConnection();
-			ps = db.prepareStatement("INSERT INTO EMPLOYEE(LASTNAME, FIRSTNAME, LSUBNAME, FSUBNAME, PLACE, HOBBY, WORD, IMAGE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			ps = db.prepareStatement("INSERT INTO EMPLOYEE(LASTNAME, FIRSTNAME, LSUBNAME, FSUBNAME, PLACE, HOBBY, WORD, IMAGE) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 			// p. 181参照
+			
+			
 			
 			ps.setString(1, regoutbeans.lastname);
 			ps.setString(2, regoutbeans.firstname);
 			ps.setString(3, regoutbeans.lsubname);
 			ps.setString(4, regoutbeans.fsubname);
 			ps.setString(5, regoutbeans.birthday);
-			ps.setString(5, regoutbeans.place);
-			ps.setString(6, regoutbeans.hobby);
-			ps.setString(7, regoutbeans.word);
-			ps.setString(8, regoutbeans.image);
+			ps.setString(6, regoutbeans.place);
+			ps.setString(7, regoutbeans.hobby);
+			ps.setString(8, regoutbeans.word);
+			ps.setString(9, regoutbeans.image);
 			
 			
 		
