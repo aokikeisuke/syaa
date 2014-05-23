@@ -33,8 +33,13 @@ public class RegInText extends HttpServlet {
 				|| "".equals(request.getParameter("lsubname"))
 				|| "".equals(request.getParameter("fsubname"))) {
 			                                               //  System.out.println("名前とフリガナを入力してください");  
-			                                                 response.getWriter().println("名前とフリガナを入力してください");
-			response.sendRedirect("/syaa/JSP/RegIn.jsp");
+//			response.getWriter().println("名前とフリガナを入力してください");
+			response.setCharacterEncoding("UTF-8");
+        	String alert1 = "名前を入力して下さい。";
+        	request.setAttribute("alert1", alert1 );
+			this.getServletContext().getRequestDispatcher("/JSP/RegIn.jsp").forward(request,response);                                             
+			
+//			response.sendRedirect("/syaa/JSP/RegIn.jsp");
 		} else {
 
 			HttpSession session = request.getSession();

@@ -17,7 +17,8 @@ width="250" height="47" style="opacity: 1;">
 </header>
 	　*は必須項目です
 	
-	<form method ="POST"  action="/syaa/servlet/RegInText">
+	<form method ="POST" action="/syaa/servlet/RegInText">
+	<font color="red" > ${requestScope['alert1']} </font>
 	<br> 
 	*姓：
 	<br>
