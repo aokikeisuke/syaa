@@ -17,7 +17,7 @@ public class SearchOutPersonal extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getPathInfo();
 		
-		ArrayList<Info> info= beans.SearchInBeans.info(info);
+		ArrayList<Info> info= beans.SearchOutBeans.info(info);
 		 request.setAttribute("info" ,info);
 		 
 		 this.getServletContext().getRequestDispatcher("/syaa/JSP/SearchOut").forward(request,response);
