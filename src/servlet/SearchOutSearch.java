@@ -24,10 +24,12 @@ public class SearchOutSearch extends HttpServlet {
 		 name = name.replaceAll("　","");
 		 name = name.replaceAll("\u0020","");
 		 
-		 ArrayList<String> list = beans.SearchOutBeans.names(name);
+		 ArrayList<SearchOutBeans> list = beans.SearchOutBeans.names(name);
 		 request.setAttribute("list" ,list);
 		 
-		 this.getServletContext().getRequestDispatcher("/JSP/SearchIn.jsp").forward(request,response);
+		
+		 
+		 this.getServletContext().getRequestDispatcher("/JSP/SearchOut.jsp").forward(request,response);
 		 
 	}
 

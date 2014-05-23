@@ -83,20 +83,26 @@ public class SearchOutBeans implements Serializable{
 	}
 	
 	
-	public static ArrayList<String>names(String name){
-		ArrayList<String> list = new ArrayList<String>();
+	public static ArrayList<SearchOutBeans>names(String name){
+		ArrayList<SearchOutBeans> list = new ArrayList<SearchOutBeans>();
 		Connection db = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		
-		
-		try{
-			Context context= new InitialContext();
-			DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/test");
-			db = ds.getConnection();
-			ps = db.prepareStatement("SELECT * FROM employee ORDER BY LSUBNAME,FSUBNAME");
-			rs = ps.executeQuery();
 			
+			try{
+				Context context= new InitialContext();
+				DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/test");
+				db = ds.getConnection();
+				ps = db.prepareStatement("SELECT * FROM employee ORDER BY LSUBNAME,FSUBNAME");
+				rs = ps.executeQuery();
+//				     while(rs.next()){
+//				    	 TopBeans topbeans = new TopBeans();
+//				    	 topbeans.setName(rs.getString("LASTNAME") + rs.getString("FIRSTNAME"));
+//				    	 topbeans.setImage(rs.getString("IMAGE"));
+//				    	 topbeans.setId(rs.getInt("ID"));
+//				    	 
+//				    	 list.add(topbeans);
 			while(rs.next()){
 				SearchOutBeans namess = new SearchOutBeans();
 				namess.setId(rs.getInt("ID"));
@@ -107,13 +113,15 @@ public class SearchOutBeans implements Serializable{
 				namess.setFsubname(rs.getString("FSUBNAME"));
 				namess.setImage(rs.getString("IMAGE"));
 				
-				String fullName =  namess.lastname + namess.firstname + namess.lsubname + namess.fsubname; 
+				String fullName =  namess.allname + namess.lsubname + namess.fsubname; 
 				if(fullName.matches(".*" + name +".*") ){
-					list.add(namess.lastname + namess.firstname + namess.image);
+					list.add(namess);
+					
+					
 				}
 				
-						
-			}
+			}		
+			
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
@@ -129,7 +137,6 @@ public class SearchOutBeans implements Serializable{
 		
 		
 	}
-
 	
 	
 }

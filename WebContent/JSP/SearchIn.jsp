@@ -20,8 +20,8 @@
 <a href = "/syaa/SearchOut/${item.id}">
 ${fn:escapeXml(item.name)}
 </a>
-<a href = "/syaa/SearchOut/"${item.id}>
-<img src="/syaa/WebContent/WEB-INF/Pic/"${item.id}>
+<a href = "/syaa/SearchOut/${item.id}">
+<img src="/syaa/WebContent/WEB-INF/Pic/${item.id}">
 <!-- 
 写真のURL指定の仕方を要確認。「+」が必要なのか。。。？
  -->

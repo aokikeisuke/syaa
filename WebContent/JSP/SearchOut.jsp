@@ -1,12 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8" />
+<title>検索入力画面</title>
 </head>
 <body>
+<br>
+検索したい社員の名前を入力してください
+<br>
+<form method="POST" action="/syaa/servlet/SearchOutSearch">
+	<input type="text" name = "search">
+	<input type="submit" value="検索">
+</form>
+
+<c:forEach var="item" items="${requestScope['list']}">
+<a href = "/syaa/SearchOut/${item.id}">
+${fn:escapeXml(item.allname)}
+</a>
+<a href = "/syaa/SearchOut/${item.id}">
+<img src="/syaa/WebContent/WEB-INF/Pic/${item.image}">
+<!-- 
+写真のURL指定の仕方を要確認。「+」が必要なのか。。。？
+ -->
+</a>
+
+</c:forEach>
 
 </body>
-</html>
