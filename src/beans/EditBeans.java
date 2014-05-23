@@ -19,13 +19,13 @@ public class EditBeans implements Serializable {
 	private String hobby;
 	private String word;
 	private String image;
-	private String id;
+	private int id;
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -106,9 +106,19 @@ public class EditBeans implements Serializable {
 		PreparedStatement ps = null;
 		try {
 			Context context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/");
+			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/test");
 			db = ds.getConnection();
-			ps = db.prepareStatement("UPDATE EMPLOYEE SET ?, ?, ?, ?, ?, ?, ?, ?, ? WHERE ID = ?");
+			ps = db.prepareStatement("UPDATE EMPLOYEE SET "
+					+ "LASTNAME = ?, "
+					+ "FIRSTNAME = ?, "
+					+ "LSUBNAME = ?, "
+					+ "FSUBNAME = ?, "
+					+ "BIRTHDAY = ?, "
+					+ "PLACE = ?, "
+					+ "HOBBY = ?, "
+					+ "IMAGE = ?, "
+					+ "WORD = ? "
+					+ "WHERE ID = ?");
 			ps.setString(1, editbeans.getLastname());
 			ps.setString(2, editbeans.getFirstname());
 			ps.setString(3, editbeans.getFsubname());
@@ -118,7 +128,7 @@ public class EditBeans implements Serializable {
 			ps.setString(7, editbeans.getHobby());
 			ps.setString(8, editbeans.getImage());
 			ps.setString(9, editbeans.getWord());
-			ps.setString(10, editbeans.getId());
+			ps.setInt(10, editbeans.getId());
 
 			ps.executeUpdate();
 		} catch (Exception e) {

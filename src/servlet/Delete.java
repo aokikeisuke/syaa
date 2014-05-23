@@ -11,9 +11,6 @@ import javax.servlet.http.HttpSession;
 
 import beans.DeleteBeans;
 
-/**
- * Servlet implementation class Edit
- */
 @WebServlet("/Delete")
 public class Delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,18 +19,17 @@ public class Delete extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		// IDはint指定ではない？
-		// ここでIDを取得するためにはSearchInBeans.javaで
-		// select *で取得したものをsessionだか何かで送る必要あり。
-		String id = request.getParameter("id");
-		session.setAttribute("id", request.getParameter("id"));
+		
+		//分からないっす。requestgetParameterってString?
+		int id = Integer.requestgetParameter("id");
+		
+		session.setAttribute("id", id);
 
 		DeleteBeans deletebeans = new DeleteBeans();
 		deletebeans.setId(id);
 
-		beans.DeleteBeans.DateBaseDelete(deletebeans);
-		// EditBeans.javaの、データベースに上書きするメソッドを呼び出す。
-
+		DeleteBeans.DateBaseDelete(deletebeans);
+		
 		response.sendRedirect("/syaa/JSP/Top");
 
 	}

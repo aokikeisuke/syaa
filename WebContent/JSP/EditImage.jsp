@@ -9,14 +9,14 @@
 <body>
 	
 	<form method = "POST" enctype = "multipart/form-data" action = "/syaa/servlet/EditImage">
-	写真：
+	写真：<br>
 	
 	<input type ="file" name="image"  size="75">
 	
 	<br>
 	
 	
-	<input type="submit" value="上書き">
+	<input type="submit" value="編集">
 	</form>
 	
 	

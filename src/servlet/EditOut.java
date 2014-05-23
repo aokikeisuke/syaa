@@ -8,15 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.EditBeans;
 
 
-import javax.servlet.http.HttpSession;
-
-import beans.RegOutBeans;
-
-
-@WebServlet("/servlet/RegOut")
-public class RegOut extends HttpServlet {
+@WebServlet("/servlet/EditOut")
+public class EditOut extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     @Override
@@ -27,7 +23,6 @@ public class RegOut extends HttpServlet {
 		if(yesNo.equals("はい")){
 			
 			System.out.println(request.getParameter("image"));
-			
 			String ln = request.getParameter("lastname");
 			String fn = request.getParameter("firstname");
 			String sln = request.getParameter("lsubname");
@@ -37,20 +32,21 @@ public class RegOut extends HttpServlet {
 			String hb = request.getParameter("hobby");
 			String im = request.getParameter("image");
 			String wd = request.getParameter("word");
+			int id = Integer.parseInt(request.getParameter("id"));
 			
-			
-			RegOutBeans regoutbeans = new RegOutBeans();
-			regoutbeans.setLastname(ln);
-			regoutbeans.setFirstname(fn);
-			regoutbeans.setLsubname(sln);
-			regoutbeans.setFsubname(sfn);
-			regoutbeans.setBirthday(bd);
-			regoutbeans.setPlace(pl);
-			regoutbeans.setHobby(hb);
-			regoutbeans.setImage(im);
-			regoutbeans.setWord(wd);
+			EditBeans editbeans = new EditBeans();
+			editbeans.setLastname(ln);
+			editbeans.setFirstname(fn);
+			editbeans.setLsubname(sln);
+			editbeans.setFsubname(sfn);
+			editbeans.setBirthday(bd);
+			editbeans.setPlace(pl);
+			editbeans.setHobby(hb);
+			editbeans.setImage(im);
+			editbeans.setWord(wd);
+			editbeans.setId(id);
 
-			RegOutBeans.DataBaseInsert(regoutbeans);
+			EditBeans.DateBaseModify(editbeans);
 // P141  セッションを明示的に破棄
 			response.sendRedirect("/syaa/JSP/Top.jsp");
 		}else{

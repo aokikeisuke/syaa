@@ -9,7 +9,7 @@
 <title>登録入力画面</title>
 </head>
 <body>
-	*は必須項目です
+	　*は必須項目です
 	
 	<form method ="POST"  action="/syaa/servlet/RegInText">
 	<br> 
