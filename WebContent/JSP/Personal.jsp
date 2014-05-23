@@ -29,7 +29,7 @@ width="250" height="47" style="opacity: 1;">
 	誕生日：${item.birthday}<br>
 	最寄り駅：${item.place}<br>
 	趣味：${item.hobby}<br>
-	写真：<img src="../Pic/${requestScope['image']} " alt="" width="100" height="100" border="0" /><br>
+	写真：<img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" /><br>
 	一言お願いします：<br>
 	${item.word}<br>
   </c:forEach>
