@@ -21,7 +21,7 @@
 ${fn:escapeXml(item.allname)}
 </a>
 <a href = "/syaa/SearchOut/${item.id}">
-<img src="/syaa/WebContent/WEB-INF/Pic/${item.image}">
+<img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" />
 <!-- 
 写真のURL指定の仕方を要確認。「+」が必要なのか。。。？
  -->

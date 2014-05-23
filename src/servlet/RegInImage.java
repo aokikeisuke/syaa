@@ -35,13 +35,12 @@ public class RegInImage extends HttpServlet {
 //			System.out.println(getServletContext().getRealPath("/Pic"));
 				HttpSession session = request.getSession();
 				//session.setAttribute("image", request.getParameter("image"));
-				session.setAttribute("picPath",getServletContext().getRealPath("/Pic") + "/" + name);
-				System.out.println(getServletContext().getRealPath("/Pic") + "/" + name);
+				//session.setAttribute("picPath",getServletContext().getRealPath("/Pic") + "/" + name);
 				request.setAttribute("image", name );
 				this.getServletContext().getRequestDispatcher("/JSP/RegOut.jsp").forward(request,response);
 				//response.sendRedirect("/syaa/JSP/RegOut.jsp");
 				
-				//System.out.println(name);
+				//	System.out.println(name);
 			
 
 			} else {
