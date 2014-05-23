@@ -10,14 +10,18 @@
 <title>検索結果</title>
 </head>
 <body>
+<div style="text-align:center">
 <header>
 <a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
 <img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
 width="250" height="47" style="opacity: 1;">
 </a>
 </header>
+</div>
 <form method="POST" action="/syaa/JSP/EditText.jsp">
+
   <c:forEach var="item" items="${requestScope['list']}">
+
 	姓：${item.lastname}<br>
 	名：${item.firstname}<br>
 	フリガナ（姓）：${item.lsubname}<br>

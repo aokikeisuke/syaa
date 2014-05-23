@@ -9,13 +9,16 @@
 </head>
 
 <body>
+<div style="text-align:center">
 <header>
 <a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
 <img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
 width="250" height="47" style="opacity: 1;">
 </a>
 </header>
+</div>
 		<form method="POST" action="/syaa/servlet/EditText">
+		<br>
 			　*は必須項目です <br> 
 			<br>
 			*姓： <br> 
@@ -33,8 +36,8 @@ width="250" height="47" style="opacity: 1;">
 			<input type="text" name="place" value="${item.place}"/> <br> 
 			趣味： <br>
 			<input type="text" name="hobby" value="${item.hobby}"/> <br> 
-			一言お願いします： <br> 
-			<input type="text" name="word"  value="${item.word}"/> <br> 
+			一言お願いします： <br>
+			<input type="text" name="word"  value="${item.word}"/> <br> <br>
 			<input type="submit" value="次へ"> 
 		</form>
 </body>

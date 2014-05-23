@@ -9,15 +9,19 @@
 <title>登録入力画面</title>
 </head>
 <body>
+<div style="text-align:center">
 <header>
 <a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
 <img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
 width="250" height="47" style="opacity: 1;">
 </a>
 </header>
+</div>
+<br>
 	　*は必須項目です
 	
-	<form method ="POST"  action="/syaa/servlet/RegInText">
+	<form method ="POST" action="/syaa/servlet/RegInText">
+	<font color="red" > ${requestScope['alert1']} </font>
 	<br> 
 	*姓：
 	<br>
@@ -56,7 +60,7 @@ width="250" height="47" style="opacity: 1;">
 	<br>
 	<input type="text" name="word" />
 	<br>
-	
+	<br>
 	<input type="submit" value="次へ">
 	</form>
 	

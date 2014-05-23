@@ -17,12 +17,13 @@ width="250" height="47" style="opacity: 1;">
 </header>
 		<form method="POST" action="http://localhost:8080/syaa/JSP/RegIn.jsp">
 		<br>
-			<input type="submit" style="WIDTH: 100px; HEIGHT: 50px" value="新規登録" >
+			<input type="submit" style="WIDTH: 80px; HEIGHT: 25px" value="新規登録" >
 		</form>
+		<br>
 		<form method="POST" action="/syaa/servlet/Top">
-			<input type="submit" value="社員一覧">
+			<input type="submit" style="WIDTH: 80px; HEIGHT: 25px" value="社員一覧">
 		</form>
-		</div>
+</div>
 </body>
 
 </html>

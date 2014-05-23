@@ -8,19 +8,21 @@
 </head>
 
 <body>
+<div style="text-align:center">
 <header>
 <a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
 <img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
 width="250" height="47" style="opacity: 1;">
 </a>
 </header>
-<div style="text-align:center">
+<br>
 		データを削除しますか？<br />
 		<form method="POST" action="/syaa/Delete">
-			 <input type="submit" value="はい">
+			 <input type="submit" style="WIDTH: 80px; HEIGHT: 25px"value="はい">
 		</form>
+		<br>
 		<form method="POST" action="/syaa/JSP/Personal.jsp">
-			 <input type="submit" value="いいえ">
+			 <input type="submit" style="WIDTH: 80px; HEIGHT: 25px" value="いいえ">
 		</form>
 </div>
 </body>

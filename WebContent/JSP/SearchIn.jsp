@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<div style="text-align:center">
 <header>
 <a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
 <img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
@@ -21,7 +22,7 @@ width="250" height="47" style="opacity: 1;">
 		<input type="text" name="search">
 		 <input type="submit" value="検索">
 	</form>
-
+</div>
 
 	<c:forEach var="item" items="${requestScope['list']}">
 
@@ -29,7 +30,7 @@ width="250" height="47" style="opacity: 1;">
 		<li>${fn:escapeXml(item.name)}</li>
 		</a>
 		<a href="/syaa/servlet/SearchOutPersonal/${item.id}"> 
-		<img src="http://localhost:8080/syaa/WebContent/WEB-INF/Pic/${item.image}" alt="" width="100"height="100" border="0" />
+		<img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100"height="100" border="0" />
 		</a>
 
 		<!-- 

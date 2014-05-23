@@ -22,13 +22,16 @@ int id = 26;
 <title>編集確認画面</title>
 </head>
 <body>
+<div style="text-align:center">
 <header>
 <a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
 <img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
 width="250" height="47" style="opacity: 1;">
 </a>
 </header>
+</div>
 
+<br>
 <p>
 姓:<%=lastname %><br>
 名:<%=firstname %><br>
@@ -40,7 +43,7 @@ width="250" height="47" style="opacity: 1;">
 写真:<img src="../Pic/${requestScope['image']} " alt="" width="100" height="100" border="0" /><br>
 一言お願いします:<%=word %><br>
 </p>
-
+以上の内容で変更を上書きしますか？
 <form  method="POST" action="/syaa/servlet/EditOut">
  <!--    <input type="hidden" name="lastname" value="${ requestScope['lastname']} "/>--> 
     <input type="hidden" name="lastname" value="<%=lastname %> "/>
