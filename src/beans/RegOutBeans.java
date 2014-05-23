@@ -20,7 +20,8 @@ public class RegOutBeans implements Serializable {
 	private String place;
 	private String hobby;
 	private String word;
-
+	private String image;
+	
 	public String getWord() {
 		return word;
 	}
@@ -93,7 +94,7 @@ public class RegOutBeans implements Serializable {
 		this.image = image;
 	}
 
-	private String image;
+	
 
 	public static void DataBaseInsert(RegOutBeans regoutbeans) {
 		Connection db = null;

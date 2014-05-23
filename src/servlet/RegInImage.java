@@ -32,13 +32,16 @@ public class RegInImage extends HttpServlet {
 			String name = this.getFileName(part);
 			if (this.isValidFile(name)) {
 				part.write(getServletContext().getRealPath("/Pic") + "/" + name);
-			
+//			System.out.println(getServletContext().getRealPath("/Pic"));
 				HttpSession session = request.getSession();
-				session.setAttribute("image", request.getParameter("image"));
-                
-				request.setAttribute("name", name );
+				//session.setAttribute("image", request.getParameter("image"));
+				session.setAttribute("picPath",getServletContext().getRealPath("/Pic") + "/" + name);
+				System.out.println(getServletContext().getRealPath("/Pic") + "/" + name);
+				request.setAttribute("image", name );
 				this.getServletContext().getRequestDispatcher("/JSP/RegOut.jsp").forward(request,response);
 				//response.sendRedirect("/syaa/JSP/RegOut.jsp");
+				
+				//System.out.println(name);
 			
 
 			} else {
