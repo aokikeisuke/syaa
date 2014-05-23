@@ -20,7 +20,8 @@ public class RegOutBeans implements Serializable {
 	private String place;
 	private String hobby;
 	private String word;
-
+	private String image;
+	
 	public String getWord() {
 		return word;
 	}
@@ -93,7 +94,7 @@ public class RegOutBeans implements Serializable {
 		this.image = image;
 	}
 
-	private String image;
+	
 
 	public static void DataBaseInsert(RegOutBeans regoutbeans) {
 		Connection db = null;
@@ -102,7 +103,7 @@ public class RegOutBeans implements Serializable {
 			Context context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/test");
 			db = ds.getConnection();
-			ps = db.prepareStatement("INSERT INTO EMPLOYEE(LASTNAME, FIRSTNAME, LSUBNAME, FSUBNAME, PLACE, HOBBY, WORD, IMAGE) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+			ps = db.prepareStatement("INSERT INTO EMPLOYEE(LASTNAME, FIRSTNAME, LSUBNAME, FSUBNAME, BIRTHDAY, PLACE, HOBBY, WORD, IMAGE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			// p. 181参照
 			
 			
@@ -118,21 +119,6 @@ public class RegOutBeans implements Serializable {
 			ps.setString(9, regoutbeans.image);
 			
 			
-		
-			//誕生日（String）はDate型に変換しないとデータベースに挿入できない。
-			
-//			SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd");
-//			Date s = f.parse(regoutbeans.getBirthday());
-//			
-//			ps.setString(1, regoutbeans.getLastname());
-//			ps.setString(2, regoutbeans.getFirstname());
-//			ps.setString(3, regoutbeans.getLsubname());
-//			ps.setString(4, regoutbeans.getFsubname());
-//			ps.setDate(5, s);
-//			ps.setString(6, regoutbeans.getPlace());
-//			ps.setString(7, regoutbeans.getHobby());
-//			ps.setString(8, regoutbeans.getWord());
-//			ps.setString(9, regoutbeans.getImage());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

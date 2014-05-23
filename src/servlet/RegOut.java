@@ -26,7 +26,7 @@ public class RegOut extends HttpServlet {
 		
 		if(yesNo.equals("はい")){
 			
-			
+			System.out.println(request.getParameter("image"));
 			
 			String ln = request.getParameter("lastname");
 			String fn = request.getParameter("firstname");
@@ -37,6 +37,8 @@ public class RegOut extends HttpServlet {
 			String hb = request.getParameter("hobby");
 			String im = request.getParameter("image");
 			String wd = request.getParameter("word");
+			
+			System.out.println(im);
 			
 			RegOutBeans regoutbeans = new RegOutBeans();
 			regoutbeans.setLastname(ln);

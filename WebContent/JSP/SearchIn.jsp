@@ -18,13 +18,18 @@
 
 <c:forEach var="item" items="${requestScope['list']}">
 <a href = "/syaa/SearchOut/${item.id}">
-${fn:escapeXml(item.name)}
+<br><li>${fn:escapeXml(item.name)}
+</li>
 </a>
 <a href = "/syaa/SearchOut/${item.id}">
+<<<<<<< HEAD
 <img src="/syaa/WebContent/WEB-INF/Pic/${item.id}">
 <!-- 
 写真のURL指定の仕方を要確認。「+」が必要なのか。。。？
  -->
+=======
+<img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" /><br>
+>>>>>>> 770b61edeec2eead687d869184615077f1c279e7
 </a>
 
 </c:forEach>
