@@ -194,8 +194,6 @@ public class SearchOutBeans implements Serializable{
 				
 				namess.setId(id);
 				
-				System.out.println(namess.id);
-				
 				ps.setString(1, namess.id);
 				rs = ps.executeQuery();
 				     
@@ -211,7 +209,6 @@ public class SearchOutBeans implements Serializable{
 				namess.setPlace(rs.getString("PLACE"));
 				namess.setHobby(rs.getString("HOBBY"));
 				namess.setWord(rs.getString("WORD"));
-				
 			
 				list.add(namess);
 					
