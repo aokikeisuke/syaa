@@ -25,7 +25,7 @@ public class SearchOutPersonal extends HttpServlet {
 		request.setAttribute("list" ,list);
 		 
 		
-		 this.getServletContext().getRequestDispatcher("/syaa/JSP/SearchOutPersonal.jsp").forward(request,response);
+		 this.getServletContext().getRequestDispatcher("/syaa/JSP/Personal.jsp").forward(request,response);
 		 
 	}
 
