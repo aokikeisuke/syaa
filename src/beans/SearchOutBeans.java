@@ -24,6 +24,10 @@ public class SearchOutBeans implements Serializable{
 	private String image;
 	private int id;
 	private String allname;
+	private String birthday;
+	private String hobby;
+	private String word;
+	
 	
 	public String getAllname() {
 		return allname;
@@ -82,6 +86,30 @@ public class SearchOutBeans implements Serializable{
 		this.image = image;
 	}
 	
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
+	public String getHobby() {
+		return hobby;
+	}
+
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+
+	public String getWord() {
+		return word;
+	}
+
+	public void setWord(String word) {
+		this.word = word;
+	}
+	
 	
 	public static ArrayList<SearchOutBeans>names(String name){
 		ArrayList<SearchOutBeans> list = new ArrayList<SearchOutBeans>();
@@ -137,6 +165,62 @@ public class SearchOutBeans implements Serializable{
 		
 		
 	}
+	
+	
+	
+	
+	public static ArrayList<SearchOutBeans> info(String id){
+		ArrayList<SearchOutBeans> list = new ArrayList<SearchOutBeans>();
+		Connection db = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+			
+			try{
+				Context context= new InitialContext();
+				DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/test");
+				db = ds.getConnection();
+				ps = db.prepareStatement("SELECT * FROM employee WHERE ID = id ORDER BY LSUBNAME,FSUBNAME");
+				rs = ps.executeQuery();
+//				     
+			while(rs.next()){
+				SearchOutBeans namess = new SearchOutBeans();
+				namess.setId(rs.getInt("ID"));
+				namess.setLastname(rs.getString("LASTNAME"));
+				namess.setFirstname(rs.getString("FIRSTNAME"));
+				namess.setLsubname(rs.getString("LSUBNAME"));
+				namess.setFsubname(rs.getString("FSUBNAME"));
+				namess.setImage(rs.getString("IMAGE"));
+				namess.setBirthday(rs.getString("BIRTHDAY"));
+				namess.setHobby(rs.getString("HOBBY"));
+				namess.setWord(rs.getString("WORD"));
+				
+			
+				list.add(namess);
+					
+					
+				
+				
+			}		
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(rs != null){ rs.close();}
+				if(ps != null){ ps.close();}
+				if(db != null){ db.close();}
+			}catch(Exception e){}
+			
+		}
+		return list;
+		
+		
+		
+	}
+
+	
+	
 	
 	
 }
