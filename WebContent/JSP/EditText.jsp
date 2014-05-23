@@ -18,6 +18,8 @@ width="250" height="47" style="opacity: 1;">
 </header>
 </div>
 		<form method="POST" action="/syaa/servlet/EditText">
+		
+  <c:forEach var="item" items="${requestScope['list']}">
 		<br>
 			　*は必須項目です <br> 
 			<br>
@@ -39,6 +41,7 @@ width="250" height="47" style="opacity: 1;">
 			一言お願いします： <br>
 			<input type="text" name="word"  value="${item.word}"/> <br> <br>
 			<input type="submit" value="次へ"> 
+			</c:forEach>
 		</form>
 </body>
 
