@@ -15,7 +15,7 @@ import org.apache.catalina.connector.Request;
 
 
 @SuppressWarnings("serial")
-public class SearchInBeans implements Serializable{
+public class SearchOutBeans implements Serializable{
 	
 	private String lastname;
 	private String firstname;
@@ -98,7 +98,7 @@ public class SearchInBeans implements Serializable{
 			rs = ps.executeQuery();
 			
 			while(rs.next()){
-				SearchInBeans namess = new SearchInBeans();
+				SearchOutBeans namess = new SearchOutBeans();
 				namess.setId(rs.getInt("ID"));
 				namess.setLastname(rs.getString("LASTNAME"));
 				namess.setFirstname(rs.getString("FIRSTNAME"));

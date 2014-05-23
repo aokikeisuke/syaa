@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.SearchInBeans;
+import beans.SearchOutBeans;
 
 
 @WebServlet("/servlet/SearchOutSearch")
@@ -24,7 +24,7 @@ public class SearchOutSearch extends HttpServlet {
 		 name = name.replaceAll("　","");
 		 name = name.replaceAll("\u0020","");
 		 
-		 ArrayList<String> list = beans.SearchInBeans.names(name);
+		 ArrayList<String> list = beans.SearchOutBeans.names(name);
 		 request.setAttribute("list" ,list);
 		 
 		 this.getServletContext().getRequestDispatcher("/JSP/SearchIn.jsp").forward(request,response);

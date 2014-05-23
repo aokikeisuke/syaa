@@ -32,7 +32,7 @@ public class RegInImage extends HttpServlet {
 			String name = this.getFileName(part);
 			if (this.isValidFile(name)) {
 				part.write(getServletContext().getRealPath("/Pic") + "/" + name);
-				
+			
 				HttpSession session = request.getSession();
 				session.setAttribute("image", request.getParameter("image"));
                 
