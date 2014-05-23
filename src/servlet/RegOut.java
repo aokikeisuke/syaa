@@ -50,6 +50,7 @@ public class RegOut extends HttpServlet {
 			regoutbeans.setWord(wd);
 
 			RegOutBeans.DataBaseInsert(regoutbeans);
+// P141  セッションを明示的に破棄
 			response.sendRedirect("/syaa/JSP/Top.jsp");
 		}else{
 			response.sendRedirect("/syaa/JSP/RegIn.jsp");

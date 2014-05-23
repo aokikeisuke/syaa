@@ -43,13 +43,13 @@ public class RegInImage extends HttpServlet {
 
 			} else {
 	            if("".equals(name)){
-//	            	HttpSession session = request.getSession();
-//	            	request.setAttribute("lastname", session.getAttribute("lastname") );
+//	           	HttpSession session = request.getSession();
+//            	request.setAttribute("lastname", session.getAttribute("lastname") );
 //	            	request.setAttribute("name", name );
 //	            	request.setAttribute("name", name );
 //	            	request.setAttribute("name", name );
 	            	this.getServletContext().getRequestDispatcher("/JSP/RegOut.jsp").forward(request,response);
-	            //	response.sendRedirect("/syaa/JSP/RegOut.jsp");
+//	            	response.sendRedirect("/syaa/JSP/RegOut.jsp");
 				
 			
 	            }else{
