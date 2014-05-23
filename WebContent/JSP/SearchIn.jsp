@@ -25,10 +25,10 @@ width="250" height="47" style="opacity: 1;">
 
 	<c:forEach var="item" items="${requestScope['list']}">
 
-		<a href="/servlet/SearchOutPersonal/${item.id}"> <br>
+		<a href="/syaa/servlet/SearchOutPersonal/${item.id}"> <br>
 		<li>${fn:escapeXml(item.name)}</li>
 		</a>
-		<a href="/servlet/SearchOutPersonal/${item.id}"> 
+		<a href="/syaa/servlet/SearchOutPersonal/${item.id}"> 
 		<img src="http://localhost:8080/syaa/WebContent/WEB-INF/Pic/${item.image}" alt="" width="100"height="100" border="0" />
 		</a>
 

@@ -22,13 +22,22 @@ public class SearchOutBeans implements Serializable{
 	private String lsubname;
 	private String fsubname;
 	private String image;
-	private int id;
+	private String id;
 	private String allname;
 	private String birthday;
+	private String place;
 	private String hobby;
 	private String word;
 	
 	
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
+
 	public String getAllname() {
 		return allname;
 	}
@@ -37,11 +46,11 @@ public class SearchOutBeans implements Serializable{
 		this.allname = allname;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -133,7 +142,7 @@ public class SearchOutBeans implements Serializable{
 //				    	 list.add(topbeans);
 			while(rs.next()){
 				SearchOutBeans namess = new SearchOutBeans();
-				namess.setId(rs.getInt("ID"));
+				namess.setId(rs.getString("ID"));
 				namess.setLastname(rs.getString("LASTNAME"));
 				namess.setFirstname(rs.getString("FIRSTNAME"));
 				namess.setAllname(rs.getString("LASTNAME")+rs.getString("FIRSTNAME"));
@@ -180,18 +189,22 @@ public class SearchOutBeans implements Serializable{
 				Context context= new InitialContext();
 				DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/test");
 				db = ds.getConnection();
-				ps = db.prepareStatement("SELECT * FROM employee WHERE ID = id ORDER BY LSUBNAME,FSUBNAME");
+				ps = db.prepareStatement("SELECT * FROM employee WHERE ID = ? ORDER BY LSUBNAME,FSUBNAME");
+				SearchOutBeans namess = new SearchOutBeans();
+				namess.setId(id);
+				ps.setString(1, namess.id);
 				rs = ps.executeQuery();
 //				     
 			while(rs.next()){
-				SearchOutBeans namess = new SearchOutBeans();
-				namess.setId(rs.getInt("ID"));
+				
+				namess.setId(rs.getString("ID"));
 				namess.setLastname(rs.getString("LASTNAME"));
 				namess.setFirstname(rs.getString("FIRSTNAME"));
 				namess.setLsubname(rs.getString("LSUBNAME"));
 				namess.setFsubname(rs.getString("FSUBNAME"));
 				namess.setImage(rs.getString("IMAGE"));
 				namess.setBirthday(rs.getString("BIRTHDAY"));
+				namess.setPlace(rs.getString("PLACE"));
 				namess.setHobby(rs.getString("HOBBY"));
 				namess.setWord(rs.getString("WORD"));
 				

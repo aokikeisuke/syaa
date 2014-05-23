@@ -11,21 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.SearchOutBeans;
 
-@WebServlet("/servlet/SearchOutPersonal/*")
+@WebServlet(urlPatterns = {"/servlet/SearchOutPersonal/*"})
 public class SearchOutPersonal extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getPathInfo();
 		
-		ArrayList<SearchOutBeans> list = beans.SearchOutBeans.info(request.getParameter("request.getPathInfo"));
-		
+		ArrayList<SearchOutBeans> list = beans.SearchOutBeans.info("request.getPathInfo()");
+		System.out.println(request.getPathInfo());
 		request.setAttribute("list" ,list);
 		 
 		
-		 this.getServletContext().getRequestDispatcher("/syaa/JSP/Personal.jsp").forward(request,response);
+		 this.getServletContext().getRequestDispatcher("/JSP/Personal.jsp").forward(request,response);
 		 
 	}
 
