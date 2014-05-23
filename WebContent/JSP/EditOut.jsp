@@ -10,6 +10,7 @@ String place = (String)session.getAttribute("place");
 String hobby = (String)session.getAttribute("hobby");
 String picPath = (String)session.getAttribute("picPath");
 String word = (String)session.getAttribute("word");
+//!!!!!!!!!!!!!!!!!!!!!!!現在26指定
 int id = 26;
 // int id = (Integer)session.getAttribute("id");
 %>
@@ -21,7 +22,12 @@ int id = 26;
 <title>編集確認画面</title>
 </head>
 <body>
-
+<header>
+<a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
+<img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
+width="250" height="47" style="opacity: 1;">
+</a>
+</header>
 
 <p>
 姓:<%=lastname %><br>
