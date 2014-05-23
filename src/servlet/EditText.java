@@ -1,6 +1,3 @@
-
-//RegInText.javaからのほぼコピペ。
-
 package servlet;
 
 import java.io.IOException;
@@ -12,9 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
-
-import beans.RegOutBeans;
 
 @MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
 @WebServlet("/servlet/EditText")
@@ -35,20 +29,12 @@ public class EditText extends HttpServlet {
 				|| "".equals(request.getParameter("firstname"))
 				|| "".equals(request.getParameter("lsubname"))
 				|| "".equals(request.getParameter("fsubname"))) {
-			                                               //  System.out.println("名前とフリガナを入力してください");  
-			                                                 response.getWriter().println("名前とフリガナを入力してください");
+		    System.out.println("名前とフリガナを入力してください");  
+			response.getWriter().println("名前とフリガナを入力してください");
 			response.sendRedirect("/syaa/JSP/EditText.jsp");
 		} else {
 
 			HttpSession session = request.getSession();
-			String ln = request.getParameter("lastname");
-			String fn = request.getParameter("firstname");
-			String sln = request.getParameter("lsubname");
-			String sfn = request.getParameter("fsubname");
-			String bd = request.getParameter("birthday");
-			String pl = request.getParameter("place");
-			String hb = request.getParameter("hobby");
-			String wd = request.getParameter("word");
 
 			session.setAttribute("lastname", request.getParameter("lastname"));
 			session.setAttribute("firstname", request.getParameter("firstname"));
@@ -59,15 +45,7 @@ public class EditText extends HttpServlet {
 			session.setAttribute("hobby", request.getParameter("hobby"));
 			session.setAttribute("word", request.getParameter("word"));
 
-			RegOutBeans regoutbeans = new RegOutBeans();
-			regoutbeans.setFirstname(ln);
-			regoutbeans.setLastname(fn);
-			regoutbeans.setFsubname(sln);
-			regoutbeans.setLsubname(sfn);
-			regoutbeans.setBirthday(bd);
-			regoutbeans.setPlace(pl);
-			regoutbeans.setHobby(hb);
-			regoutbeans.setWord(wd);
+			
 
 			response.sendRedirect("/syaa/JSP/EditImage.jsp");
 
@@ -75,16 +53,3 @@ public class EditText extends HttpServlet {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
