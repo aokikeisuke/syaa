@@ -20,8 +20,8 @@ public class Delete extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		
-		//分からないっす。requestgetParameterってString?
-		int id = Integer.requestgetParameter("id");
+		int id = 10;
+		//int id = Integer.parseInt(request.getParameter("id"));;
 		
 		session.setAttribute("id", id);
 
@@ -30,7 +30,7 @@ public class Delete extends HttpServlet {
 
 		DeleteBeans.DateBaseDelete(deletebeans);
 		
-		response.sendRedirect("/syaa/JSP/Top");
+		response.sendRedirect("/syaa/JSP/Top.jsp");
 
 	}
 

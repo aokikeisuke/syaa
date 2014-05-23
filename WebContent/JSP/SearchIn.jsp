@@ -9,6 +9,12 @@
 </head>
 
 <body>
+<header>
+<a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
+<img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
+width="250" height="47" style="opacity: 1;">
+</a>
+</header>
 	<br> 検索したい社員の名前を入力してください
 	<br>
 	<form method="POST" action="/syaa/servlet/SearchOutSearch">

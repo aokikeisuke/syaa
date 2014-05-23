@@ -10,9 +10,14 @@
 <title>検索結果</title>
 </head>
 <body>
-
+<header>
+<a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
+<img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
+width="250" height="47" style="opacity: 1;">
+</a>
+</header>
 <form method="POST" action="/syaa/JSP/EditText.jsp">
-	<c:forEach var="item" items="${requestScope['list']}">
+	
 	姓：${item.lastname}<br>
 	名：${item.firstname}<br>
 	フリガナ（姓）：${item.lsubname}<br>
@@ -24,6 +29,8 @@
 	一言お願いします：<br>
 	${item.word}<br>
 	
+	
+	<c:forEach var="item" items="${requestScope['list']}">
 	 <input type="hidden" name="lastname" value="${item.lastname} "/>
     <input type="hidden" name="firstname" value="${item.firstname}"/>
     <input type="hidden" name="lsubname" value="${item.lsubname}<"/>
