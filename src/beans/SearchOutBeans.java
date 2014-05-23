@@ -191,10 +191,14 @@ public class SearchOutBeans implements Serializable{
 				db = ds.getConnection();
 				ps = db.prepareStatement("SELECT * FROM employee WHERE ID = ? ORDER BY LSUBNAME,FSUBNAME");
 				SearchOutBeans namess = new SearchOutBeans();
+				
 				namess.setId(id);
+				
+				System.out.println(namess.id);
+				
 				ps.setString(1, namess.id);
 				rs = ps.executeQuery();
-//				     
+				     
 			while(rs.next()){
 				
 				namess.setId(rs.getString("ID"));

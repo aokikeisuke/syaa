@@ -19,8 +19,12 @@ public class SearchOutPersonal extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<SearchOutBeans> list = beans.SearchOutBeans.info("request.getPathInfo()");
-		System.out.println(request.getPathInfo());
+		String id = request.getPathInfo();
+		int pos = id.lastIndexOf("/");
+		id = id.substring(pos + 1);
+		
+		ArrayList<SearchOutBeans> list = beans.SearchOutBeans.info(id);
+		
 		request.setAttribute("list" ,list);
 		 
 		

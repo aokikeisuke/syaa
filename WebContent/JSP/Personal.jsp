@@ -17,7 +17,7 @@ width="250" height="47" style="opacity: 1;">
 </a>
 </header>
 <form method="POST" action="/syaa/JSP/EditText.jsp">
-	
+  <c:forEach var="item" items="${requestScope['list']}">
 	姓：${item.lastname}<br>
 	名：${item.firstname}<br>
 	フリガナ（姓）：${item.lsubname}<br>
@@ -28,7 +28,7 @@ width="250" height="47" style="opacity: 1;">
 	写真：<img src="../Pic/${requestScope['image']} " alt="" width="100" height="100" border="0" /><br>
 	一言お願いします：<br>
 	${item.word}<br>
-	
+  </c:forEach>
 	
 	<c:forEach var="item" items="${requestScope['list']}">
 	 <input type="hidden" name="lastname" value="${item.lastname} "/>
