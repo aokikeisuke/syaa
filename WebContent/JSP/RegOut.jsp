@@ -38,7 +38,8 @@ session.setAttribute("lastname", lastname);
 </p>
 
 <form  method="POST" action="/syaa/servlet/RegOut">
-    <input type="hidden" name="lastname" value="${ requestScope['lastname']} "/>
+ <!--    <input type="hidden" name="lastname" value="${ requestScope['lastname']} "/>--> 
+    <input type="hidden" name="lastname" value="<%=lastname %> "/>
     <input type="hidden" name="firstname" value="<%=firstname %>"/>
     <input type="hidden" name="lsubname" value="<%=lsubname %>"/>
     <input type="hidden" name="fsubname" value="<%=fsubname %>"/>
