@@ -51,8 +51,14 @@ public class RegOut extends HttpServlet {
 			regoutbeans.setWord(wd);
 
 			RegOutBeans.DataBaseInsert(regoutbeans);
+			
+			
+			response.setCharacterEncoding("UTF-8");
+	    	String topalert = "登録完了しました。";
+	    	request.setAttribute("topalert", topalert );
+	    	this.getServletContext().getRequestDispatcher("/JSP/Top.jsp").forward(request,response);   
 // P141  セッションを明示的に破棄
-			response.sendRedirect("/syaa/JSP/Top.jsp");
+//			response.sendRedirect("/syaa/JSP/Top.jsp");
 		}else{
 			response.sendRedirect("/syaa/JSP/RegIn.jsp");
 		}
