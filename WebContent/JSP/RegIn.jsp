@@ -59,12 +59,12 @@ width="250" height="47" style="opacity: 1;">
 	<br>
 	趣味：
 	<br>
-	<input type="text" name="hobby" maxlength = "100"/>
+	<input type="text" name="hobby" maxlength = "200"/>
 	<br>
 	
 	一言お願いします：
 	<br>
-	<input type="text" name="word" maxlength = "100"/>
+	<input type="text" name="word" maxlength = "200"/>
 	<br>
 	<br>
 	<p class="exam1"> ${requestScope['alert1']} </p><br>
