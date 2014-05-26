@@ -32,22 +32,22 @@ width="250" height="47" style="opacity: 1;">
 	*姓：
 	<br>
 	
-	<input type="text" name="lastname" maxlength = "30"/>
+	<input type="text" name="lastname" />
 	
 	
 	<br>
 	*名：
 	<br>
-	<input type="text" name="firstname" maxlength = "30"/>
+	<input type="text" name="firstname" />
 	
 	<br>
 	*フリガナ（姓）：
 	<br>
-	<input type="text" name="lsubname" maxlength = "30"/>
+	<input type="text" name="lsubname" />
 	<br>
 	*フリガナ（名）：
 	<br>
-	<input type="text" name="fsubname" maxlength = "30"/>
+	<input type="text" name="fsubname" />
 	<br>
 	生年月日：
 	<br>
@@ -55,23 +55,27 @@ width="250" height="47" style="opacity: 1;">
 	<br>
 	最寄り駅：
 	<br>
-	<input type="text" name="place" maxlength = "30"/>
+	<input type="text" name="place" />
 	<br>
 	趣味：
 	<br>
-	<input type="text" name="hobby" maxlength = "200"/>
+	<input type="text" name="hobby" />
 	<br>
 	
 	一言お願いします：
 	<br>
-	<input type="text" name="word" maxlength = "200"/>
+	<input type="text" name="word" />
 	<br>
 	<br>
 	写真：<br/>
 	<input type ="file" name="image"  size="75"/><br/>
 	<br>
 	<p class="exam1"> ${requestScope['alert1']} </p><br>
-	<input type="submit" value="次へ">
+	<input type="submit" value="登録">  
+	
+	<c:forEach var = "errorMessage" items = "${requestScope['list']}">
+	    <div>${errorMessage}</div>
+	</c:forEach>
 	</form>
 	
 	

@@ -40,12 +40,18 @@ public class RegIn extends HttpServlet {
         ArrayList<String> list = beans.RegInBeans.errorMessage(
         		request.getParameter("lastname"),request.getParameter("firstname"),
         		request.getParameter("lsubname"),request.getParameter("fsubname"),
-        		request.getParameter("birthday"),request.getParameter("hobby"),request.getParameter("word"));
+        		request.getParameter("birthday"),request.getParameter("place"),
+        		request.getParameter("hobby"),   request.getParameter("word"));
         
         //ここでリストに入ったエラーメッセージをリクエストスコープの変数にセット、それをJSPで動的に受け取る
         
-        
+        if(list.size() > 0){
 		request.setAttribute("list" ,list);
+		this.getServletContext().getRequestDispatcher("/JSP/RegIn.jsp").forward(request, response);
+		return;
+        }
+		 
+		 
 		//ファイルのアップロード処理
 		Part part = request.getPart("image");
 
