@@ -26,7 +26,7 @@ width="250" height="47" style="opacity: 1;">
 <br>
 	　*は必須項目です
 	
-	<form method ="POST" action="/syaa/servlet/RegInText">
+	<form method ="POST" enctype = "multipart/form-data" action="/syaa/servlet/RegIn">
 	
 	<br> 
 	*姓：
@@ -66,6 +66,9 @@ width="250" height="47" style="opacity: 1;">
 	<br>
 	<input type="text" name="word" maxlength = "200"/>
 	<br>
+	<br>
+	写真：<br/>
+	<input type ="file" name="image"  size="75"/><br/>
 	<br>
 	<p class="exam1"> ${requestScope['alert1']} </p><br>
 	<input type="submit" value="次へ">
