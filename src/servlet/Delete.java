@@ -20,8 +20,8 @@ public class Delete extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		
-		int id = 10;
-		//int id = Integer.parseInt(request.getParameter("id"));;
+		
+		int id = Integer.parseInt(request.getParameter("id"));;
 		
 		session.setAttribute("id", id);
 
