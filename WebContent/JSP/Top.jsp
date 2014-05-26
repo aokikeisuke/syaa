@@ -21,7 +21,10 @@ width="250" height="47" style="opacity: 1;">
 		</form>
 		<br>
 		<form method="POST" action="/syaa/servlet/Top">
-			<input type="submit" style="WIDTH: 80px; HEIGHT: 25px" value="社員一覧">
+			<input type="submit" style="WIDTH: 80px; HEIGHT: 25px" value="社員一覧"><br>
+			
+			 ${requestScope['topalert']}
+			
 		</form>
 </div>
 </body>
