@@ -32,22 +32,22 @@ width="250" height="47" style="opacity: 1;">
 	*姓：
 	<br>
 	
-	<input type="text" name="lastname"/>
+	<input type="text" name="lastname" maxlength = "30"/>
 	
 	
 	<br>
 	*名：
 	<br>
-	<input type="text" name="firstname"/>
+	<input type="text" name="firstname" maxlength = "30"/>
 	
 	<br>
 	*フリガナ（姓）：
 	<br>
-	<input type="text" name="lsubname" value = "aoki"/>
+	<input type="text" name="lsubname" maxlength = "30"/>
 	<br>
 	*フリガナ（名）：
 	<br>
-	<input type="text" name="fsubname"/>
+	<input type="text" name="fsubname" maxlength = "30"/>
 	<br>
 	生年月日：
 	<br>
@@ -55,16 +55,16 @@ width="250" height="47" style="opacity: 1;">
 	<br>
 	最寄り駅：
 	<br>
-	<input type="text" name="place" />
+	<input type="text" name="place" maxlength = "30"/>
 	<br>
 	趣味：
 	<br>
-	<input type="text" name="hobby" />
+	<input type="text" name="hobby" maxlength = "100"/>
 	<br>
 	
 	一言お願いします：
 	<br>
-	<input type="text" name="word" />
+	<input type="text" name="word" maxlength = "100"/>
 	<br>
 	<br>
 	<p class="exam1"> ${requestScope['alert1']} </p><br>
