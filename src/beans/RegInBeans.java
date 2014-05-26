@@ -64,18 +64,8 @@ public class RegInBeans {
 			  String error2 = "!!\"フリガナ（性）\"・\"フリガナ（名）\"の入力文字数はそれぞれ３０文字までです";
 			  list.add(error2);
 		  }
-
-<<<<<<< HEAD
-=======
 		  if(place.length() > 100){
 			  String error3 = "!!\"最寄り駅\"        の入力文字数は１００文字までです";
-
-
-
->>>>>>> 3db9cfb95bb273c02fe16e0cece759369ebde11b
-		  if(place.length() > 200){
-			  String error3 = "!!\"最寄り駅\"        の入力文字数は２００文字までです";
-
 			  list.add(error3);
 		  }
 		  if(hobby.length() > 100){
