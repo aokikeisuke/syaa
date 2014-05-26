@@ -17,21 +17,11 @@ public class Delete extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
-		HttpSession session = request.getSession();
-		
-		
-		int id = Integer.parseInt(request.getParameter("id"));;
-		
-		session.setAttribute("id", id);
-
+		int id = Integer.parseInt(request.getParameter("id"));
 		DeleteBeans deletebeans = new DeleteBeans();
 		deletebeans.setId(id);
-
 		DeleteBeans.DateBaseDelete(deletebeans);
-		
 		response.sendRedirect("/syaa/JSP/Top.jsp");
-
 	}
 
 }
