@@ -18,12 +18,14 @@ width="250" height="47" style="opacity: 1;">
 <br>
 		データを削除しますか？<br />
 		<form method="POST" action="/syaa/Delete">
-			 <input type="submit" style="WIDTH: 80px; HEIGHT: 25px"value="はい">
+			 <input type="submit" name="yesno2" style="WIDTH: 80px; HEIGHT: 25px"value="はい">
 			 <input type="hidden" name="id" value="${requestScope['id']}"/>
-		</form>
+		  </form>  
 		<br>
-		<form method="POST" action="/syaa/JSP/Personal.jsp">
-			 <input type="submit" style="WIDTH: 80px; HEIGHT: 25px" value="いいえ">
+		  <form method="POST" action="/syaa/JSP/Personal.jsp">  
+		
+		
+			 <input type="submit" name="yesno2" style="WIDTH: 80px; HEIGHT: 25px" value="いいえ">
 		</form>
 </div>
 </body>
