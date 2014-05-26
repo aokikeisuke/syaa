@@ -34,9 +34,7 @@ function on_mouseover(){
  -->
 <a href = "/syaa/servlet/SearchOutPersonal/${item.id}">
 <img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" />
-<!-- 
-写真のURL指定の仕方を要確認。「+」が必要なのか。。。？
- -->
+
 </a>
 
 </c:forEach>
