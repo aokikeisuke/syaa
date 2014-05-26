@@ -65,7 +65,6 @@ public class RegInBeans {
 			  list.add(error2);
 		  }
 
-
 		  if(place.length() > 200){
 			  String error3 = "!!\"最寄り駅\"        の入力文字数は２００文字までです";
 			  list.add(error3);
