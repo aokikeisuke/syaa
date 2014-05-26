@@ -57,6 +57,14 @@ public class RegIn extends HttpServlet {
 		return;
         }
 		 
+        request.setAttribute("lastname", request.getParameter("lastname"));
+		request.setAttribute("firstname", request.getParameter("firstname"));
+		request.setAttribute("lsubname", request.getParameter("lsubname"));
+		request.setAttribute("fsubname", request.getParameter("fsubname"));
+		request.setAttribute("birthday", request.getParameter("birthday"));
+		request.setAttribute("place", request.getParameter("place"));
+		request.setAttribute("hobby", request.getParameter("hobby"));
+		request.setAttribute("word", request.getParameter("word"));
 		 
 		//ファイルのアップロード処理
 		Part part = request.getPart("image");
@@ -66,14 +74,7 @@ public class RegIn extends HttpServlet {
 			part.write(getServletContext().getRealPath("/Pic") + "/" + name);
 
 			request.setAttribute("image", name);
-			request.setAttribute("lastname", request.getParameter("lastname"));
-			request.setAttribute("firstname", request.getParameter("firstname"));
-			request.setAttribute("lsubname", request.getParameter("lsubname"));
-			request.setAttribute("fsubname", request.getParameter("fsubname"));
-			request.setAttribute("birthday", request.getParameter("birthday"));
-			request.setAttribute("place", request.getParameter("place"));
-			request.setAttribute("hobby", request.getParameter("hobby"));
-			request.setAttribute("word", request.getParameter("word"));
+			
 
 			this.getServletContext().getRequestDispatcher("/JSP/RegOut.jsp").forward(request, response);
 
