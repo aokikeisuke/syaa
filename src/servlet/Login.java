@@ -36,13 +36,19 @@ public class Login extends HttpServlet {
 		if ("シャア".equals(ans)) {
 			response.sendRedirect("http://localhost:8080/syaa/JSP/Top.jsp");
 		} else {
-			PrintWriter out = response.getWriter();
-			out.println("<script type='text/javascript'>");
-			out.println("alert(' invalid password');");
-			out.println("history.back();");
-			out.println("</script>");
-			out.close();
-			response.sendRedirect("http://localhost.8080/syaa/JSP/Login.jsp");
+//			PrintWriter out = response.getWriter();
+//			out.println("<script type='text/javascript'>");
+//			out.println("alert(' invalid password');");
+//			out.println("history.back();");
+//			out.println("</script>");
+//			out.close();
+			//response.sendRedirect("http://localhost.8080/syaa/JSP/Login.jsp");
+			
+			response.setCharacterEncoding("UTF-8");
+        	String loginalert = "正しいパスワードを入力して下さい";
+        	request.setAttribute("loginalert", loginalert );
+			this.getServletContext().getRequestDispatcher("/JSP/Login.jsp").forward(request,response);   
+			
 			return;
 		}
 	}
