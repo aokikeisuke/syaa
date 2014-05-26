@@ -21,8 +21,6 @@ public class EditOut extends HttpServlet {
 		String yesNo = request.getParameter("yesno");
 		
 		if(yesNo.equals("はい")){
-			
-			System.out.println(request.getParameter("image"));
 			String ln = request.getParameter("lastname");
 			String fn = request.getParameter("firstname");
 			String sln = request.getParameter("lsubname");

@@ -121,8 +121,8 @@ public class EditBeans implements Serializable {
 					+ "WHERE ID = ?");
 			ps.setString(1, editbeans.getLastname());
 			ps.setString(2, editbeans.getFirstname());
-			ps.setString(3, editbeans.getFsubname());
-			ps.setString(4, editbeans.getLsubname());
+			ps.setString(3, editbeans.getLsubname());
+			ps.setString(4, editbeans.getFsubname());
 			ps.setString(5, editbeans.getBirthday());
 			ps.setString(6, editbeans.getPlace());
 			ps.setString(7, editbeans.getHobby());

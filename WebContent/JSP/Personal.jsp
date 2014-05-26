@@ -17,11 +17,11 @@
 width="250" height="47" style="opacity: 1;">
 </a>
 </header>
-</div>
+
 <form method="POST" action="/syaa/servlet/Personal">
 
   <c:forEach var="item" items="${requestScope['list']}">
-
+<br>
 	姓：${item.lastname}<br>
 	名：${item.firstname}<br>
 	フリガナ（姓）：${item.lsubname}<br>
@@ -37,14 +37,14 @@ width="250" height="47" style="opacity: 1;">
 	<c:forEach var="item" items="${requestScope['list']}">
 	<input type="hidden" name="lastname" value="${item.lastname} "/>
     <input type="hidden" name="firstname" value="${item.firstname}"/>
-    <input type="hidden" name="lsubname" value="${item.lsubname}<"/>
+    <input type="hidden" name="lsubname" value="${item.lsubname}"/>
     <input type="hidden" name="fsubname" value="${item.fsubname}"/>
     <input type="hidden" name="birthday" value="${item.birthday}"/>
     <input type="hidden" name="place" value="${item.place}"/>
     <input type="hidden" name="hobby" value="${item.hobby}"/>
     <input type="hidden" name="image" value="${requestScope['image']}"/>
     <input type="hidden" name="word" value="${item.word}"/>
-    <input type="hidden" name="word" value="${item.id}"/>
+    <input type="hidden" name="id" value="${item.id}"/>
 	
 	</c:forEach>
 	
@@ -52,6 +52,6 @@ width="250" height="47" style="opacity: 1;">
 <input type="submit" name="choice" value="削除">
 </form>
 
-
+</div>
 </body>
 </html>

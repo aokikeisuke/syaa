@@ -19,29 +19,28 @@ width="250" height="47" style="opacity: 1;">
 </div>
 		<form method="POST" action="/syaa/servlet/EditText">
 		
-  <c:forEach var="item" items="${requestScope['list']}">
 		<br>
 			　*は必須項目です <br> 
 			<br>
-			*姓： <br> 
-			<input type="text" name="lastname" value="${item.lastname}"/>
+			*姓：<br>
+			<input type="text" name="lastname" value="${requestScope['lastname']}"/>
 			<br> 
-			*名： <br> 
-			<input type="text" name="firstname" value="${item.firstname}"/> <br>
-			*フリガナ（姓）： <br> 
-			<input type="text" name="lsubname" value="${item.lsubname}"/> <br>
-			*フリガナ（名）： <br> 
-			<input type="text" name="fsubname" value="${item.fsubname}"/> <br>
-			生年月日： <br> 
-			<input type="date" name="birthday" value="${item.birthday}"/> <br>
+			*名：<br> 
+			<input type="text" name="firstname" value="${requestScope['firstname']}"/> <br>
+			*フリガナ（姓）：<br> 
+			<input type="text" name="lsubname" value="${requestScope['lsubname']}"/> <br>
+			*フリガナ（名）：<br> 
+			<input type="text" name="fsubname" value="${requestScope['fsubname']}"/> <br>
+			生年月日：<br> 
+			<input type="date" name="birthday" value="${requestScope['birthday']}"/> <br>
 			最寄り駅： <br> 
-			<input type="text" name="place" value="${item.place}"/> <br> 
+			<input type="text" name="place" value="${requestScope['place']}"/> <br> 
 			趣味： <br>
-			<input type="text" name="hobby" value="${item.hobby}"/> <br> 
+			<input type="text" name="hobby" value="${requestScope['hobby']}"/> <br> 
 			一言お願いします： <br>
-			<input type="text" name="word"  value="${item.word}"/> <br> <br>
+			<input type="text" name="word"  value="${requestScope['word']}"/> <br> <br>
+			<input type="hidden" name="id" value="${requestScope['id']}"/>
 			<input type="submit" value="次へ"> 
-			</c:forEach>
 		</form>
 </body>
 
