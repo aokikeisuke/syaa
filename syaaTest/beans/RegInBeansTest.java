@@ -16,8 +16,6 @@ public class RegInBeansTest {
 			str.append("あ");
 		}
 		
-		int expected = 0;
-		
 		RegInBeans regben = new RegInBeans();
 		String msg = new String(str);
 		regben.setLastname(msg);
@@ -29,6 +27,8 @@ public class RegInBeansTest {
 		regben.setWord(msg);
 		
 		ArrayList<String> list = regben.checkStrLength();
+		
+		int expected = 0;
 		int actual = list.size();
 		assertThat(actual, is(expected));
 	}
