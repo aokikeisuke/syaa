@@ -17,8 +17,8 @@ width="250" height="47" style="opacity: 1;">
 </header>
 <br>
 		私たちのチームの名前は？<br />
-		<form method="POST" action="/syaa/Login">
-			<input type="text" name="answer" autocomplete="off"/> <input type="submit" value="ログイン">
+		<form method="POST" action="/syaa/Login" autocomplete="off">
+			<input type="text" name="answer" /> <input type="submit" value="ログイン">
 
 		</form>
 	</div>

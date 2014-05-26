@@ -44,6 +44,7 @@ width="250" height="47" style="opacity: 1;">
     <input type="hidden" name="hobby" value="${item.hobby}"/>
     <input type="hidden" name="image" value="${requestScope['image']}"/>
     <input type="hidden" name="word" value="${item.word}"/>
+    <input type="hidden" name="word" value="${item.id}"/>
 	
 	</c:forEach>
 	

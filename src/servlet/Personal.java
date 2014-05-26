@@ -30,10 +30,23 @@ public class Personal extends HttpServlet {
 			String hb = request.getParameter("hobby");
 			String im = request.getParameter("image");
 			String wd = request.getParameter("word");
-			
+			String id = request.getParameter("id");
 			
 			response.sendRedirect("/syaa/JSP/Edit.jsp");
 		}else{
+			String ln = request.getParameter("lastname");
+			String fn = request.getParameter("firstname");
+			String sln = request.getParameter("lsubname");
+			String sfn = request.getParameter("fsubname");
+			String bd = request.getParameter("birthday");
+			String pl = request.getParameter("place");
+			String hb = request.getParameter("hobby");
+			String im = request.getParameter("image");
+			String wd = request.getParameter("word");
+			String id =request.getParameter("id");
+			
+			
+			
 			response.sendRedirect("/syaa/JSP/Delete.jsp");
 		}
 		
