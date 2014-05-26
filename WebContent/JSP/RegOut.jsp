@@ -34,8 +34,8 @@ width="250" height="47" style="opacity: 1;">
 誕生日:${requestScope['birthday']}<br>
 最寄り駅:${requestScope['place']}<br>
 趣味:${requestScope['hobby']}<br>
-写真:<img src="../Pic/${requestScope['image']} " alt="" width="100" height="100" border="0" /><br>
 一言お願いします:${requestScope['word']}<br>
+写真:<img src="../Pic/${requestScope['image']} " alt="" width="100" height="100" border="0" /><br>
 </p>
 以上の内容で登録しますか？
 <br>
