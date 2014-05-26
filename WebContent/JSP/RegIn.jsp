@@ -32,7 +32,7 @@ width="250" height="47" style="opacity: 1;">
 	*姓：
 	<br>
 	
-	<input type="text" name="lastname" />
+	<input type="text" name="lastname" value=${"lastname"}/>
 	
 	
 	<br>

@@ -65,16 +65,25 @@ public class RegInBeans {
 			  list.add(error2);
 		  }
 
+<<<<<<< HEAD
+=======
+		  if(place.length() > 100){
+			  String error3 = "!!\"最寄り駅\"        の入力文字数は１００文字までです";
+
+
+
+>>>>>>> 3db9cfb95bb273c02fe16e0cece759369ebde11b
 		  if(place.length() > 200){
 			  String error3 = "!!\"最寄り駅\"        の入力文字数は２００文字までです";
+
 			  list.add(error3);
 		  }
-		  if(hobby.length() > 200){
-			  String error4 = "!!\"趣味\"         の入力文字数は２００文字までです";
+		  if(hobby.length() > 100){
+			  String error4 = "!!\"趣味\"         の入力文字数は１００文字までです";
 			  list.add(error4);
 		  }
-		  if(word.length() > 200){
-			  String error5 = "!!\"一言お願いします\"     の入力文字数は２００文字までです";
+		  if(word.length() > 100){
+			  String error5 = "!!\"一言お願いします\"     の入力文字数は１００文字までです";
 			  list.add(error5);
 		  }
 		  
