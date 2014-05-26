@@ -21,36 +21,14 @@ public class EditImage extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		    Part part = request.getPart("image");
-	        
-		//if (!(null == part )) {      || "".equals(image)
-			
-			
-			
 			String name = this.getFileName(part);
 			if (this.isValidFile(name)) {
 				part.write(getServletContext().getRealPath("/Pic") + "/" + name);
-//			System.out.println(getServletContext().getRealPath("/Pic"));
-				HttpSession session = request.getSession();
-				//session.setAttribute("image", request.getParameter("image"));
-				//session.setAttribute("picPath",getServletContext().getRealPath("/Pic") + "/" + name);
 				request.setAttribute("image", name );
 				this.getServletContext().getRequestDispatcher("/JSP/EditOut.jsp").forward(request,response);
-				//response.sendRedirect("/syaa/JSP/RegOut.jsp");
-				
-				//	System.out.println(name);
-			
-
 			} else {
 	            if("".equals(name)){
-//	           	HttpSession session = request.getSession();
-//            	request.setAttribute("lastname", session.getAttribute("lastname") );
-//	            	request.setAttribute("name", name );
-//	            	request.setAttribute("name", name );
-//	            	request.setAttribute("name", name );
 	            	this.getServletContext().getRequestDispatcher("/JSP/EditOut.jsp").forward(request,response);
-//	            	response.sendRedirect("/syaa/JSP/RegOut.jsp");
-				
-			
 	            }else{
 	            	response.setCharacterEncoding("UTF-8");
 	            	String alert = "アップロードできない種類のファイルです";

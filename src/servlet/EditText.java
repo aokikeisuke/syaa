@@ -39,6 +39,7 @@ public class EditText extends HttpServlet {
 			session.setAttribute("place", request.getParameter("place"));
 			session.setAttribute("hobby", request.getParameter("hobby"));
 			session.setAttribute("word", request.getParameter("word"));
+			session.setAttribute("id", request.getParameter("id"));
 
 			
 

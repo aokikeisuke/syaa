@@ -132,6 +132,7 @@ public class SearchOutBeans implements Serializable{
 				DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/test");
 				db = ds.getConnection();
 				ps = db.prepareStatement("SELECT * FROM employee ORDER BY LSUBNAME,FSUBNAME");
+				
 				rs = ps.executeQuery();
 //				     while(rs.next()){
 //				    	 TopBeans topbeans = new TopBeans();

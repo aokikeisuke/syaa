@@ -10,9 +10,7 @@ String place = (String)session.getAttribute("place");
 String hobby = (String)session.getAttribute("hobby");
 String picPath = (String)session.getAttribute("picPath");
 String word = (String)session.getAttribute("word");
-//!!!!!!!!!!!!!!!!!!!!!!!現在26指定
-int id = 26;
-// int id = (Integer)session.getAttribute("id");
+String id = (String)session.getAttribute("id");
 %>
 
 <!DOCTYPE html>
