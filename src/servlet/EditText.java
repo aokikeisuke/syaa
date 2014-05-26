@@ -19,11 +19,6 @@ public class EditText extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		// System.out.println("lastname: " + request.getParameter("lastname"));
-		// System.out.println("firstname: " +
-		// request.getParameter("firstname"));
-		// System.out.println("lsubname: " + request.getParameter("lsubname"));
-		// System.out.println("fsubname: " + request.getParameter("fsubname"));
         request.setCharacterEncoding("UTF-8");
 		if ("".equals(request.getParameter("lastname"))
 				|| "".equals(request.getParameter("firstname"))

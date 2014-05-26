@@ -18,7 +18,7 @@ width="250" height="47" style="opacity: 1;">
 </a>
 </header>
 </div>
-<form method="POST" action="/syaa/JSP/EditText.jsp">
+<form method="POST" action="/syaa/servlet/Personal">
 
   <c:forEach var="item" items="${requestScope['list']}">
 
@@ -29,16 +29,13 @@ width="250" height="47" style="opacity: 1;">
 	誕生日：${item.birthday}<br>
 	最寄り駅：${item.place}<br>
 	趣味：${item.hobby}<br>
-
-
 	写真：<img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" /><br>
-
 	一言お願いします：<br>
 	${item.word}<br>
   </c:forEach>
 	
 	<c:forEach var="item" items="${requestScope['list']}">
-	 <input type="hidden" name="lastname" value="${item.lastname} "/>
+	<input type="hidden" name="lastname" value="${item.lastname} "/>
     <input type="hidden" name="firstname" value="${item.firstname}"/>
     <input type="hidden" name="lsubname" value="${item.lsubname}<"/>
     <input type="hidden" name="fsubname" value="${item.fsubname}"/>
@@ -49,7 +46,9 @@ width="250" height="47" style="opacity: 1;">
     <input type="hidden" name="word" value="${item.word}"/>
 	
 	</c:forEach>
-	<input type="submit" value="編集">
+	
+<input type="submit" name="choice" value="編集">
+<input type="submit" name="choice" value="削除">
 </form>
 
 
