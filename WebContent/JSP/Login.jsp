@@ -9,6 +9,8 @@
 <style type="text/css">
 p.exam1 {color: #ff0000; font-weight:bold}
 </style>
+
+
 </head>
 
 <body>
@@ -22,7 +24,7 @@ width="250" height="47" style="opacity: 1;">
 <br>
 		私たちのチームの名前は？<br />
 		<form method="POST" action="/syaa/Login" autocomplete="off">
-			<input type="text" name="answer" /> <input type="submit" value="ログイン">
+			<input type="text" name="answer" /> <input type="submit" value="ログイン" >
 		<p class="exam1"> ${requestScope['loginalert']} </p><br>
 		</form>
 	</div>
