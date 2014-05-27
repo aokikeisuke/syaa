@@ -71,11 +71,11 @@ width="250" height="47" style="opacity: 1;">
 	写真：<br/>
 	<input type ="file" name="image"  size="75"/><br/>
 	<br>
-	<p class="exam1"> ${requestScope['alert1']} </p><br>
-	<input type="submit" value="登録">  
 	
+	<input type="submit" value="登録">  
+	<p class="exam1"> ${requestScope['alert1']} </p><br>
 	<c:forEach var = "errorMessage" items = "${requestScope['list']}">
-	    <div>${errorMessage}</div>
+	    <div  class="exam1">${errorMessage}</div>
 	</c:forEach>
 	</form>
 	
