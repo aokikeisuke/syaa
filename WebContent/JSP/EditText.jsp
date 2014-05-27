@@ -17,7 +17,7 @@ width="250" height="47" style="opacity: 1;">
 </a>
 </header>
 </div>
-		<form method="POST" action="/syaa/servlet/EditText">
+		<form method="POST" enctype = "multipart/form-data" action="/syaa/servlet/EditText">
 		
 		<br>
 			　*は必須項目です <br> 
@@ -39,8 +39,18 @@ width="250" height="47" style="opacity: 1;">
 			<input type="text" name="hobby" value="${requestScope['hobby']}"/> <br> 
 			一言お願いします： <br>
 			<input type="text" name="word"  value="${requestScope['word']}"/> <br> <br>
+			写真：<br>
+	        <input type ="file" name="image"  size="75">
+	        
 			<input type="hidden" name="id" value="${requestScope['id']}"/>
-			<input type="submit" value="次へ"> 
+			
+			<p class="exam1"> ${requestScope['alert1']} </p><br>
+			<input type="submit" value="編集"> 
+			
+			<c:forEach var = "errorMessage" items = "${requestScope['list']}">
+	    <div>${errorMessage}</div>
+	        </c:forEach>
+	        
 		</form>
 </body>
 

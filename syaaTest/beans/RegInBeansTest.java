@@ -26,6 +26,7 @@ public class RegInBeansTest {
 		regben.setHobby(msg);
 		regben.setWord(msg);
 		
+		
 		ArrayList<String> list = regben.checkStrLength();
 		
 		int expected = 0;

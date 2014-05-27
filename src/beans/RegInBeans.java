@@ -57,6 +57,7 @@ public class RegInBeans {
 	public  ArrayList<String> checkStrLength(){
 		
 		
+		
 		  ArrayList<String> list = new ArrayList<String>();
 		  
 		  if(this.lastname.length() > 30 || this.firstname.length() > 30){
