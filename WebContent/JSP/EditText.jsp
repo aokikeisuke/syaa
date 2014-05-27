@@ -6,17 +6,17 @@
 <head>
 <meta charset="UTF-8" />
 <title>編集画面</title>
+<link rel="stylesheet" href="/syaa/css/text.css" type="text/css" />
+<style type="text/css">
+p.exam1 {color: #ff0000; font-weight:bold}
+</style>
 </head>
-
-<body>
-<div style="text-align:center">
+<body class="background" style="text-align:center">
 <header>
-<a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
-<img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
-width="250" height="47" style="opacity: 1;">
+<a href="/syaa/JSP/Top.jsp"> <br>
+<img src="/syaa/Pic/casley_logo.png">
 </a>
 </header>
-</div>
 		<form method="POST" enctype = "multipart/form-data" action="/syaa/servlet/EditText">
 		
 		<br>
@@ -48,7 +48,7 @@ width="250" height="47" style="opacity: 1;">
 			<input type="submit" value="編集"> 
 			
 			<c:forEach var = "errorMessage" items = "${requestScope['list']}">
-	    <div>${errorMessage}</div>
+	     <p class="exam1">${errorMessage}</p>
 	        </c:forEach>
 	        
 		</form>

@@ -6,13 +6,12 @@
 <head>
 <meta charset="UTF-8" />
 <title>検索入力画面</title>
+<link rel="stylesheet" href="/syaa/css/text.css" type="text/css" />
 </head>
-<body>
-<div style="text-align:center">
+<body class="background" style="text-align:center">
 <header>
-<a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
-<img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
-width="250" height="47" style="opacity: 1;">
+<a href="/syaa/JSP/Top.jsp"> <br>
+<img src="/syaa/Pic/casley_logo.png">
 </a>
 </header>
 <br>
@@ -22,17 +21,14 @@ width="250" height="47" style="opacity: 1;">
 	<input type="text" name = "search"  value = "${requestScope['keyWord']}">
 	<input type="submit" value="検索">
 </form>
-<div>
 検索結果は ${requestScope['objNum']}件です
-</div>
-</div>
 <c:forEach var="item" items="${requestScope['list']}">
 
 <a href = "/syaa/servlet/SearchOutPersonal/${item.id}">
 <li>${fn:escapeXml(item.allname)}
 </a>
 <a href = "/syaa/servlet/SearchOutPersonal/${item.id}">
-<img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" />
+<img src="/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" />
 
 </a>
 

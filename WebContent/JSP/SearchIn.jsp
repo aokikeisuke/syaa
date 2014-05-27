@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>検索入力画面</title>
-<link rel="stylesheet" href="../css/text.css" type="text/css" />
+<link rel="stylesheet" href="/syaa/css/text.css" type="text/css" />
 </head>
 <body class="background" style="text-align:center">
 
@@ -27,7 +27,7 @@
 
 	<tr>
 		<td align="right"><a href="/syaa/servlet/SearchOutPersonal/${item.id}">${fn:escapeXml(item.name)}</a></td>
-		<td><a href="/syaa/servlet/SearchOutPersonal/${item.id}"><img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="75"height="75" border="0" /></a></td>
+		<td><a href="/syaa/servlet/SearchOutPersonal/${item.id}"><img src="/syaa/Pic/${item.image}" alt="" width="75"height="75" border="0" /></a></td>
 	</tr>
 
 	</c:forEach>
