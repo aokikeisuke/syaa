@@ -40,7 +40,7 @@ width="250" height="47" style="opacity: 1;">
 以上の内容で登録しますか？
 <br>
 <form  method="POST" action="/syaa/servlet/RegOut">
- <!--    <input type="hidden" name="lastname" value="${ requestScope['lastname']} "/>--> 
+ <!--    <input type="hidden" name="lastname" value="${ requestScope['lastname']} "/> --> 
     <input type="hidden" name="lastname" value="${requestScope['lastname']} "/>
     <input type="hidden" name="firstname" value="${requestScope['firstname']}"/>
     <input type="hidden" name="lsubname" value="${requestScope['lsubname']}"/>
