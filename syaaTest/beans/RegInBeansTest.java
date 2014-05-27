@@ -9,33 +9,7 @@ import org.junit.Test;
 
 public class RegInBeansTest {
 
-	@Test
-	public void 入力がすべてのフォームで制限いっぱいの３０文字＿返るエラー１つ() {
-		//フォームに入力される文字列が３０文字と仮定
-		StringBuilder str = new StringBuilder();
-		for(int i = 0 ; i < 30 ; i++){
-			str.append("あ");
-		}
-		
-		//オブジェクトのパラメータに文字列をセット
-		RegInBeans regben = new RegInBeans();
-		String msg = new String(str);
-		regben.setLastname(msg);
-		regben.setFirstname(msg);
-		regben.setLsubname(msg);
-		regben.setFsubname(msg);
-		regben.setPlace(msg);
-		regben.setHobby(msg);
-		regben.setWord(msg);
-		
-		//制限文字数を超えたパラメータの数に対応したエラーメッセージをlistに格納
-		ArrayList<String> list = regben.checkStrLength();
-		
-		//エラーメッセージの数が正しいかをチェック
-		int expected = 0;
-		int actual = list.size();
-		assertThat(actual, is(expected));
-	}
+	
     @Test
 	public void lastnameの文字数のみ３１文字以上＿返るエラー１つ() {
     	//フォームに入力される文字列が３０文字と仮定

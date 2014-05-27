@@ -151,7 +151,12 @@ public class SearchOutBeans implements Serializable{
 				namess.setFsubname(rs.getString("FSUBNAME"));
 				namess.setImage(rs.getString("IMAGE"));
 				
-				String fullName =  namess.allname + namess.lsubname + namess.fsubname; 
+				String subFullName =  namess.lastname + namess.firstname + namess.lsubname + namess.fsubname;
+				
+				String fullName = subFullName;
+				fullName = fullName.replaceAll("　","");
+				fullName = fullName.replaceAll("\u0020","");
+				
 				if(fullName.matches(".*" + name +".*") ){
 					list.add(namess);
 					
