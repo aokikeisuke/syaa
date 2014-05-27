@@ -21,17 +21,18 @@
 	<input type="text" name = "search"  value = "${requestScope['keyWord']}">
 	<input type="submit" value="検索">
 </form>
+<br>
 検索結果は ${requestScope['objNum']}件です
-<c:forEach var="item" items="${requestScope['list']}">
+<br>
+<table align="center">
+	<c:forEach var="item" items="${requestScope['list']}">
 
-<a href = "/syaa/servlet/SearchOutPersonal/${item.id}">
-<li>${fn:escapeXml(item.allname)}
-</a>
-<a href = "/syaa/servlet/SearchOutPersonal/${item.id}">
-<img src="/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" />
+	<tr>
+		<td align="right"><a href="/syaa/servlet/SearchOutPersonal/${item.id}">${fn:escapeXml(item.allname)}</a></td>
+		<td><a href="/syaa/servlet/SearchOutPersonal/${item.id}"><img src="/syaa/Pic/${item.image}" alt="" width="75"height="75" border="0" /></a></td>
+	</tr>
 
-</a>
-
-</c:forEach>
+	</c:forEach>
+</table>
 
 </body>

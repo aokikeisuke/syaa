@@ -22,7 +22,7 @@
   <c:forEach var="item" items="${requestScope['list']}">
 <br>
 
-<table border=1 align="center" bgcolor="white">
+<table border=1 align="center" bgcolor="#fff5ee">
 <tr>
 	<td>名前</td><td>（姓）${item.lastname}</td><td>（名）${item.firstname}</td>
 	<td rowspan="4"><img src="/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" /></td>
