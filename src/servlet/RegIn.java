@@ -28,6 +28,7 @@ public class RegIn extends HttpServlet {
 				|| "".equals(request.getParameter("firstname"))
 				|| "".equals(request.getParameter("lsubname"))
 				|| "".equals(request.getParameter("fsubname"))) {
+			
 			response.setCharacterEncoding("UTF-8");
 			String alert1 = "名前を入力して下さい。";
 			request.setAttribute("alert1", alert1);
