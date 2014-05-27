@@ -21,12 +21,14 @@ public class Delete extends HttpServlet {
 		
 		
 		
-		
 		int id = Integer.parseInt(request.getParameter("id"));
 		DeleteBeans deletebeans = new DeleteBeans();
 		deletebeans.setId(id);
 		DeleteBeans.DateBaseDelete(deletebeans);
-		response.sendRedirect("/syaa/JSP/Top.jsp");
+		request.setAttribute("msg", "削除完了");
+		
+		this.getServletContext().getRequestDispatcher("/JSP/Top.jsp").forward(request, response);
+	
 	
 
 }
