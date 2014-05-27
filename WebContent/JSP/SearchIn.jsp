@@ -6,10 +6,9 @@
 <head>
 <meta charset="UTF-8" />
 <title>検索入力画面</title>
-<link rel="stylesheet" href="../Javascript/text.css" type="text/css" />
+<link rel="stylesheet" href="../css/text.css" type="text/css" />
 </head>
-<body>
-<div class="background" style="text-align:center">
+<body class="background" style="text-align:center">
 
 <header>
 <a href="/syaa/JSP/Top.jsp"> <br>
@@ -33,6 +32,5 @@
 
 	</c:forEach>
 </table>
-</div>
 </body>
 </html>
