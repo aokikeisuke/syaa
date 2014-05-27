@@ -160,7 +160,7 @@ public class SearchOutBeans implements Serializable{
 				if(fullName.matches(".*" + name +".*") ){
 					list.add(namess);
 					
-					
+				
 				}
 				
 			}		
