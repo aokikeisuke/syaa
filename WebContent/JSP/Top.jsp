@@ -6,16 +6,15 @@
 <meta charset="UTF-8" />
 
 <title>トップ画面</title>
+<link rel="stylesheet" href="../css/text.css" type="text/css" />
 </head>
-<body>
-<div style="text-align:center">
+<body class="background" style="text-align:center">
 <header>
-<a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
-<img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
-width="250" height="47" style="opacity: 1;">
+<a href="/syaa/JSP/Top.jsp"> <br>
+<img src="/syaa/Pic/casley_logo.png">
 </a>
 </header>
-		<form method="POST" action="http://localhost:8080/syaa/JSP/RegIn.jsp">
+		<form method="POST" action="syaa/JSP/RegIn.jsp">
 		<br>
 			<input type="submit" style="WIDTH: 80px; HEIGHT: 25px" value="新規登録" >
 		</form>
@@ -26,7 +25,6 @@ width="250" height="47" style="opacity: 1;">
 			 ${requestScope['topalert']}
 			
 		</form>
-</div>
 </body>
 
 </html>
