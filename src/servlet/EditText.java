@@ -14,7 +14,7 @@ import javax.servlet.http.Part;
 
 import beans.RegInBeans;
 
-@MultipartConfig(location = "getServletConfig().getRealPath('/syaa/WEB-INF/instancePic')", maxFileSize = 16777215L)
+@MultipartConfig(maxFileSize = 16777215L)
 @WebServlet("/servlet/EditText")
 public class EditText extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -31,6 +31,19 @@ public class EditText extends HttpServlet {
 			response.setCharacterEncoding("UTF-8");
 			String alert1 = "名前を入力して下さい。";
 			request.setAttribute("alert1", alert1);
+			
+			request.setAttribute("lastname", request.getParameter("lastname"));
+			request.setAttribute("firstname", request.getParameter("firstname"));
+			request.setAttribute("lsubname", request.getParameter("lsubname"));
+			request.setAttribute("fsubname", request.getParameter("fsubname"));
+			request.setAttribute("birthday", request.getParameter("birthday"));
+			request.setAttribute("place", request.getParameter("place"));
+			request.setAttribute("hobby", request.getParameter("hobby"));
+			request.setAttribute("word", request.getParameter("word"));
+//			HttpSession session = request.getSession();
+//			session.setAttribute("id", request.getParameter("id"));
+			request.setAttribute("id", request.getParameter("id"));
+			
 			this.getServletContext().getRequestDispatcher("/JSP/EditText.jsp").forward(request, response);
 			return;
 		} 
@@ -52,6 +65,18 @@ public class EditText extends HttpServlet {
         
         if(list.size() > 0){
 		request.setAttribute("list" ,list);
+		request.setAttribute("lastname", request.getParameter("lastname"));
+		request.setAttribute("firstname", request.getParameter("firstname"));
+		request.setAttribute("lsubname", request.getParameter("lsubname"));
+		request.setAttribute("fsubname", request.getParameter("fsubname"));
+		request.setAttribute("birthday", request.getParameter("birthday"));
+		request.setAttribute("place", request.getParameter("place"));
+		request.setAttribute("hobby", request.getParameter("hobby"));
+		request.setAttribute("word", request.getParameter("word"));
+//		HttpSession session = request.getSession();
+//		session.setAttribute("id", request.getParameter("id"));
+		request.setAttribute("id", request.getParameter("id"));
+		
 		this.getServletContext().getRequestDispatcher("/JSP/EditText.jsp").forward(request, response);
 		return;
         }
@@ -64,7 +89,10 @@ public class EditText extends HttpServlet {
 		request.setAttribute("place", request.getParameter("place"));
 		request.setAttribute("hobby", request.getParameter("hobby"));
 		request.setAttribute("word", request.getParameter("word"));
-		 
+//		HttpSession session = request.getSession();
+//		session.setAttribute("id", request.getParameter("id"));
+		request.setAttribute("id", request.getParameter("id"));
+		
 		//ファイルのアップロード処理
 		Part part = request.getPart("image");
 
