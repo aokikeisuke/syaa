@@ -23,15 +23,15 @@ width="250" height="47" style="opacity: 1;">
 		 <input type="submit" value="検索">
 	</form>
 </div>
-
+<table border="1" align="center">
 	<c:forEach var="item" items="${requestScope['list']}">
 	<a href="/syaa/servlet/SearchOutPersonal/${item.id}"> <br>
-<table border="1">
+
 <tr>
-<td>${fn:escapeXml(item.name)}</td><td><img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100"height="100" border="0" /></td>
+<td align="right">${fn:escapeXml(item.name)}</td><td><img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="75"height="75" border="0" /></td>
 </tr>
-</table>
+
 </a>
 	</c:forEach>
-
+</table>
 </body>
