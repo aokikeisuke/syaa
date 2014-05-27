@@ -12,8 +12,8 @@
 </head>
 <body class="background" style="text-align:center">
 <header>
-<a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
-<img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
+<a href="/syaa/JSP/Top.jsp"> <br>
+<img src="/syaa/Pic/casley_logo.png" 
 width="250" height="47" style="opacity: 1;">
 </a>
 </header>
@@ -26,7 +26,7 @@ width="250" height="47" style="opacity: 1;">
 <table border=1 align="center" bgcolor="white">
 <tr>
 	<td>名前</td><td>（姓）${item.lastname}</td><td>（名）${item.firstname}</td>
-	<td rowspan="4"><img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" /></td>
+	<td rowspan="4"><img src="/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" /></td>
 	</tr>
 	<tr>
 	<td>フリガナ</td><td>（セイ）${item.lsubname}</td><td>（メイ）${item.fsubname}</td>

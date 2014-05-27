@@ -27,7 +27,7 @@
 
 	<tr>
 		<td align="right"><a href="/syaa/servlet/SearchOutPersonal/${item.id}">${fn:escapeXml(item.name)}</a></td>
-		<td><a href="/syaa/servlet/SearchOutPersonal/${item.id}"><img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="75"height="75" border="0" /></a></td>
+		<td><a href="/syaa/servlet/SearchOutPersonal/${item.id}"><img src="/syaa/Pic/${item.image}" alt="" width="75"height="75" border="0" /></a></td>
 	</tr>
 
 	</c:forEach>

@@ -9,8 +9,8 @@
 </head>
 <body class="background" style="text-align:center">
 	<header>
-<a href="http://localhost:8080/syaa/JSP/Top.jsp"> <br>
-<img src="http://www.casleyconsulting.co.jp/wp-content/themes/casleyconsulting/images/header_logo.png" 
+<a href="/syaa/JSP/Top.jsp"> <br>
+<img src="/syaa/Pic/casley_logo.png" 
 width="250" height="47" style="opacity: 1;">
 </a>
 </header>

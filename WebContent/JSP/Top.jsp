@@ -14,7 +14,7 @@
 <img src="/syaa/Pic/casley_logo.png">
 </a>
 </header>
-		<form method="POST" action="syaa/JSP/RegIn.jsp">
+		<form method="POST" action="/syaa/JSP/RegIn.jsp">
 		<br>
 			<input type="submit" style="WIDTH: 80px; HEIGHT: 25px" value="新規登録" >
 		</form>
