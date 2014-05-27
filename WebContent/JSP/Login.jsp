@@ -23,5 +23,4 @@ p.exam1 {color: #ff0000; font-weight:bold}
 		<p class="exam1"> ${requestScope['loginalert']} </p><br>
 		</form>
 </body>
-
 </html>

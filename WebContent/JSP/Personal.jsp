@@ -8,13 +8,12 @@
 <head>
 <meta charset="UTF-8" />
 <title>検索結果</title>
-<link rel="stylesheet" href="../css/text.css" type="text/css" />
+<link rel="stylesheet" href="../css/text.css" type="text/css"/>
 </head>
 <body class="background" style="text-align:center">
 <header>
 <a href="/syaa/JSP/Top.jsp"> <br>
-<img src="/syaa/Pic/casley_logo.png" 
-width="250" height="47" style="opacity: 1;">
+<img src="/syaa/Pic/casley_logo.png">
 </a>
 </header>
 
