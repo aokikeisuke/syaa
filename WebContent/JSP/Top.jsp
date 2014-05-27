@@ -6,7 +6,7 @@
 <meta charset="UTF-8" />
 
 <title>トップ画面</title>
-<link rel="stylesheet" href="../css/text.css" type="text/css" />
+<link rel="stylesheet" href="/syaa/css/text.css" type="text/css" />
 </head>
 <body class="background" style="text-align:center">
 <header>

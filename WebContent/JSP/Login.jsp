@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>ログイン画面</title>
-<link rel="stylesheet" href="../css/text.css" type="text/css" />
+<link rel="stylesheet" href="/syaa/css/text.css" type="text/css" />
 <style type="text/css">
 p.exam1 {color: #ff0000; font-weight:bold}
 </style>

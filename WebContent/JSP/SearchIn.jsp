@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>検索入力画面</title>
-<link rel="stylesheet" href="../css/text.css" type="text/css" />
+<link rel="stylesheet" href="/syaa/css/text.css" type="text/css" />
 </head>
 <body class="background" style="text-align:center">
 
