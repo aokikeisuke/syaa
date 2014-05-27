@@ -27,6 +27,8 @@ public class SearchOutSearch extends HttpServlet {
 		 ArrayList<SearchOutBeans> list = beans.SearchOutBeans.names(name);
 		 request.setAttribute("list" ,list);
 		 
+		 request.setAttribute("keyWord" ,request.getParameter("search"));
+		 
 		
 		 
 		 this.getServletContext().getRequestDispatcher("/JSP/SearchOut.jsp").forward(request,response);
