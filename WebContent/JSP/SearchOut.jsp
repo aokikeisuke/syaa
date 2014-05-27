@@ -26,12 +26,8 @@ width="250" height="47" style="opacity: 1;">
 <c:forEach var="item" items="${requestScope['list']}">
 
 <a href = "/syaa/servlet/SearchOutPersonal/${item.id}">
-${fn:escapeXml(item.allname)}
+<li>${fn:escapeXml(item.allname)}
 </a>
-<!-- 
-function on_mouseover(){
-
- -->
 <a href = "/syaa/servlet/SearchOutPersonal/${item.id}">
 <img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100" height="100" border="0" />
 

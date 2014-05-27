@@ -25,18 +25,13 @@ width="250" height="47" style="opacity: 1;">
 </div>
 
 	<c:forEach var="item" items="${requestScope['list']}">
-
-		<a href="/syaa/servlet/SearchOutPersonal/${item.id}"> <br>
-		<li>${fn:escapeXml(item.name)}</li>
-		</a>
-		<a href="/syaa/servlet/SearchOutPersonal/${item.id}"> 
-		<img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100"height="100" border="0" />
-		</a>
-
-		<!-- 
-写真のURL指定の仕方を要確認。「+」が必要なのか。。。？
- -->
-
+	<a href="/syaa/servlet/SearchOutPersonal/${item.id}"> <br>
+<table border="1">
+<tr>
+<td>${fn:escapeXml(item.name)}</td><td><img src="http://localhost:8080/syaa/Pic/${item.image}" alt="" width="100"height="100" border="0" /></td>
+</tr>
+</table>
+</a>
 	</c:forEach>
 
 </body>

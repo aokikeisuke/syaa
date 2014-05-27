@@ -48,7 +48,28 @@ public class EditOut extends HttpServlet {
 // P141  セッションを明示的に破棄
 			response.sendRedirect("/syaa/JSP/Top.jsp");
 		}else{
-			response.sendRedirect("/syaa/JSP/RegIn.jsp");
+			String ln = request.getParameter("lastname");
+			String fn = request.getParameter("firstname");
+			String sln = request.getParameter("lsubname");
+			String sfn = request.getParameter("fsubname");
+			String bd = request.getParameter("birthday");
+			String pl = request.getParameter("place");
+			String hb = request.getParameter("hobby");
+			String im = request.getParameter("image");
+			String wd = request.getParameter("word");
+			int id = Integer.parseInt(request.getParameter("id"));
+			
+			request.setAttribute("lastname", ln);
+			request.setAttribute("firstname", fn);
+			request.setAttribute("lsubname", sln);
+			request.setAttribute("fsubname", sfn);
+			request.setAttribute("birthday", bd);
+			request.setAttribute("place", pl);
+			request.setAttribute("hobby", hb);
+			request.setAttribute("image", im);
+			request.setAttribute("word", wd);
+			request.setAttribute("id", id);
+			this.getServletContext().getRequestDispatcher("/JSP/EditText.jsp").forward(request, response);
 		}
 		
 	
