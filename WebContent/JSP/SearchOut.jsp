@@ -22,6 +22,9 @@ width="250" height="47" style="opacity: 1;">
 	<input type="text" name = "search"  value = "${requestScope['keyWord']}">
 	<input type="submit" value="検索">
 </form>
+<div>
+検索結果は ${requestScope['objNum']}件です
+</div>
 </div>
 <c:forEach var="item" items="${requestScope['list']}">
 
