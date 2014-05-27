@@ -32,40 +32,40 @@ width="250" height="47" style="opacity: 1;">
 	*姓：
 	<br>
 	
-	<input type="text" name="lastname"/>
+	<input type="text" name="lastname" value="${requestScope['lastname']}"/>
 	
 	
 	<br>
 	*名：
 	<br>
-	<input type="text" name="firstname" />
+	<input type="text" name="firstname" value="${requestScope['firstname']}"/>
 	
 	<br>
 	*フリガナ（姓）：
 	<br>
-	<input type="text" name="lsubname" />
+	<input type="text" name="lsubname" value="${requestScope['lsubname']}"/>
 	<br>
 	*フリガナ（名）：
 	<br>
-	<input type="text" name="fsubname" />
+	<input type="text" name="fsubname" value="${requestScope['fsubname']}"/>
 	<br>
 	生年月日：
 	<br>
-	<input type="date" name="birthday" />
+	<input type="date" name="birthday" value="${requestScope['birthday']}"/>
 	<br>
 	最寄り駅：
 	<br>
 	
-	<input type="text" name="place" />
+	<input type="text" name="place" value="${requestScope['place']}"/>
 	<br>
 	趣味：
 	<br>
-	<input type="text" name="hobby" />
+	<input type="text" name="hobby" value="${requestScope['hobby']}"/>
 	<br>
 	
 	一言お願いします：
 	<br>
-	<input type="text" name="word" />
+	<input type="text" name="word" value="${requestScope['word']}"/>
 	<br>
 	<br>
 	写真：<br/>

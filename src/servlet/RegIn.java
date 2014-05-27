@@ -34,6 +34,16 @@ public class RegIn extends HttpServlet {
 			response.setCharacterEncoding("UTF-8");
 			String alert1 = "名前を入力して下さい。";
 			request.setAttribute("alert1", alert1);
+			
+			request.setAttribute("lastname", request.getParameter("lastname"));
+			request.setAttribute("firstname", request.getParameter("firstname"));
+			request.setAttribute("lsubname", request.getParameter("lsubname"));
+			request.setAttribute("fsubname", request.getParameter("fsubname"));
+			request.setAttribute("birthday", request.getParameter("birthday"));
+			request.setAttribute("place", request.getParameter("place"));
+			request.setAttribute("hobby", request.getParameter("hobby"));
+			request.setAttribute("word", request.getParameter("word"));
+			
 			this.getServletContext().getRequestDispatcher("/JSP/RegIn.jsp").forward(request, response);
 			return;
 		}
