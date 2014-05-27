@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import beans.RegInBeans;
 import beans.RegOutBeans;
 import beans.SearchOutBeans;
 
@@ -20,6 +21,7 @@ import beans.SearchOutBeans;
 public class RegIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	
 	@Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -36,12 +38,18 @@ public class RegIn extends HttpServlet {
 			return;
 		}
         
+		RegInBeans obj = new RegInBeans();
+		obj.setLastname(request.getParameter("lastname"));
+		obj.setFirstname(request.getParameter("firstname"));
+		obj.setLsubname(request.getParameter("lsubname"));
+		obj.setFsubname(request.getParameter("fsubname"));
+		obj.setPlace(request.getParameter("place"));
+		obj.setHobby(request.getParameter("hobby"));
+		obj.setWord(request.getParameter("word"));
+		
 		//入力文字数のチェック
-        ArrayList<String> list = beans.RegInBeans.errorMessage(
-        		request.getParameter("lastname"),request.getParameter("firstname"),
-        		request.getParameter("lsubname"),request.getParameter("fsubname"),
-        		request.getParameter("birthday"),request.getParameter("place"),
-        		request.getParameter("hobby"),   request.getParameter("word"));
+		
+        ArrayList<String> list = obj.checkStrLength();
         
         //ここでリストに入ったエラーメッセージをリクエストスコープの変数にセット、それをJSPで動的に受け取る
         
@@ -50,7 +58,7 @@ public class RegIn extends HttpServlet {
 		this.getServletContext().getRequestDispatcher("/JSP/RegIn.jsp").forward(request, response);
 		return;
         }
-        
+		 
         request.setAttribute("lastname", request.getParameter("lastname"));
 		request.setAttribute("firstname", request.getParameter("firstname"));
 		request.setAttribute("lsubname", request.getParameter("lsubname"));
@@ -59,7 +67,6 @@ public class RegIn extends HttpServlet {
 		request.setAttribute("place", request.getParameter("place"));
 		request.setAttribute("hobby", request.getParameter("hobby"));
 		request.setAttribute("word", request.getParameter("word"));
-		 
 		 
 		//ファイルのアップロード処理
 		Part part = request.getPart("image");

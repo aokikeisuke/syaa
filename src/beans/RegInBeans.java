@@ -55,7 +55,11 @@ public class RegInBeans {
 
 
 	public  ArrayList<String> checkStrLength(){
+		
+		
+		
 		  ArrayList<String> list = new ArrayList<String>();
+		  
 		  if(this.lastname.length() > 30 || this.firstname.length() > 30){
 			  String error1 = "      !!\"姓\"・\"名\"       の入力文字数はそれぞれ３０文字までです";
 			  list.add(error1);
@@ -64,15 +68,8 @@ public class RegInBeans {
 			  String error2 = "!!\"フリガナ（性）\"・\"フリガナ（名）\"の入力文字数はそれぞれ３０文字までです";
 			  list.add(error2);
 		  }
-
 		  if(place.length() > 100){
 			  String error3 = "!!\"最寄り駅\"        の入力文字数は１００文字までです";
-
-
-
-		  if(place.length() > 200){
-			  String error3 = "!!\"最寄り駅\"        の入力文字数は２００文字までです";
-
 			  list.add(error3);
 		  }
 		  if(hobby.length() > 100){

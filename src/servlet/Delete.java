@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.DeleteBeans;
+import beans.RegOutBeans;
 
 @WebServlet("/Delete")
 public class Delete extends HttpServlet {
@@ -17,11 +18,16 @@ public class Delete extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
+		
 		int id = Integer.parseInt(request.getParameter("id"));
 		DeleteBeans deletebeans = new DeleteBeans();
 		deletebeans.setId(id);
 		DeleteBeans.DateBaseDelete(deletebeans);
 		response.sendRedirect("/syaa/JSP/Top.jsp");
-	}
+	
 
+}
 }

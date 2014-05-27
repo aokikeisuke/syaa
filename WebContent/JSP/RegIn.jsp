@@ -55,6 +55,7 @@ width="250" height="47" style="opacity: 1;">
 	<br>
 	最寄り駅：
 	<br>
+	
 	<input type="text" name="place" />
 	<br>
 	趣味：
