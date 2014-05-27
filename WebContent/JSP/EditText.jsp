@@ -45,7 +45,7 @@ p.exam1 {color: #ff0000; font-weight:bold}
 			<input type="hidden" name="id" value="${requestScope['id']}"/>
 			
 			<p class="exam1"> ${requestScope['alert1']} </p><br>
-			<input type="submit" value="編集"> 
+			<input type="submit" value="変更"> 
 			
 			<c:forEach var = "errorMessage" items = "${requestScope['list']}">
 	     <p class="exam1">${errorMessage}</p>
