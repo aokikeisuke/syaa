@@ -60,7 +60,16 @@ public class RegOut extends HttpServlet {
 // P141  セッションを明示的に破棄
 //			response.sendRedirect("/syaa/JSP/Top.jsp");
 		}else{
-			response.sendRedirect("/syaa/JSP/RegIn.jsp");
+			request.setAttribute("lastname", request.getParameter("lastname"));
+			request.setAttribute("firstname", request.getParameter("firstname"));
+			request.setAttribute("lsubname", request.getParameter("lsubname"));
+			request.setAttribute("fsubname", request.getParameter("fsubname"));
+			request.setAttribute("birthday", request.getParameter("birthday"));
+			request.setAttribute("place", request.getParameter("place"));
+			request.setAttribute("hobby", request.getParameter("hobby"));
+			request.setAttribute("word", request.getParameter("word"));
+			
+			this.getServletContext().getRequestDispatcher("/JSP/RegIn.jsp").forward(request,response);
 		}
 		
 	

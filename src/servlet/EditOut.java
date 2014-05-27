@@ -43,10 +43,12 @@ public class EditOut extends HttpServlet {
 			editbeans.setImage(im);
 			editbeans.setWord(wd);
 			editbeans.setId(id);
-
+			
 			EditBeans.DateBaseModify(editbeans);
 // P141  セッションを明示的に破棄
-			response.sendRedirect("/syaa/JSP/Top.jsp");
+			request.setAttribute("msg", "編集完了");
+			this.getServletContext().getRequestDispatcher("/JSP/Top.jsp").forward(request, response);
+			
 		}else{
 			String ln = request.getParameter("lastname");
 			String fn = request.getParameter("firstname");
