@@ -22,7 +22,7 @@
 	<input type="submit" value="検索">
 </form>
 <br>
-検索結果は ${requestScope['objNum']}件です
+<b>検索結果は ${requestScope['objNum']}件です</b>
 <br>
 <table align="center">
 	<c:forEach var="item" items="${requestScope['list']}">

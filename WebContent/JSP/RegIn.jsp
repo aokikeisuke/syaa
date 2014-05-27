@@ -26,46 +26,46 @@ p.exam1 {color: #ff0000; font-weight:bold}
 	<form method ="POST" enctype = "multipart/form-data" action="/syaa/servlet/RegIn">
 	
 	<br> 
-	*姓：
+	*姓
 	<br>
 	
 	<input type="text" name="lastname" value="${requestScope['lastname']}"/>
 	
 	
 	<br>
-	*名：
+	*名
 	<br>
 	<input type="text" name="firstname" value="${requestScope['firstname']}"/>
 	
 	<br>
-	*フリガナ（姓）：
+	*フリガナ（姓）
 	<br>
 	<input type="text" name="lsubname" value="${requestScope['lsubname']}"/>
 	<br>
-	*フリガナ（名）：
+	*フリガナ（名）
 	<br>
 	<input type="text" name="fsubname" value="${requestScope['fsubname']}"/>
 	<br>
-	生年月日：
+	生年月日
 	<br>
 	<input type="date" name="birthday" value="${requestScope['birthday']}"/>
 	<br>
-	最寄り駅：
+	最寄り駅
 	<br>
 	
 	<input type="text" name="place" value="${requestScope['place']}"/>
 	<br>
-	趣味：
+	趣味
 	<br>
 	<input type="text" name="hobby" value="${requestScope['hobby']}"/>
 	<br>
 	
-	一言お願いします：
+	一言お願いします
 	<br>
 	<input type="text" name="word" value="${requestScope['word']}"/>
 	<br>
 	<br>
-	写真：<br/>
+	写真<br/>
 	<input type ="file" name="image"  size="75"/><br/>
 	<br>
 	
