@@ -131,7 +131,7 @@ public class SearchOutBeans implements Serializable{
 				Context context= new InitialContext();
 				DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/test");
 				db = ds.getConnection();
-				ps = db.prepareStatement("SELECT * FROM employee ORDER BY LSUBNAME,FSUBNAME");
+				ps = db.prepareStatement("SELECT * FROM EMPLOYEE ORDER BY LSUBNAME,FSUBNAME");
 				
 				rs = ps.executeQuery();
 //				     while(rs.next()){
@@ -195,7 +195,7 @@ public class SearchOutBeans implements Serializable{
 				Context context= new InitialContext();
 				DataSource ds = (DataSource)context.lookup("java:comp/env/jdbc/test");
 				db = ds.getConnection();
-				ps = db.prepareStatement("SELECT * FROM employee WHERE ID = ? ORDER BY LSUBNAME,FSUBNAME");
+				ps = db.prepareStatement("SELECT * FROM EMPLOYEE WHERE ID = ? ORDER BY LSUBNAME,FSUBNAME");
 				SearchOutBeans namess = new SearchOutBeans();
 				
 				namess.setId(id);
