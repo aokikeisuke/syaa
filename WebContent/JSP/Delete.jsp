@@ -15,7 +15,29 @@ width="250" height="47" style="opacity: 1;">
 </a>
 </header>
 <br>
-		データを削除しますか？<br />
+<table border=1 align="center" bgcolor="#fff5ee">
+<tr>
+	<td>名前</td><td>（姓）${requestScope['lastname']}</td><td>（名）${requestScope['firstname']}</td>
+	<td rowspan="4"><img src="/syaa/Pic/${requestScope['image']}" alt="" width="100" height="100" border="0" /></td>
+	</tr>
+	<tr>
+	<td>フリガナ</td><td>（セイ）${requestScope['lsubname']}</td><td>（メイ）${requestScope['fsubname']}</td>
+	</tr>
+	<tr>
+	<td>誕生日</td><td colspan="2">${requestScope['birthday']}</td>
+	</tr>
+	<tr>
+	<td>最寄り駅</td><td colspan="2">${requestScope['place']}</td>
+	</tr>
+	<tr>
+	<td>趣味</td><td colspan="3">${requestScope['hobby']}</td>
+	</tr>
+	<tr>
+	<td>一言お願いします</td><td colspan="3">${requestScope['word']}</td>
+	</tr>
+</table>
+<br>
+		データを削除しますか？<br><br>
 		<form method="POST" action="/syaa/Delete">
 			 <input type="submit" style="WIDTH: 80px; HEIGHT: 25px"value="はい">
 			 <input type="hidden" name="id" value="${requestScope['id']}"/>

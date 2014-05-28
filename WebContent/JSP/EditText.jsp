@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/syaa/css/text.css" type="text/css" />
 <style type="text/css">
 p.exam1 {color: #ff0000; font-weight:bold}
+input.word {height: 10em;}
 </style>
 </head>
 <body class="background" style="text-align:center">
@@ -22,24 +23,27 @@ p.exam1 {color: #ff0000; font-weight:bold}
 		<br>
 			　*は必須項目です <br> 
 			<br>
-			*姓：<br>
+			*姓<br>
 			<input type="text" name="lastname" value="${requestScope['lastname']}"/>
 			<br> 
-			*名：<br> 
+			*名<br> 
 			<input type="text" name="firstname" value="${requestScope['firstname']}"/> <br>
-			*フリガナ（姓）：<br> 
+			*フリガナ（姓）<br> 
 			<input type="text" name="lsubname" value="${requestScope['lsubname']}"/> <br>
-			*フリガナ（名）：<br> 
+			*フリガナ（名）<br> 
 			<input type="text" name="fsubname" value="${requestScope['fsubname']}"/> <br>
-			生年月日：<br> 
+			生年月日<br> 
 			<input type="date" name="birthday" value="${requestScope['birthday']}"/> <br>
-			最寄り駅： <br> 
+			最寄り駅 <br> 
 			<input type="text" name="place" value="${requestScope['place']}"/> <br> 
-			趣味： <br>
+			趣味<br>
 			<input type="text" name="hobby" value="${requestScope['hobby']}"/> <br> 
-			一言お願いします： <br>
+			一言お願いします <br>
+			<textarea name="word" rows="3" cols="30">${requestScope['word']}</textarea><br>
+			<!-- 
 			<input type="text" name="word"  value="${requestScope['word']}"/> <br> <br>
-			写真：<br>
+			 -->
+			写真<br>
 	        <input type ="file" name="image"  size="75">
 	        
 			<input type="hidden" name="id" value="${requestScope['id']}"/>

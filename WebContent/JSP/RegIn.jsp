@@ -59,12 +59,15 @@ p.exam1 {color: #ff0000; font-weight:bold}
 	<br>
 	<input type="text" name="hobby" value="${requestScope['hobby']}"/>
 	<br>
-	
+	 一言お願いします <br>
+			<textarea name="word" rows="3" cols="30">${requestScope['word']}</textarea><br>
+	<!-- 
 	一言お願いします
 	<br>
 	<input type="text" name="word" value="${requestScope['word']}"/>
 	<br>
 	<br>
+	 -->
 	写真<br/>
 	<input type ="file" name="image"  size="75"/><br/>
 	<br>

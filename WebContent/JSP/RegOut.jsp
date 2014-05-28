@@ -24,19 +24,32 @@ session.setAttribute("lastname", lastname);
 </a>
 </header>
 
-<p>
-姓:${requestScope['lastname']}<br>
-名:${requestScope['firstname']}<br>
-フリガナ（姓）:${requestScope['lsubname']}<br>
-フリガナ（名）:${requestScope['fsubname']}<br>
-誕生日:${requestScope['birthday']}<br>
-最寄り駅:${requestScope['place']}<br>
-趣味:${requestScope['hobby']}<br>
-一言お願いします:${requestScope['word']}<br>
-写真:<img src="../Pic/${requestScope['image']} " alt="" width="100" height="100" border="0" /><br>
-</p>
-以上の内容で登録しますか？
+
+<table border=1 align="center" bgcolor="#fff5ee">
+<tr>
+	<td>名前</td><td>（姓）${requestScope['lastname']}</td><td>（名）${requestScope['firstname']}</td>
+	<td rowspan="4"><img src="/syaa/Pic/${requestScope['image']}" alt="" width="100" height="100" border="0" /></td>
+	</tr>
+	<tr>
+	<td>フリガナ</td><td>（セイ）${requestScope['lsubname']}</td><td>（メイ）${requestScope['fsubname']}</td>
+	</tr>
+	<tr>
+	<td>誕生日</td><td colspan="2">${requestScope['birthday']}</td>
+	</tr>
+	<tr>
+	<td>最寄り駅</td><td colspan="2">${requestScope['place']}</td>
+	</tr>
+	<tr>
+	<td>趣味</td><td colspan="3">${requestScope['hobby']}</td>
+	</tr>
+	<tr>
+	<td>一言お願いします</td><td colspan="3">${requestScope['word']}</td>
+	</tr>
+
+</table>
 <br>
+以上の内容で登録しますか？
+<br><br>
 <form  method="POST" action="/syaa/servlet/RegOut">
  <!--    <input type="hidden" name="lastname" value="${ requestScope['lastname']} "/> --> 
     <input type="hidden" name="lastname" value="${requestScope['lastname']}"/>

@@ -67,7 +67,7 @@
     <input type="hidden" name="birthday" value="${item.birthday}"/>
     <input type="hidden" name="place" value="${item.place}"/>
     <input type="hidden" name="hobby" value="${item.hobby}"/>
-    <input type="hidden" name="image" value="${requestScope['image']}"/>
+    <input type="hidden" name="image" value="${item.image}"/>
     <input type="hidden" name="word" value="${item.word}"/>
     <input type="hidden" name="id" value="${item.id}"/>
 	
