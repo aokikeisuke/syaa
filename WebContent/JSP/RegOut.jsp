@@ -24,7 +24,7 @@ session.setAttribute("lastname", lastname);
 </a>
 </header>
 
-
+<br>
 <table border=1 align="center" bgcolor="#fff5ee">
 <tr>
 	<td>名前</td><td>（姓）${requestScope['lastname']}</td><td>（名）${requestScope['firstname']}</td>
