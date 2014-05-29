@@ -67,6 +67,7 @@ public class RegOut extends HttpServlet {
 			request.setAttribute("birthday", request.getParameter("birthday"));
 			request.setAttribute("place", request.getParameter("place"));
 			request.setAttribute("hobby", request.getParameter("hobby"));
+			request.setAttribute("image", request.getParameter("image"));
 			request.setAttribute("word", request.getParameter("word"));
 			
 			this.getServletContext().getRequestDispatcher("/JSP/RegIn.jsp").forward(request,response);
