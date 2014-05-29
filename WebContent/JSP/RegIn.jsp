@@ -70,6 +70,9 @@ p.exam1 {color: #ff0000; font-weight:bold}
 	 -->
 	写真<br/>
 	<input type ="file" name="image"  size="75"/><br/>
+	<!--  
+	<input type="hidden" name="image_bk" value="${requestScope[]} }" />
+	-->
 	<br>
 	
 	<input type="submit" value="登録">  
