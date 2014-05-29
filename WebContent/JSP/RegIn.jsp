@@ -73,7 +73,7 @@ p.exam1 {color: #ff0000; font-weight:bold}
 	${requestScope['image']}
 	<br>
 	
-	<input type="submit" value="登録">  
+	<input type="submit" value="登録"><input type="button" value="戻る" onClick="history.back()">
 	<p class="exam1"> ${requestScope['alert1']} </p><br>
 	<c:forEach var = "errorMessage" items = "${requestScope['list']}">
 	    <p class="exam1">${errorMessage}</p>

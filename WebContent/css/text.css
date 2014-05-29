@@ -1,5 +1,26 @@
 body.background{
 background-image: url("/syaa/Pic/bg.jpg");
 height: 100%;
-
+padding-top: 100px;
+}
+header{
+	position: fixed !important;  
+    position: absolute;  
+    top: 0;  
+    left: 0;
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    background: transparent;
+}
+footer{
+	position: fixed !important;  
+    position: absolute; 
+    bottom: 0px;
+	width: 1350px;
+    height: 50px;
+    margin: 0 auto;
+    background: transparent;
+    text-align: center;
+	
 }

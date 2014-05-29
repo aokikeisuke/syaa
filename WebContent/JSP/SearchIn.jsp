@@ -32,6 +32,8 @@
 
 	</c:forEach>
 </table>
+<footer>
 <input type="button" value="戻る" onClick="history.back()">
+</footer>
 </body>
 </html>

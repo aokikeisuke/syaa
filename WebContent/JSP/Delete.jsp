@@ -47,6 +47,10 @@ width="250" height="47" style="opacity: 1;">
 		
 			 <input type="submit" style="WIDTH: 80px; HEIGHT: 25px" value="いいえ">
 		</form>
+
+<footer>
+<input type="button" value="戻る" onClick="history.back()">
+</footer>
 </body>
 
 </html>
